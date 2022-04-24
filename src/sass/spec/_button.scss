@@ -1,0 +1,79 @@
+.btn {
+    user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.btn-rect {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    width: 100%;
+    height: 64px;
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    line-height: 1.55;
+    font-weight: 500;
+    border-radius: 10px;
+    border-color: transparent;
+    border-style: solid;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    margin-bottom: 10px;
+
+    @include sm {
+        margin-bottom: 0;
+        margin-right: 10px;
+        max-width: 174px;
+    }
+}
+
+.btn-blue:hover,
+.btn-blue:active,
+.btn-blue:focus {
+    background-color: #024a97;
+}
+
+.btn-blue {
+    background-color: $blue;
+}
+
+.btn-red {
+    background-color: $red;
+}
+
+.btn-white-blue {
+    background-color: $white;
+    color: $blue;
+}
+
+.btn-white-red {
+    background-color: $white;
+    color: $red;
+}
+
+.btn-white-blue:active,
+.btn-white-red:active,
+.btn-white-blue:hover,
+.btn-white-red:hover,
+.btn-white-blue:focus,
+.btn-white-red:focus {
+    background-color: $gray-h;
+}
+
+.btn-blue svg {
+    color: $white;
+}
+
+.btn-white-red svg{
+    color: $red;
+}
+
+.btn__icon {
+    top: 4px;
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+}
+

@@ -1,0 +1,110 @@
+@mixin container($max-width: 120rem,$padding: 2rem) {
+    width: 100%;
+    max-width: #{$max-width};
+    padding: 0 #{$padding};
+    margin: 0 auto;
+}
+
+@mixin font-base($fw: 500,$fz: 40px,$lh: 20px) {
+    font-size: $fz;
+    line-height: $lh;
+    font-weight: $fw;
+}
+
+@mixin flex-column ($fl-dir: column, $a-start: flex-start, $j-start: center) {
+    display: flex;
+    flex-direction: $fl-dir;
+    align-items: $a-start;
+    justify-content: $j-start;
+}
+
+@mixin flex-row ($fl-dir: row, $a-start: center, $j-start: space-between) {
+    display: flex;
+    flex-direction: $fl-dir;
+    align-items: $a-start;
+    justify-content: $j-start;
+}
+
+@mixin xs {
+    @media screen and (max-width: #{$xs_width}) {
+        @content;
+    }
+}
+
+@mixin xs-down  {
+    @media screen and (max-width: #{$xs_width - 1}) {
+        @content;
+    }
+}
+
+@mixin csx {
+    @media screen and (min-width: #{$csx_width}) {
+        @content;
+    }
+}
+
+@mixin csx-down  {
+    @media screen and (max-width: #{$csx_width - 1}) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (min-width: #{$sm_width}) {
+        @content;
+    }
+}
+
+@mixin sm-down {
+    @media screen and (max-width: #{$sm_width - 1}) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (min-width: #{$md_width}) {
+        @content;
+    }
+}
+
+@mixin md-down {
+    @media screen and (max-width: #{$md_width - 1}) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (min-width: #{$lg_width}) {
+        @content;
+    }
+}
+
+@mixin lg-down {
+    @media screen and (max-width: #{$lg_width - 1}) {
+        @content;
+    }
+}
+
+@mixin lg-inner {
+    @media screen and (min-width: #{$lg_width_inner}) {
+        @content;
+    }
+}
+
+@mixin lgx {
+    @media screen and (min-width: #{$lgx_width}) {
+        @content;
+    }
+}
+
+@mixin lgx-down {
+    @media screen and (max-width: #{$lgx_width - 1}) {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media screen and (min-width: #{$xl_width}) {
+        @content;
+    }
+}

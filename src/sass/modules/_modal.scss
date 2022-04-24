@@ -1,0 +1,40 @@
+.modal {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10000;
+    max-width: 400px;
+    min-width: 260px;
+    width: auto;
+    box-shadow: -3px -2px 36px 1px rgba(34, 60, 80, 0.2);
+    border-radius: 3px;
+    text-align: left;
+    font-family: 'Inter','Arial',sans-serif;
+    background: #F95D51;
+    padding: 10px;
+}
+
+.modal.open {
+    display: block;
+}
+
+.modal__text {
+    padding: 10px;
+    @include font-base($fw: 600,$fz: 15px,$lh: 1.55);
+    color: $white;
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.modal__icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.modal__icon svg {
+    width: 20px;
+    height: 20px;
+    color: $white;
+}

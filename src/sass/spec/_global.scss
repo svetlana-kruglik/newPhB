@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+html,
+body {
+    position: relative;
+    min-height: 100%;
+    background: $white;
+    @include font-base();
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.main {
+    overflow: hidden;
+    padding-top: 70px;
+
+    @include md {
+        padding-top: 20px;
+    }
+}
+
+
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+
+    &[href] {
+        cursor: pointer;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-style: none;
+}
+
+picture {
+    display: block;
+}
+
+/* Remove shadow from fields for WebKit browsers */
+input:not([type=checkbox]):not([type=radio]),
+textarea,
+select {
+    appearance: none;
+}
+
+select {
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+}
+
+li {
+    list-style-type: none;
+    line-height: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: $container-width;
+    padding: 0 $container-padding;
+    margin: 0 auto;
+
+    @include csx-down() {
+        padding: 0 $container-padding-csx;
+    }
+}
+
+h1, .h1 {
+    @include font-base($fw: 700,$fz: 34px,$lh: 1.15);
+    color: $black;
+    font-family: 'Rubik', 'Arial', sans-serif;
+
+    @include csx {
+        @include font-base($fz: 40px,$lh: 1.15);
+    }
+}
+
+h2, .h2 {
+    @include font-base($fw: 700,$fz: 26px,$lh: 1.15);
+    color: $black;
+    font-family: 'Inter', 'Arial', sans-serif;
+
+    @include csx {
+        @include font-base($fw: 700,$fz: 24px,$lh: 1.15);
+        font-family: 'Inter', 'Arial', sans-serif;
+    }
+}
+
+.text-xs {
+    color: $gray-tx;
+    @include font-base($fw: 400,$fz: 16px,$lh: 1.55);
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.text-s {
+    color: $gray-tx;
+    @include font-base($fw: 400,$fz: 18px,$lh: 1.55);
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+//footer
+.text-m {
+    color: $black;
+    @include font-base($fw: 400,$fz: 16px,$lh: 1.15);
+    font-family: 'Inter', 'Arial', sans-serif;
+
+    @include csx {
+        @include font-base($fz: 18px);
+    }
+}
+
+.icon-svg {
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+}

@@ -1,0 +1,71 @@
+.contact-s {
+    padding-top: 40px;
+}
+
+.contact-s1 {
+    padding-top: 70px;
+    padding-bottom: 80px;
+
+    @include sm {
+        padding-top: 230px;
+    }
+}
+
+.contact-s1 .btn-rect {
+    border-radius: 30px;
+    margin-bottom: 0;
+}
+
+.contact-s1 .form__content-bottom.form__content-bottom--mob {
+    display: block;
+    max-width: 100%;
+    margin: 30px 0 0;
+    text-align: start;
+
+    @include csx {
+        display: none;
+    }
+}
+
+.contact-s1 .form__content-bottom.form__content-bottom--mob .form__content-inner {
+    text-align: start;
+}
+
+.contact-s1 .form__content-bottom.form__content-bottom--desk .form__content-inner{
+    @include csx-down() {
+        max-width: 100%;
+        margin: 30px 0 0;
+    }
+
+    @include csx {
+        text-align: center;
+    }
+
+    @include md {
+        text-align: start;
+    }
+}
+
+.contact-s1 .form__content-bottom.form__content-bottom--mob .form__desc.text-s {
+    font-size: 14px;
+}
+
+.contact-s1 .form__content-bottom.form__content-bottom--desk .form__desc.text-s {
+
+    @include csx-down() {
+        font-size: 14px;
+    }
+}
+
+.contact-s1 .form__content-bottom.form__content-bottom--mob .h2 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.contact-s1 .form__content-bottom.form__content-bottom--mob .soc-list {
+    justify-content: start;
+}
+
+.contact-s1 .form .form__content-bottom.form__content-bottom--mob .soc-el:first-child {
+    margin-right: 10px;
+}
