@@ -1,4 +1,3 @@
-
 'use strict';
 
 /* Подключение необходимых плагинов */
@@ -6,9 +5,8 @@ import gulp from 'gulp';
 import babel from 'gulp-babel';
 import del from 'del';
 import plumber from 'gulp-plumber';
-import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
-const sass = gulpSass(dartSass);
+import dartSass from 'sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import minify from 'gulp-csso';
@@ -20,11 +18,11 @@ import svgstore from 'gulp-svgstore';
 import posthtml from 'gulp-posthtml';
 import include from 'posthtml-include';
 import sync from 'browser-sync';
-
+const sass = gulpSass(dartSass);
 
 // Clean
 export const clean = () => {
-    return del('build');
+    return del(['build/*']);
 }
 
 // HTML
@@ -87,7 +85,7 @@ export const imgOg = () => {
 
 // WEBP
 export const png = () => {
-    return gulp.src('src/img/**/*.png')
+    return gulp.src('src/img//*.png')
         .pipe(webp({
             lossless: true
         }))
@@ -95,7 +93,7 @@ export const png = () => {
 }
 
 export const jpg = () => {
-    return gulp.src('src/img/**/*.jpg')
+    return gulp.src('src/img//*.jpg')
         .pipe(webp({
             quality: 85
         }))
@@ -164,7 +162,7 @@ export const watch = () => {
 }
 
 // Build
-export const build = () => {
+export const build = done => {
     gulp.series(
         clean,
         html,
@@ -177,7 +175,7 @@ export const build = () => {
         imgOg,
         js,
         jsVendor,
-    );
+    )(done);
 }
 
 // Default
