@@ -1,121 +1,24 @@
 # PhB
 PhB
 
-## Перед началом работы
+## Features
+* [Gulp](https://gulpjs.com) as a build system
+* [SCSS](http://sass-lang.com) preprocessor for CSS
+* [npm packages](https://www.npmjs.com/) package manager
 
-Для работы необходимо установить `nodejs` (вместе с `npm`)
+## Install dependencies
+* Clone or download this [repo](git@github.com:svetlana-kruglik/newPhB.git)
+* Run `npm install` to fetch all the dependencies
+* Run  `$ npm run start` to make development build. View template on `localhost:3000`. If this port not busy.
 
-- [Установка Node.js](https://htmlacademy.ru/blog/87-installing-nodejs "Установка Node.js")
+### Build the app for production
+* Run `$ gulp build` to make production build.
+* Download this build on production server
 
-## Установка 
+### View result on GitHub Pages
+* Link
 
-``` sh
-$ git clone git@github.com:sergeykonovalenko/gulp-project.git project-name
-$ cd project-name
-$ npm install
-```
-
-По окончанию выполнения будут установлены все необходимые пакеты.
-
-### Задачи Gulp
-
- - `$ gulp clean` - очистка каталога `build/`
- - `$ gulp html` - обработка HTML
- - `$ gulp fonts` - копирование шрифтов
- - `$ gulp css` - компилиция SCSS
- - `$ gulp css-vendor` - копирование CSS файлов библиотек
- - `$ gulp img` - копирование изображений, оптимизация SVG
- - `$ gulp webp` - конвертация изображений в формат WebP
- - `$ gulp sprite` - создание SVG спрайта
- - `$ gulp js` - сборка JS
- - `$ gulp js-vendor` - копирование JS файлов библиотек и фреймворков
- - `$ gulp server` - запуск локального веб-сервера для livereload и отслеживания изменений
- - `$ gulp build` - полная сборка проекта
- - `$ npm start` - полная сборка проекта + запуск локального веб-сервера livereload и отслеживания изменений
- 
-## Общая концепция
-
-- `src/` - каталог для размещения рабочих файлов (html, scss, js, шрифты, изображения)
-- `build/` - каталог для размещения готовой верстки
-
-Вся работа осуществляется в каталоге `src/`.
-
-## Концепции работы
-
-### Очистка каталога сборки
-
-Задача `$ gulp clean`
-
-При выполнении задачи полностью удаляется содержимое каталога `build/`.
-
-### Обработка HTML файлов
-
-Задача `$ gulp html`
-
-При выполнении задачи HTML файлы будут обработаны и скопированы в каталог `build/`.
-
-### Обработка файлов шрифтов
-
-Задача `$ gulp fonts`
-
-При выполнении задачи шрифты будут скопированы в каталог `build/fonts`.
-
-### Компиляция SCSS
-
-Задача `$ gulp css`
-
-Файл `src/sass/style.scss` является диспетчером подключений для всех файлов, кроме файлов стилей библиотек.
-
-Организация файлов проекта осуществляется по методологии MCSS.
-
-При компиляции происходит объединение всех файлов, компиляция в CSS, форматирование стиля кодирования, добавление вендорных префиксов.
-Итоговые файлы стилевых таблиц помещаются в каталог `build/css` (style.css, style.min.css)
-
-Задача `$ gulp css-vendor`
-
-Папка `src/sass/vendor` содержит стили сторонних библиотек. 
-
-При выполнении задачи они будут скопированы в каталог `build/css`.
-
-### Обработка изображений
-
-Задача `$ gulp img`
-
-При обработке изображения будут скопированы в каталог `build/img`, будет произведена оптимизация SVG.
-Оптимизация растровых изображений происходит отдельно от сборки.
-
-Задача `$ gulp webp`
-
-При выполнении задачи все растровые изображения будут конвертированы в формат WebP и помещены в каталог `build/img`.
-
-### Компиляция JavaScript
-
-Задача `$ gulp js`
-
-Файл `src/js/basic-init.js` предназначен для написания собственного кода.
-
-При выполнении задачи происходит минификация и итоговый файл помещается в каталог `build/js` (basic-init.js, basic-init.min.js)
-
-Задача `$ gulp js-vendor`
-
-Папка `src/js/vendor` содержит все сторонние библиотеки и фреймворки. 
-
-При выполнении задачи они будут скопированы в каталог `build/js`.
-
-### Полная сборка проекта
-
-Задача `$ gulp build`
-
-При запуске задачи последовательно выполняются задачи  `clean`, `html`, `fonts`, `css`, `css-vendor`, `img`, `webp`, `js`, `js-vendor`.
-
-В итоге выполнения в каталоге `build/` формируется полная сборка проекта.
-
-### Полная сборка проекта + Livereload и синхронизация между браузерами
-
-Задача `$ npm run start`
-
-При выполнении задачи выполняется полная сборка проекта + запускается локальный веб-сервер BrowserSync и открыватся index.html проекта.  
-
-При изменении или добавлении в каталоге `src/` каких-либо файлов, автоматически запускается соответсвующая задача по их обработке.
-
-Сервер использует каталог `build/` в качестве корня проекта.
+### Important Pages project. `Localhost`
+* [Index](http://localhost:3000/index.html)
+* [Become_a_partner](http://localhost:3000/become_a_partner.html)
+* [Contact](http://localhost:3000/contact.html)
