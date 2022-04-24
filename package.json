@@ -1,7 +1,7 @@
 {
-  "name": "gulp-project-template",
+  "name": "PhB",
   "version": "1.0.0",
-  "description": "Template for frontend develop base on Gulp",
+  "description": "PhB",
   "type": "module",
   "scripts": {
     "editorconfig": "editorconfig-cli",
@@ -17,11 +17,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/sergeykonovalenko/gulp-project.git"
+    "url": ""
   },
-  "author": "Sergey Konovalenko <sergeykonovalenko5550199@gmail.com>",
+  "author": "",
   "license": "MIT",
-  "homepage": "https://github.com/sergeykonovalenko/gulp-project",
+  "homepage": "",
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/preset-env": "^7.13.15",
