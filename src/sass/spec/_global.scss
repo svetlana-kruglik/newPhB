@@ -87,12 +87,12 @@ li {
     padding: 0 $container-padding;
     margin: 0 auto;
 
-    @include csx-down() {
+    @include sm-down() {
         padding: 0 $container-padding-csx;
     }
 }
 
-h1, .h1 {
+.h1 {
     @include font-base($fw: 700,$fz: 34px,$lh: 1.15);
     color: $black;
     font-family: 'Rubik', 'Arial', sans-serif;
@@ -113,6 +113,12 @@ h2, .h2 {
     }
 }
 
+.text-x {
+    color: $gray-tx;
+    @include font-base($fw: 400,$fz: 13px,$lh: 1.55);
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
 .text-xs {
     color: $gray-tx;
     @include font-base($fw: 400,$fz: 16px,$lh: 1.55);
@@ -121,7 +127,7 @@ h2, .h2 {
 
 .text-s {
     color: $gray-tx;
-    @include font-base($fw: 400,$fz: 18px,$lh: 1.55);
+    @include font-base($fw: 400,$fz: 18px,$lh: 22px);
     font-family: 'Inter', 'Arial', sans-serif;
 }
 

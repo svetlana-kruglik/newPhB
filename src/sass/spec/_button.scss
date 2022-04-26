@@ -10,7 +10,7 @@
     justify-content: center;
     max-width: 300px;
     width: 100%;
-    height: 64px;
+    height: 48px;
     color: #ffffff;
     font-size: 18px;
     font-family: 'Inter', 'Arial', sans-serif;
@@ -29,10 +29,44 @@
     }
 }
 
+.btn-rect.btn-black {
+    height: 54px;
+
+    @include sm {
+        max-width: 164px;
+    }
+}
+
+.btn-wrap .btn-rect.btn-black:first-child {
+    margin-right: 24px;
+}
+
+.btn__icon.btn__icon--apple,
+.btn__icon.btn__icon--google {
+    width: 20px;
+}
+
 .btn-blue:hover,
 .btn-blue:active,
 .btn-blue:focus {
     background-color: #024a97;
+}
+
+.btn__title-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-rect .btn__title {
+    line-height: 1;
+}
+
+.btn__title.btn__title--small {
+    font-size: 12px;
+}
+
+.btn-black {
+    background-color: $black;
 }
 
 .btn-blue {
@@ -43,9 +77,9 @@
     background-color: $red;
 }
 
-.btn-white-blue {
+.btn-white-black{
     background-color: $white;
-    color: $blue;
+    color: $black;
 }
 
 .btn-white-red {
@@ -71,7 +105,6 @@
 }
 
 .btn__icon {
-    top: 4px;
     display: inline-block;
     position: relative;
     margin-right: 10px;
