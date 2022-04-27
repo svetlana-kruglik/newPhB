@@ -12,3 +12,8 @@
 //    clip: rect(0 0 0 0);
 //    overflow: hidden;
 //}
+
+input:focus {
+    border-color: $blue;
+    outline: 0;
+}

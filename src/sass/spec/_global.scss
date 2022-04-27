@@ -101,17 +101,17 @@ li {
         @include font-base($fz: 40px,$lh: 1.15);
     }
 }
-
-h2, .h2 {
-    @include font-base($fw: 700,$fz: 26px,$lh: 1.15);
-    color: $black;
-    font-family: 'Inter', 'Arial', sans-serif;
-
-    @include csx {
-        @include font-base($fw: 700,$fz: 24px,$lh: 1.15);
-        font-family: 'Inter', 'Arial', sans-serif;
-    }
-}
+//
+//h2, .h2 {
+//    @include font-base($fw: 700,$fz: 26px,$lh: 1.15);
+//    color: $black;
+//    font-family: 'Inter', 'Arial', sans-serif;
+//
+//    @include csx {
+//        @include font-base($fw: 700,$fz: 24px,$lh: 1.15);
+//        font-family: 'Inter', 'Arial', sans-serif;
+//    }
+//}
 
 .text-x {
     color: $gray-tx;

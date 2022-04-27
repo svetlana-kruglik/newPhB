@@ -9,7 +9,7 @@
 .row.row--reverse {
     @include flex-column($j-start: flex-start);
 
-    @include md {
+    @include sm {
         @include flex-row($fl-dir: row-reverse, $a-start: center, $j-start: space-between);
     }
 }
@@ -32,29 +32,38 @@
     margin-bottom: 8px;
 }
 
-.index-s1 .col50__title {
+.index-s .col50__title {
+    margin-bottom: 8px;
+
     @include sm-down {
+        margin: 0 auto 8px;
         text-align: center;
     }
 }
 
-.index-s1 .btn-rect.btn-black {
+.btn-rect.btn-black {
     margin-bottom: 10px;
 
     @include sm {
         margin-bottom: 0;
-        //margin-right: 40px;
-    }
-
-    @include sm-down {
-        max-width: 100%;
     }
 }
 
-.index-s1 .btn-rect.btn-black:first-child {
+.btn-rect.btn-black:first-child {
     margin-right: 0;
     @include sm {
         margin-right: 40px;
+    }
+}
+
+.index-s1 .btn-wrap,
+.index-s7 .btn-wrap {
+    margin-top: 25px;
+}
+
+.index-s .overtitle {
+    @include sm-down() {
+        text-align: center;
     }
 }
 
@@ -72,6 +81,14 @@
     }
 }
 
+.index-s1 .col50__subdesc {
+    @include sm-down {
+       margin: 0 auto;
+        text-align: center;
+    }
+}
+
+.index-s7 .btn-wrap,
 .index-s1 .btn-wrap {
     width: 100%;
     display: flex;
@@ -129,7 +146,7 @@
 }
 
 .bg-s-revers {
-    @include md {
+    @include sm {
         background-repeat: no-repeat;
         background-image: url("/img/base/bg.png");
         background-size: 50%;
@@ -137,18 +154,38 @@
     }
 }
 
-.bg-s .col50.col50--right.bg-s-mob {
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: flex-end;
+.index-s .bg-s .col50.col50--right.bg-s-mob {
+    display: none;
 
-    @include sm-down() {
-        background-image: url("/img/base/bg.png");
-        background-size: clamp(110%,4em,115%);
-        background-position: center;
-        padding: 60px 0 169px;
+    @include sm {
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: flex-end;
     }
 }
+
+.index-s .bg-s-revers .col50.col50--right {
+    display: none;
+
+    @include sm {
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+//.bg-s .col50.col50--right.bg-s-mob {
+//    background-repeat: no-repeat;
+//    display: flex;
+//    justify-content: flex-end;
+//
+//    @include sm-down() {
+//        background-image: url("/img/base/bg.png");
+//        background-size: clamp(110%,4em,115%);
+//        background-position: center;
+//        padding: 60px 0 169px;
+//    }
+//}
 
 .img-grid {
     display: grid;
@@ -219,10 +256,17 @@
     }
 }
 
-.index-s1 .col50__desc,
-.index-s9 .col50__desc {
-    margin-bottom: 32px;
+
+.index-s .col50__desc {
+    @include sm-down {
+        text-align: center;
+    }
 }
+
+//.index-s1 .col50__desc,
+//.index-s .col50__desc {
+//    margin-bottom: 32px;
+//}
 
 .index-s5 .col50__img.col50__img--385,
 .index-s6 .col50__img.col50__img--385 {
@@ -287,17 +331,11 @@
     }
 }
 
-//.index-s6 .col50.col50--right {
-//    @include md-down() {
-//        max-width: 100%;
+//.index-s1 .col50.col50--right {
+//    @include sm-down() {
+//        padding-top: 60px;
 //    }
 //}
-
-.index-s1 .col50.col50--right {
-    @include sm-down() {
-        padding-top: 60px;
-    }
-}
 
 .index-s2,
 .index-s3,
@@ -311,15 +349,15 @@
     }
 }
 
-.index-s6 .col50__desc {
-    @include csx {
-        padding-bottom: 40px;
-    }
-
-    @include lgx {
-        padding-bottom: 0;
-    }
-}
+//.index-s6 .col50__desc {
+//    @include csx {
+//        padding-bottom: 40px;
+//    }
+//
+//    @include lgx {
+//        padding-bottom: 0;
+//    }
+//}
 
 .col50__subdesc.text-x {
     max-width: 477px;
@@ -328,8 +366,12 @@
 
 .index-s7 {
     background: linear-gradient(93.16deg, #FF4545 -4.03%, #FF457D 113.72%, #FF45B5 113.72%);
-    padding: 70px 0;
+    padding: 70px 0 0;
     position: relative;
+
+    @include sm {
+        padding: 100px 0 100px;
+    }
 
     @include md {
         padding: 175px 0 190px;
@@ -346,7 +388,11 @@
 
 .index-s8 {
     text-align: center;
-    padding: 220px 0;
+    padding: 154px 0 85px;
+
+    @include md {
+        padding: 220px 0;
+    }
 }
 
 .index-s8 .row-grid__desc {
@@ -362,7 +408,7 @@
 .index-s7 .col50__img.col50__img--340 {
     display: none;
 
-    @include lgx {
+    @include sm {
         display: block;
         position: absolute;
         top: -60px;
@@ -378,9 +424,9 @@
     color: $white;
 }
 
-.index-s7 .col50__desc {
-    margin-bottom: 25px;
-}
+//.index-s7 .col50__desc {
+//    margin-bottom: 25px;
+//}
 
 .index-s7 h1 {
     @include csx-down() {

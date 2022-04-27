@@ -91,6 +91,13 @@
     font-family: 'Inter', 'Arial', sans-serif;
 }
 
+.nav.nav--mob .nav-item {
+    @include md {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .nav.nav--mob .nav-item:not(:last-child) {
     margin-bottom: 10px;
 }

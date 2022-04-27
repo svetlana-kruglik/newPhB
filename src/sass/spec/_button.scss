@@ -38,7 +38,9 @@
 }
 
 .btn-wrap .btn-rect.btn-black:first-child {
-    margin-right: 24px;
+    @include sm {
+        margin-right: 24px;
+    }
 }
 
 .btn__icon.btn__icon--apple,
@@ -46,10 +48,13 @@
     width: 20px;
 }
 
-.btn-blue:hover,
+.btn-blue:hover{
+    background-color: $blue-h;
+}
+
 .btn-blue:active,
 .btn-blue:focus {
-    background-color: #024a97;
+    background-color: $blue-a;
 }
 
 .btn__title-wrap {

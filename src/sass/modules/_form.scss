@@ -19,6 +19,39 @@
         justify-content: center;
     }
 }
+//
+//.form-control {
+//    position: relative;
+//}
+//
+//.form-control .form__label {
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    height: 100%;
+//    padding: 1rem .75rem;
+//    pointer-events: none;
+//    border: 1px solid transparent;
+//    transform-origin: 0 0;
+//    transition: opacity .15s ease-in-out, transform .15s ease-in-out;
+//}
+//
+//.form-control .form__input::-moz-placeholder {
+//    color: transparent;
+//}
+//.form-control .form__input::placeholder {
+//    color: transparent;
+//}
+//.form-control .form__input:focus,
+//.form-control .form__input:not(:placeholder-shown) {
+//    padding-top: 1.625rem;
+//    padding-bottom: .625rem;
+//}
+//.form-control .form__input:focus~.form__label,
+//.form-control .form__input:not(:placeholder-shown)~.form__label {
+//    opacity: .65;
+//    transform: scale(.85) translateY(-.75rem) translateX(.15rem);
+//}
 
 .form .soc-el:first-child {
     margin-right: 40px;
