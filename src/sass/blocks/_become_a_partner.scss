@@ -1,20 +1,29 @@
 .partner-s1 {
     background-repeat: no-repeat;
-    background-image: url("/img/base/bg-2x.png");
+    background-image: url("/img/base/bg2x-mob.png");
     background-size: cover;
-    background-position: center center;
+    background-position: unset;
     width: 100%;
     height: 706px;
 
+    @include sm-down {
+        display: flex;
+        align-items: flex-end;
+    }
+
     @include sm {
         height: 820px;
+        background-image: url("/img/base/bg-2x.png");
+        background-size: cover;
+        background-position: center center;
     }
 }
-//
 
 .partner-s2 .row.row--reverse {
+    flex-direction: column-reverse;
+
     @include sm {
-        flex-direction: column-reverse;
+        flex-direction: row-reverse;
     }
 }
 
@@ -63,6 +72,11 @@
         width: 100%;
         padding: 246px 0;
     }
+
+    @include sm-down {
+        vertical-align: bottom;
+        margin: auto 0 0;
+    }
 }
 
 .partner-s1 .btn-rect {
@@ -92,6 +106,7 @@
 .partner-s .row.row--reverse .col50.col50--right {
     @include sm-down {
         justify-content: center;
+        margin-bottom: 40px;
     }
 }
 
@@ -108,16 +123,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 40px;
     }
 }
 
 .list__el:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .list__el {
     position: relative;
-    padding-left: 20px;
+    padding-left: 18px;
 }
 
 .list__el:after {
@@ -153,11 +169,17 @@
     }
 }
 
-//.partner-s1 .col50.col50--left {
-//    @include csx-down() {
-//        text-align: center;
-//    }
-//}
+.partner-s .row.row--reverse {
+    @include sm-down() {
+        flex-direction: column-reverse;
+    }
+}
+
+.partner-s .row{
+    @include sm-down() {
+        flex-direction: column-reverse;
+    }
+}
 
 .partner-s .col50.col50--left {
     @include sm-down() {
@@ -169,6 +191,10 @@
 
 .partner-s1 .col50__desc {
     margin-bottom: 20px;
+
+    @include sm-down() {
+       text-align: center;
+    }
 }
 
 .partner-s1 .btn-rect {
@@ -186,23 +212,29 @@
 }
 
 .partner-s3 {
-    background-color: $black;
+    background-color: $blue;
 
     @include sm {
         background-color: $white;
     }
 }
 
-.partner-s3 .col50__title {
+.partner-s .partner-s3 .col50__title {
     margin-bottom: 30px;
     max-width: 580px;
 
     @include sm {
        margin: 0 auto 68px;
     }
+
+    @include sm-down {
+        color: $white;
+    }
 }
 
 .partner-s .col50__title {
+    margin-bottom: 15px;
+
     @include sm-down {
         max-width: 100%;
         text-align: center;
@@ -213,6 +245,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @include sm-down {
+        margin-bottom: 76px;
+    }
 }
 
 .icon-grid__inner {
@@ -238,16 +274,18 @@
 
 .icon-grid__desc.text-s {
     @include font-base($fw: 400,$fz: 18px,$lh: 22px);
+    opacity: 60%;
+    color: $white;
 }
 
 .icon-grid__img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 25px;
 
-    @include csx {
-        width: 60px;
-        height: 60px;
+    @include sm {
+        margin-right: 10px;
+        margin-bottom: 0;
     }
 }
 
@@ -294,10 +332,49 @@
 
     @include sm-down {
         display: flex;
-        width: 70%;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 }
+
+.partner-s8 {
+    background-color: $black;
+    padding: 160px 0;
+
+    @include sm {
+        padding: 80px 0;
+    }
+}
+
+.partner-s8 a.soc-el__link {
+    background-color: $white;
+    opacity: 60%;
+}
+
+.partner-s8 .h1.form__title {
+    color: $white;
+}
+
+.partner-s8 .form__desc.text-s {
+    color: $white;
+    opacity: 60%;
+}
+
+.partner-s8 .form__textarea,
+.partner-s8 .form__input {
+    background: rgba(153, 156, 160, 0.2);
+}
+
+.contact-s .row.form,
+.partner-s .partner-s8 .row.form {
+    @include sm-down {
+        flex-direction: column;
+    }
+}
+
+.form .col50.col50--left {
+    margin-bottom: 0;
+}
+
 

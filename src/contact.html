@@ -27,208 +27,117 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="header js-header">
-    <div class="header__row header__row--hr">
-        <div class="container container--mob">
-            <div class="header__wrap">
-                <div class="header__col header__col--left">
-                    <a href="/index.html" class="header-logo">
-                        <img src="/img/base/header-logo.svg" alt="Company`s logo" title="Company`s logo"/>
-                    </a>
-                    <nav class="nav nav--desk">
-                        <ul class="nav__list nav__list--header">
+    <header class="header js-header">
+        <div class="header__row header__row--hr">
+            <div class="container container--mob">
+                <div class="header__wrap">
+                    <div class="header__col header__col--left">
+                        <a href="/index.html" class="header-logo">
+                            <img src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo"/>
+                        </a>
+                        <nav class="nav nav--desk">
+                            <ul class="nav__list nav__list--header">
+                                <li class="nav__item nav-item">
+                                    <a href="/index.html" class="nav-item__link text-xs">About Us</a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="/become_a_partner.html" class="nav-item__link text-xs">Become a Partner</a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="/contact.html" class="nav-item__link text-xs">Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header__col header__col--right">
+                        <p class="header__name text-xs">PharmBonus International LLC</p>
+                    </div>
+                    <div class="hamburger-menu">
+                        <input type="checkbox" class="input-check2" id="input-check2" hidden/>
+                        <label class="bars-container js-bars-container bars-container2" for="input-check2">
+                            <span class="bar bar1"></span>
+                            <span class="bar bar2"></span>
+                            <span class="bar bar3"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-overlay js-menu-overlay">
+                <div class="menu-overlay-bg"></div>
+                <div class="menu-overlay__wrap">
+                    <nav class="nav nav--mob">
+                        <ul class="nav__list">
                             <li class="nav__item nav-item">
-                                <a href="/index.html" class="nav-item__link text-xs">About Us</a>
+                                <a href="/index.html" class="nav-item__link">About Us</a>
                             </li>
                             <li class="nav__item nav-item">
-                                <a href="/become_a_partner.html" class="nav-item__link text-xs">Become a Partner</a>
+                                <a href="/become_a_partner.html" class="nav-item__link">Become a Partner</a>
                             </li>
                             <li class="nav__item nav-item">
-                                <a href="/contact.html" class="nav-item__link text-xs">Contact Us</a>
+                                <a href="/contact.html" class="nav-item__link">Contact Us</a>
+                            </li>
+                            <li class="nav__item nav-item nav-item--arrow js-sv-item">
+                                <div class="nav-item__top nav-item__link">
+                                        <span class="nav-item__title">Locations
+                                         <span class="icon-arrow js-sv-item__btn">
+                                           <svg viewBox="0 0 8 15">
+                                               <use xlink:href="/img/base/sprite.svg#arrow-down"></use>
+                                           </svg>
+                                        </span></span>
+                                </div>
+                                <div class="nav-item__cont js-sv-item__cont">
+                                    <div class="naw-item__wrap js-sv-item__wrap">
+                                        <ul class="nav__list nav__list--inner">
+                                            <li class="nav__item nav-item">
+                                                <a href="/index.html" class="nav-item__link text-m">International, UAE</a>
+                                            </li>
+                                            <li class="nav__item nav-item">
+                                                <a href="https://pharmbonus.by/" class="nav-item__link text-m">Belarus</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav__item nav-item">
+                                <a href="https://play.google.com/store/apps/details?id=com.pharmbonus.by&hl=ru&gl=US" class="nav-item__link">Google Play</a>
+                            </li>
+                            <li class="nav__item nav-item">
+                                <a href="https://apps.apple.com/ru/app/pharmbonus/id1062954210" class="nav-item__link">App Store</a>
                             </li>
                         </ul>
                     </nav>
-                </div>
-                <div class="header__col header__col--right">
-                    <p class="header__name text-xs">PharmBonus International LLC</p>
-                </div>
-                <div class="hamburger-menu">
-                    <input type="checkbox" class="input-check2" id="input-check2" hidden/>
-                    <label class="bars-container js-bars-container bars-container2" for="input-check2">
-                        <span class="bar bar1"></span>
-                        <span class="bar bar2"></span>
-                        <span class="bar bar3"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="menu-overlay js-menu-overlay">
-            <div class="menu-overlay-bg"></div>
-            <div class="menu-overlay__wrap">
-                <nav class="nav nav--mob">
-                    <ul class="nav__list">
-                        <li class="nav__item nav-item">
-                            <a href="/index.html" class="nav-item__link">About Us</a>
-                        </li>
-                        <li class="nav__item nav-item">
-                            <a href="/become_a_partner.html" class="nav-item__link">Become a Partner</a>
-                        </li>
-                        <li class="nav__item nav-item">
-                            <a href="/contact.html" class="nav-item__link">Contact Us</a>
-                        </li>
-                        <li class="nav__item nav-item nav-item--arrow js-sv-item">
-                            <div class="nav-item__top nav-item__link">
-                                    <span class="nav-item__title">Locations
-                                     <span class="icon-arrow js-sv-item__btn">
-                                       <svg viewBox="0 0 8 15">
-                                           <use xlink:href="/img/base/sprite.svg#arrow-down"></use>
-                                       </svg>
-                                    </span></span>
-                            </div>
-                            <div class="nav-item__cont js-sv-item__cont">
-                                <div class="naw-item__wrap js-sv-item__wrap">
-                                    <ul class="nav__list nav__list--inner">
-                                        <li class="nav__item nav-item">
-                                            <a href="/index.html" class="nav-item__link text-m">International, UAE</a>
-                                        </li>
-                                        <li class="nav__item nav-item">
-                                            <a href="https://pharmbonus.by/" class="nav-item__link text-m">Belarus</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav__item nav-item">
-                            <a href="https://play.google.com/store/apps/details?id=com.pharmbonus.by&hl=ru&gl=US" class="nav-item__link">Google Play</a>
-                        </li>
-                        <li class="nav__item nav-item">
-                            <a href="https://apps.apple.com/ru/app/pharmbonus/id1062954210" class="nav-item__link">App Store</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="menu-overlay__inner">
-                    <div class="menu-overlay__desc">
-                        <p class="menu-overlay__text">
-                            PharmBonus International LLC
-                        </p>
-                        <p class="menu-overlay__text">
-                            UAE, Dubai
-                        </p>
-                        <p class="menu-overlay__text">
-                            Dubai Investment Park First
-                        </p>
-                        <p class="menu-overlay__text">
-                            BAYAN BUSINESS CENTER 108-156
-                        </p>
-                    </div>
-                    <ul class="menu-overlay__soc soc-list">
-                        <li class="soc-el">
-                            <a class="soc-el__link" href="https://www.facebook.com/pharmbonus">
-                                    <span class="soc-el__icon icon-fb">
+                    <div class="menu-overlay__inner">
+                        <div class="menu-overlay__desc">
+                            <p class="menu-overlay__text">
+                                PharmBonus International LLC
+                            </p>
+                            <p class="menu-overlay__text">
+                                UAE, Dubai
+                            </p>
+                            <p class="menu-overlay__text">
+                                Dubai Investment Park First
+                            </p>
+                            <p class="menu-overlay__text">
+                                BAYAN BUSINESS CENTER 108-156
+                            </p>
+                        </div>
+                        <ul class="menu-overlay__soc soc-list">
+                            <li class="soc-el">
+                                <a class="soc-el__link" href="https://www.facebook.com/pharmbonus">
+                                        <span class="soc-el__icon icon-fb">
+                                             <svg class="icon-svg">
+                                                <use xlink:href="/img/base/sprite.svg#fb"></use>
+                                             </svg>
+                                        </span>
+                                </a>
+                            </li>
+                            <li class="soc-el">
+                                <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
+                                    <span class="soc-el__icon icon-insta">
                                          <svg class="icon-svg">
-                                            <use xlink:href="/img/base/sprite.svg#fb"></use>
+                                            <use xlink:href="/img/base/sprite.svg#insta2"></use>
                                          </svg>
                                     </span>
-                            </a>
-                        </li>
-                        <li class="soc-el">
-                            <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
-                                <span class="soc-el__icon icon-insta">
-                                     <svg class="icon-svg">
-                                        <use xlink:href="/img/base/sprite.svg#insta2"></use>
-                                     </svg>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-<main class="main contact-s">
-    <section class="contact-s1">
-        <div class="container">
-            <div class="row form">
-                <div class="col50 col50--left form__content">
-                    <div class="form__content-top">
-                        <h1 class="h1 form__title">Send us a message</h1>
-                        <p class="form__desc text-s">We will be in touch as soons as possible</p>
-                    </div>
-                    <div class="form__content-bottom form__content-bottom--desk">
-                        <div class="form__content-inner">
-                            <p class="form__desc text-s">UAE, Dubai, Bur Dubai 1</p>
-                            <p class="form__desc text-s">Dubai Investment Park First</p>
-                            <p class="form__desc text-s">BAYAN BUSINESS CENTER 108-156</p>
-                        </div>
-                        <ul class="menu-overlay__soc soc-list">
-                            <li class="soc-el">
-                                <a class="soc-el__link" href="https://www.facebook.com/pharmbonus">
-                            <span class="soc-el__icon icon-fb">
-                                 <svg class="icon-svg">
-                                    <use xlink:href="/img/base/sprite.svg#fb2"></use>
-                                 </svg>
-                            </span>
-                                </a>
-                            </li>
-                            <li class="soc-el">
-                                <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
-                            <span class="soc-el__icon icon-insta">
-                                 <svg class="icon-svg">
-                                    <use xlink:href="/img/base/sprite.svg#inst2"></use>
-                                 </svg>
-                            </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col50 col50--right">
-                    <form class="form__inner js-form" name="contact-form">
-                        <div class="form-control">
-                            <input class="form__input" placeholder="Your name" type="text" name="name"
-                                   id="name"/>
-                            <div class="error hide">This field is required</div>
-                        </div>
-                        <div class="form-control">
-                            <input class="form__input" placeholder="Company name" type="text" name="company-name" id="company-name"/>
-                            <div class="error hide">This field is required</div>
-                        </div>
-                        <div class="form-control">
-<!--                            <label class="form__label" for="email">Email</label>-->
-                            <input class="form__input" placeholder="Work email"  type="email" id="email" name="email"/>
-                            <div class="error hide">Please, check the email format (e.g sample@sample.com)</div>
-                        </div>
-                        <div class="form-control">
-                            <textarea class="form__textarea" placeholder="Drop us a line" name="message" ></textarea>
-                            <div class="error hide">This field is required</div>
-                        </div>
-                        <button class="btn btn-rect btn-blue" type="submit">Send</button>
-                    </form>
-                    <div class="form__content-bottom form__content-bottom--mob">
-                        <div class="form__content-inner">
-                            <p class="form__desc text-s">UAE, Dubai, Bur Dubai 1</p>
-                            <p class="form__desc text-s">Dubai Investment Park First</p>
-                            <p class="form__desc text-s">BAYAN BUSINESS CENTER 108-156</p>
-                            <h2 class="h2 form__title">PharmBonus International LLC</h2>
-                        </div>
-                        <ul class="menu-overlay__soc soc-list">
-                            <li class="soc-el">
-                                <a class="soc-el__link" href="https://www.facebook.com/pharmbonus">
-                            <span class="soc-el__icon icon-fb">
-                                 <svg class="icon-svg">
-                                    <use xlink:href="/img/base/sprite.svg#fb2"></use>
-                                 </svg>
-                            </span>
-                                </a>
-                            </li>
-                            <li class="soc-el">
-                                <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
-                            <span class="soc-el__icon icon-insta">
-                                 <svg class="icon-svg">
-                                    <use xlink:href="/img/base/sprite.svg#inst2"></use>
-                                 </svg>
-                            </span>
                                 </a>
                             </li>
                         </ul>
@@ -236,8 +145,203 @@
                 </div>
             </div>
         </div>
-    </section>
-</main>
-<script src="js/basic-init.js"></script>
+    </header>
+    <main class="main contact-s">
+        <section class="contact-s1">
+            <div class="container">
+                <div class="row form">
+                    <div class="col50 col50--left form__content">
+                        <div class="form__content-top">
+                            <h1 class="h1 form__title">Send us a message</h1>
+                            <p class="form__desc text-s">We will be in touch as soons as possible</p>
+                        </div>
+                        <div class="form__content-bottom form__content-bottom--desk">
+                            <div class="form__content-inner">
+                                <p class="form__desc text-s">UAE, Dubai</p>
+                                <p class="form__desc text-s">Dubai Investment Park First</p>
+                                <p class="form__desc text-s">BAYAN BUSINESS CENTER 108-156</p>
+                            </div>
+                            <ul class="soc-list">
+                                <li class="soc-el">
+                                    <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
+                                        <img src="/img/base/lin-gr.svg" alt="">
+                                    </a>
+                                </li>
+                                <li class="soc-el">
+                                    <a class="soc-el__link" href="https://www.facebook.com/pharmbonus">
+                                        <img src="/img/base/fb-gray.svg" alt="">
+                                    </a>
+                                </li>
+                                <li class="soc-el">
+                                    <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
+                                        <img src="/img/base/insta-gray.svg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col50 col50--right">
+                        <form class="form__inner js-form" name="contact-form">
+                            <div class="form-control">
+                                <input class="form__input" placeholder="Your name" type="text" name="name"
+                                       id="name"/>
+                                <div class="error hide">This field is required</div>
+                            </div>
+                            <div class="form-control">
+                                <input class="form__input" placeholder="Company name" type="text" name="company-name" id="company-name"/>
+                                <div class="error hide">This field is required</div>
+                            </div>
+                            <div class="form-control">
+                                <input class="form__input" placeholder="Email*"  type="email" name="email"/>
+                                <div class="error hide">Please, check the email format (e.g sample@sample.com)</div>
+                            </div>
+                            <div class="form-control">
+                                <textarea class="form__textarea" placeholder="Drop us a line" name="message"></textarea>
+                                <div class="error hide">This field is required</div>
+                            </div>
+                            <button class="btn btn-rect btn-blue" type="submit">Send</button>
+                        </form>
+                        <div class="form__content-bottom form__content-bottom--mob">
+                            <div class="form__content-inner">
+                                <p class="form__desc text-s">UAE, Dubai</p>
+                                <p class="form__desc text-s">Dubai Investment Park First</p>
+                                <p class="form__desc text-s">BAYAN BUSINESS CENTER 108-156</p>
+                            </div>
+                            <ul class="menu-overlay__soc soc-list">
+                                <li class="soc-el">
+                                    <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
+                                        <img src="/img/base/lin-black.svg" alt="">
+                                    </a>
+                                </li>
+                                <li class="soc-el">
+                                    <a class="soc-el__link" href="https://www.facebook.com/pharmbonus">
+                                        <img src="/img/base/fb-black.svg" alt="">
+                                    </a>
+                                </li>
+                                <li class="soc-el">
+                                    <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
+                                        <img src="/img/base/insta-black.svg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer footer--black">
+        <div class="footer__row">
+            <div class="container">
+                <div class="footer__row footer--top">
+                    <div class="footer__grid footer-grid">
+                        <div class="grid-item grid-item--m">
+                            <span class="grid-item__title text-s">PharmBonus</span>
+                            <ul class="nav__list">
+                                <li class="nav__item nav-item">
+                                    <a href="/index.html" class="nav-item__link text-m">About Us</a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="/become_a_partner.html" class="nav-item__link text-m">Become a Partner</a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="/contact.html" class="nav-item__link text-m">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-item grid-item--t">
+                            <span class="grid-item__title text-s">About</span>
+                            <ul class="nav__list">
+                                <li class="nav__item nav-item">
+                                    <a href="/index.html" target="_blank" class="nav-item__link text-m">Terms and Conditions</a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a class="nav-item__link text-m" href="mailto:info@pharmbonus.com">info@pharmbonus.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-item grid-item--desc">
+                            <span class="grid-item__title text-s">Download</span>
+                            <ul class="nav__list">
+                                <li class="nav__item nav-item nav-item--download">
+                                    <a href="https://play.google.com/store/apps/details?id=com.pharmbonus.by&amp;hl=ru&amp;gl=US" target="_blank" class="nav-item__link text-m">
+                                        <img class="nav-item__img" src="/img/base/gp-gray.svg" alt="">
+                                        <span>Google Play</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item nav-item nav-item--download">
+                                    <a href="https://apps.apple.com/ru/app/pharmbonus/id1062954210" target="_blank" class="nav-item__link text-m">
+                                        <img class="nav-item__img" src="/img/base/ap-gray.svg" alt="">
+                                        <span>App Store</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid-item grid-item--desc">
+                            <span class="grid-item__title grid-item__title--soc text-s">Social</span>
+                            <ul class="nav__list nav__list--soc">
+                                <li class="nav__item nav-item nav-item--social">
+                                    <a href="https://play.google.com/store/apps/details?id=com.pharmbonus.by&amp;hl=ru&amp;gl=US" target="_blank" class="nav-item__link text-m">
+                                        <img class="nav-item__img" src="/img/base/lin-gr-f.svg" alt="">
+                                        <span class="nav-item__soc-title">Linkedin</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="https://apps.apple.com/ru/app/pharmbonus/id1062954210" target="_blank" class="nav-item__link text-m">
+                                        <img class="nav-item__img" src="/img/base/fb-gr-f.svg" alt="">
+                                        <span class="nav-item__soc-title">Facebook</span>
+                                    </a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="https://apps.apple.com/ru/app/pharmbonus/id1062954210" target="_blank" class="nav-item__link text-m">
+                                        <img class="nav-item__img" src="/img/base/inst-gr-f.svg" alt="">
+                                        <span class="nav-item__soc-title">Instagram</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__row">
+            <div class="container">
+                <div class="footer__row footer--bottom">
+                    <img src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo" class="footer__logo">
+                    <div class="footer__col footer-col footer-col--desc">
+                        <p class="footer-col__copy">©2022 PharmBonus Internationa Investment L.L.C. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal js-modal">
+            <p class="modal__text">This field is required</p>
+            <span class="modal__icon js-modal-close">
+                    <svg class="icon-svg">
+                        <use xlink:href="/img/base/sprite.svg#close"></use>
+                    </svg>
+                </span>
+        </div>
+        <div class="overlay">
+            <div class="overlay__box">
+                <div class="overlay__wrap">
+                     <span class="overlay__close js-overlay-close">
+                        <svg class="icon-svg">
+                            <use xlink:href="/img/base/sprite.svg#close"></use>
+                        </svg>
+                     </span>
+                    <div class="overlay__content">
+                         <span class="overlay__img">
+                            <svg class="icon-svg">
+                                <use xlink:href="/img/base/sprite.svg#check2"></use>
+                            </svg>
+                         </span>
+                        <p class="overlay__text">Thank you! Your data has been submitted.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/basic-init.js"></script>
 </body>
 </html>

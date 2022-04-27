@@ -12,7 +12,6 @@
 }
 
 .contact-s1 .btn-rect {
-    border-radius: 30px;
     margin-bottom: 0;
 }
 
@@ -70,3 +69,15 @@
     margin-right: 10px;
 }
 
+.footer.footer--black {
+    background-color: $black;
+}
+
+.footer.footer--black .nav-item__link.text-m {
+    color: $white;
+}
+
+.footer.footer--black .grid-item__title.text-s {
+    color: $white;
+    opacity: 60%;
+}
