@@ -1,7 +1,6 @@
 .header {
     background: $white;
     width: 100%;
-    padding: 32px 0;
 
     @include md-down() {
         position: fixed;
@@ -12,13 +11,6 @@
     }
 }
 
-.header__row.header__row--hr {
-    width: 100%;
-
-    @include md {
-        border-bottom: 1px solid $gray-l;
-    }
-}
 .container.container--mob {
     @include md-down() {
         padding: 0 20px 0;
@@ -32,6 +24,11 @@
     background-color: $white;
     z-index: 10000;
     position: sticky;
+    padding: 16px 0;
+
+    @include sm {
+        padding: 32px 0;
+    }
 }
 
 .header__col {
@@ -43,14 +40,24 @@
     justify-content: flex-start;
 }
 
+.header__title-mob {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    font-family: "Rubik", "Arial", sans-serif;
+    display: inline-block;
+    color: $black;
+    margin-bottom: 147px;
+}
+
 .header-logo {
     width: 48px;
     height: 40px;
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: flex;
 
-    @include md {
+    @include sm {
         margin-right: 60px;
     }
 }
@@ -92,8 +99,44 @@
     font-family: 'Inter', 'Arial', sans-serif;
 }
 
+.nav-item {
+    position: relative;
+}
+
+.nav-item__top.nav-item__link {
+    @include sm-down {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.nav-item.nav-item--arrow {
+    flex-direction: column;
+}
+
+.nav.nav--desk .nav__item.active a.nav-item__link.text-xs {
+    color: $blue;
+}
+
+.nav.nav--desk .active.nav__item:before {
+    display: block;
+}
+
+.nav.nav--desk .nav__item:before {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    display: none;
+    width: 6px;
+    height: 6px;
+    background-color: $blue;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
 .nav.nav--mob .nav-item {
-    @include md {
+    @include sm-down {
         display: flex;
         justify-content: center;
     }
@@ -103,32 +146,21 @@
     margin-bottom: 10px;
 }
 
-.menu-overlay {
-    position: fixed;
-    width: 100%;
-    min-height: 100%;
-    background-color: $white;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -100;
-    opacity: 0;
-    transition: .3s ease-in-out;
-    overflow-y: auto;
-    padding: 0 20px;
-    display: none;
-}
-
-.menu-overlay-bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #ffffff;
-    opacity: 1;
-}
+//.menu-overlay {
+//    position: fixed;
+//    width: 100%;
+//    min-height: 100%;
+//    background-color: $white;
+//    top: 0;
+//    right: 0;
+//    left: 0;
+//    bottom: 0;
+//    z-index: -100;
+//    opacity: 0;
+//    transition: .3s ease-in-out;
+//    //overflow-y: auto;
+//    display: none;
+//}
 
 .menu-overlay__wrap {
     display: flex;
@@ -138,26 +170,25 @@
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 0 0 30px;
+    padding: 30px 0 0;
     width: 100%;
     overflow-y: scroll;
     position: relative;
-    height: 100%;
     margin: 0 auto;
 }
 
-.menu-overlay.menu {
-    z-index: 9999;
-    opacity: 1;
-    display: block;
-}
-
-.menu .menu-overlay__wrap {
-    position: relative;
-    display: block;
-    z-index: 9999;
-    height: auto;
-}
+//.menu-overlay.menu {
+//    z-index: 10001;
+//    opacity: 1;
+//    display: block;
+//}
+//
+//.menu .menu-overlay__wrap {
+//    position: relative;
+//    display: block;
+//    z-index: 10001;
+//    height: auto;
+//}
 
 .nav.nav--mob {
     transform: translateY(20%);
@@ -165,7 +196,7 @@
     right: auto;
     left: auto;
     top: auto;
-    padding: 140px 0 0;
+    //padding: 140px 0 0;
     display: flex;
     justify-content: center;
 }
@@ -237,13 +268,17 @@ a.soc-el__link {
     color: $white;
 }
 
+.menu-overlay__soc.soc-list {
+    justify-content: center;
+}
+
 /************ common styles ************/
 
 .hamburger-menu {
     display: inline-block;
     padding: 3px;
     width: 29px;
-    z-index: 100;
+    z-index: 10002;
 
     @include md {
         display: none;
@@ -265,9 +300,13 @@ a.soc-el__link {
 .bar {
     width: 100%;
     height: 2px;
-    background-color: #8f8f8f;
+    background-color: $black;
     border-radius: 5px;
     display: block;
+}
+
+.bar.bar2 {
+    width: 80%;
 }
 
 .overlap-container {
@@ -315,54 +354,54 @@ a.soc-el__link {
     animation: moveDown 0.25s ease 0s 1 forwards, makeCross1 0.25s ease 0.25s 1 forwards;
 }
 
-.input-check2:checked + label .bar2 {
-    opacity: 0;
-}
+//.input-check2:checked + label .bar2 {
+//    opacity: 0;
+//}
 
 .input-check2:checked + label .bar3 {
     animation: moveUp 0.25s ease 0s 1 forwards,
     makeCross2 0.25s ease 0.25s 1 forwards;
 }
 
-@keyframes moveDown {
-    from { top: 5%; transform: translateY(0); }
-    to { top: 50%; transform: translateY(-50%); }
-}
-
-@keyframes moveDownBackward {
-    from { top: 50%; transform: translateY(-50%); }
-    to { top: 5%; transform: translateY(0); }
-}
-
-@keyframes moveUp {
-    from { top: 95%; transform: translateY(0); }
-    to { top: 50%; transform: translateY(-50%); }
-}
-
-@keyframes moveUpBackward {
-    from { top: 50%; transform: translateY(-50%); }
-    to { top: 95%; transform: translateY(0); }
-}
-
-@keyframes makeCross1 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(40deg); }
-}
-
-@keyframes makeCross1Backward {
-    from { top: 50%; transform: rotate(40deg) translateY(-50%); }
-    to { top: 50%; transform: rotate(0deg) translateY(-50%); }
-}
-
-@keyframes makeCross2 {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-40deg); }
-}
-
-@keyframes makeCross2Backward {
-    from { top: 50%; transform: rotate(-40deg) translateY(-50%); }
-    to { top: 50%; transform: rotate(0deg) translateY(-50%); }
-}
+//@keyframes moveDown {
+//    from { top: 5%; transform: translateY(0); }
+//    to { top: 50%; transform: translateY(-50%); }
+//}
+//
+//@keyframes moveDownBackward {
+//    from { top: 50%; transform: translateY(-50%); }
+//    to { top: 5%; transform: translateY(0); }
+//}
+//
+//@keyframes moveUp {
+//    from { top: 95%; transform: translateY(0); }
+//    to { top: 50%; transform: translateY(-50%); }
+//}
+//
+//@keyframes moveUpBackward {
+//    from { top: 50%; transform: translateY(-50%); }
+//    to { top: 95%; transform: translateY(0); }
+//}
+//
+//@keyframes makeCross1 {
+//    from { transform: rotate(0deg); }
+//    to { transform: rotate(40deg); }
+//}
+//
+//@keyframes makeCross1Backward {
+//    from { top: 50%; transform: rotate(40deg) translateY(-50%); }
+//    to { top: 50%; transform: rotate(0deg) translateY(-50%); }
+//}
+//
+//@keyframes makeCross2 {
+//    from { transform: rotate(0deg); }
+//    to { transform: rotate(-40deg); }
+//}
+//
+//@keyframes makeCross2Backward {
+//    from { top: 50%; transform: rotate(-40deg) translateY(-50%); }
+//    to { top: 50%; transform: rotate(0deg) translateY(-50%); }
+//}
 
 .nav-item__title {
     position: relative;
@@ -396,10 +435,103 @@ a.soc-el__link {
     transition: all .2s;
 }
 
-.nav-item--arrow {
-    position: relative;
-}
-
 .icon-arrow.active svg {
     transform: rotate(180deg);
+}
+
+//
+.select-wrapper {
+    width: 167px;
+    display: block;
+
+    @include sm-down {
+        display: none;
+    }
+}
+
+.select {
+    position: relative;
+    width: 100%;
+}
+
+.search-block__right-top .select {
+    margin-left:10px;
+    width: 100%;
+}
+
+.select.is-active .select__body {
+    display: block;
+}
+
+.select__header {
+    background: $white;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 0;
+    width: 100%;
+    color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select__current {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+}
+
+.select__body {
+    padding: 16px 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.24);
+    border-radius: 16px;
+    display: none;
+    overflow: hidden;
+    background: $white;
+    width: 100%;
+    color: $gray-tx;
+    position: absolute;
+    transform: translateY(5px);
+    right: 0;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+}
+
+.select__icon {
+    flex-shrink: 0;
+    margin-left: 5px;
+    transform: rotate(180deg);
+    transition: all .2s;
+    width: 10px;
+    height: 10px;
+}
+
+.select.is-active .select__icon {
+    transform: rotate(0deg);
+}
+
+.select__item {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    padding: 3px 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    background-color: inherit;
+    transition: all .2s;
+}
+
+.select__item:hover {
+    color: $black;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.select__img {
+    width: 32px;
+    height: 25px;
+    margin-right: 8px;
 }

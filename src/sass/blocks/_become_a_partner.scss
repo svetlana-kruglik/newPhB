@@ -274,8 +274,13 @@
 
 .icon-grid__desc.text-s {
     @include font-base($fw: 400,$fz: 18px,$lh: 22px);
-    opacity: 60%;
-    color: $white;
+    max-width: 389px;
+    width: 100%;
+
+    @include sm-down {
+        opacity: 60%;
+        color: $white;
+    }
 }
 
 .icon-grid__img {

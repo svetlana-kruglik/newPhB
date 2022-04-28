@@ -1,10 +1,11 @@
-.overlay {
+.overlay-modal {
     display: none;
-    //display: block;
     position: fixed;
-    background-color: rgba(0,0,0,.8);
+    background-color: $white;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     z-index: 10000;
@@ -12,31 +13,37 @@
     cursor: pointer;
 }
 
-.overlay.open {
+.overlay-modal.show {
     display: block;
 }
 
 .overlay__box {
     width: 100%;
-    max-width: 400px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
     right: 0;
     margin: 0 auto;
-    padding: 20px;
     box-sizing: border-box;
 }
 
+
 .overlay__wrap {
     background-color: #fff;
-    padding: 40px 40px 50px;
     box-sizing: border-box;
-    border-radius: 5px;
     text-align: center;
     position: relative;
     cursor: default;
+}
+
+.menu-overlay__top {
+    display: flex;
+}
+
+.overlay__content {
+    width: 100%;
+    height: 100%;
 }
 
 .overlay__close {
@@ -44,6 +51,7 @@
     top: 14px;
     right: 14px;
     cursor: pointer;
+    z-index: 100;
 }
 
 .overlay__close svg {
@@ -68,4 +76,109 @@
     @include font-base($fw: 600,$fz: 18px,$lh: 1.55);
     color: $black;
     font-family: 'Rubik', 'Arial', sans-serif;
+}
+
+.overlay-modal .grid-item__title.text-s {
+    @include font-base($fw: 400,$fz: 16px,$lh: 19px);
+}
+
+.overlay-modal .nav-item__link.text-m  {
+    @include font-base($fw: 600,$fz: 18px,$lh: 40px);
+}
+
+.overlay-modal .grid-item__title {
+    margin-bottom: 16px;
+}
+
+.overlay-modal .grid-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+
+.menu-overlay__center {
+    margin-bottom: 156px;
+}
+
+.overlay-modal .nav__list.nav__list--soc .nav-item__soc-title {
+    display: none;
+}
+
+.overlay-modal .nav__list.nav__list--soc {
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-modal .nav__list.nav__list--soc .nav__item.nav-item:not(:last-child) {
+    margin-right: 16px;
+}
+
+.overlay-modal .nav-item {
+    justify-content: center;
+    display: flex;
+}
+
+//
+
+.menu-overlay__bottom {
+    width: 100%;
+}
+
+.select-wrapper.select-wrapper--overlay {
+    width: 100%;
+    display: block;
+}
+
+.select-wrapper--overlay .select__item span {
+    width: 100%;
+}
+
+.select-wrapper--overlay .select__body {
+    transform: translateY(-110px);
+    border-radius: 0;
+    z-index: 2;
+}
+
+.select-wrapper--overlay .select .select__overlay {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #010101;
+    opacity: 0.4;
+    display: none;
+}
+
+.select-wrapper--overlay .select.is-active .select__overlay {
+    display: block;
+}
+
+.overlay-modal .grid-item {
+    z-index: -1;
+    position: relative;
+}
+
+.select-wrapper--overlay .select__header {
+   border-radius: 0;
+}
+
+.select-wrapper--overlay .select__close {
+    width: 20px;
+    height: 20px;
+}
+
+.select-wrapper--overlay .select__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.select-wrapper--overlay .select__title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    color: $black;
 }

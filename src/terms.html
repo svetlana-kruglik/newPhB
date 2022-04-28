@@ -28,71 +28,93 @@
 </head>
     <body>
         <header class="header js-header">
-            <div class="header__row header__row--hr">
-                <div class="container container--mob">
-                    <div class="header__wrap">
-                        <div class="header__col header__col--left">
-                            <a href="/index.html" class="header-logo">
-                                <img src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo"/>
-                            </a>
-                            <nav class="nav nav--desk">
-                                <ul class="nav__list nav__list--header">
-                                    <li class="nav__item nav-item active">
-                                        <a href="/index.html" class="nav-item__link text-xs">About Us</a>
-                                    </li>
-                                    <li class="nav__item nav-item">
-                                        <a href="/become_a_partner.html" class="nav-item__link text-xs">Become a Partner</a>
-                                    </li>
-                                    <li class="nav__item nav-item">
-                                        <a href="/contact.html" class="nav-item__link text-xs">Contact Us</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="header__col header__col--right">
-                            <div class="select-wrapper">
-                                <div class="select js-select">
-                                    <div class="select__header js-select__header">
-                                        <div class="select__current js-select__current">International</div>
-                                        <img class="select__icon js-select__icon" src="/img/base/arr-down.svg"/>
+        <div class="header__row header__row--hr">
+            <div class="container container--mob">
+                <div class="header__wrap">
+                    <div class="header__col header__col--left">
+                        <a href="/index.html" class="header-logo">
+                            <img src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo"/>
+                        </a>
+                        <nav class="nav nav--desk">
+                            <ul class="nav__list nav__list--header">
+                                <li class="nav__item nav-item active">
+                                    <a href="/index.html" class="nav-item__link text-xs">About Us</a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="/become_a_partner.html" class="nav-item__link text-xs">Become a Partner</a>
+                                </li>
+                                <li class="nav__item nav-item">
+                                    <a href="/contact.html" class="nav-item__link text-xs">Contact Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="header__col header__col--right">
+                        <div class="select-wrapper">
+                            <div class="select js-select">
+                                <div class="select__header js-select__header">
+                                    <div class="select__current js-select__current">International</div>
+                                    <img class="select__icon js-select__icon" src="/img/base/arr-down.svg"/>
+                                </div>
+                                <div class="select__body js-select__body">
+                                    <div class="select__item" data-value="int">
+                                        <img src="/img/base/brit.svg" class="select__img" alt="">
+                                        <span class="js-select__item">International</span>
                                     </div>
-                                    <div class="select__body js-select__body">
-                                        <div class="select__item" data-value="int">
-                                            <img src="/img/base/brit.svg" class="select__img" alt="">
-                                            <span class="js-select__item">International</span>
-                                        </div>
-                                        <div class="select__item" data-value="by">
-                                            <img src="/img/base/bel.svg" class="select__img" alt="">
-                                            <span class="js-select__item">Беларусь</span>
-                                        </div>
-                                        <div class="select__item" data-value="pl">
-                                            <img src="/img/base/pl.svg" class="select__img" alt="">
-                                            <span class="js-select__item">Polska</span>
-                                        </div>
+                                    <div class="select__item" data-value="by">
+                                        <img src="/img/base/bel.svg" class="select__img" alt="">
+                                        <span class="js-select__item">Беларусь</span>
+                                    </div>
+                                    <div class="select__item" data-value="pl">
+                                        <img src="/img/base/pl.svg" class="select__img" alt="">
+                                        <span class="js-select__item">Polska</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="hamburger-menu js-open-modal" data-opn="modal">
-                            <input type="checkbox" class="input-check2" id="input-check2" hidden/>
-                            <label class="bars-container js-bars-container bars-container2" for="input-check2">
-                                <span class="bar bar1"></span>
-                                <span class="bar bar2"></span>
-                                <span class="bar bar3"></span>
-                            </label>
-                        </div>
+                    </div>
+                    <div class="hamburger-menu js-open-modal" data-opn="modal">
+                        <input type="checkbox" class="input-check2" id="input-check2" hidden/>
+                        <label class="bars-container js-bars-container bars-container2" for="input-check2">
+                            <span class="bar bar1"></span>
+                            <span class="bar bar2"></span>
+                            <span class="bar bar3"></span>
+                        </label>
                     </div>
                 </div>
             </div>
-        </header>
-        <main class="main error-s">
-            <section class="error-s1">
+        </div>
+    </header>
+        <main class="main terms-s">
+            <section class="terms-s1">
                 <div class="container">
-                    <div class="error-s__wrap">
-                        <span class="error-s__title">404</span>
-                        <div class="error__subtitle text-s">We are sorry)</div>
-                        <img class="error__img" src="/img/base/cat.png" alt="Cat">
-                        <button class="btn btn-rect btn-blue">Go to main page</button>
+                    <div class="terms-s__wrap">
+                        <h1 class="h1 terms-s__title">Условия и положения</h1>
+                        <div class="terms-s__row">
+                            <div class="terms-s__col30">
+                                <ul class="terms-s__links">
+                                    <li class="terms-s__el active js-toggle-btn">
+                                        <a href="#" class="terms-s__link">Пользовательское соглашение</a>
+                                    </li>
+                                    <li class="terms-s__el js-toggle-btn">
+                                        <a href="#" class="terms-s__link">Политика конфинденциальности</a>
+                                    </li>
+                                    <li class="terms-s__el js-toggle-btn">
+                                        <a href="#" class="terms-s__link">Политика защиты авторских прав</a>
+                                    </li>
+                                    <li class="terms-s__el js-toggle-btn">
+                                        <a href="#" class="terms-s__link">Положение о бонусной программе «PharmBonus»</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="terms-s__col70">
+                                <div class="terms-s__text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque blanditiis cum
+                                    doloremque eaque, enim expedita possimus repudiandae. Adipisci, corporis culpa eum
+                                    labore libero nisi perferendis, tempora tenetur ut voluptatem, voluptatum!
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -182,13 +204,13 @@
                 </div>
             </div>
             <div class="modal js-modal">
-                <p class="modal__text">This field is required</p>
-                <span class="modal__icon js-modal-close">
-                    <svg class="icon-svg">
-                        <use xlink:href="/img/base/sprite.svg#close"></use>
-                    </svg>
-                </span>
-            </div>
+            <p class="modal__text">This field is required</p>
+            <span class="modal__icon js-modal-close">
+                <svg class="icon-svg">
+                    <use xlink:href="/img/base/sprite.svg#close"></use>
+                </svg>
+            </span>
+        </div>
         </footer>
         <div class="overlay-modal js-modal-wind" data-md="modal">
             <div class="overlay__content">

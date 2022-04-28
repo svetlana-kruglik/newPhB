@@ -1,79 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // menu burger
-    const hamburgerLabels = Array.from(document.querySelectorAll(".js-bars-container"));
-    let open = false;
+    //burger modal
+    let openBtnMd = document.querySelector('.js-open-modal');
+    let closeBtnMd = document.querySelector('.js-close-modal');
 
-        function changeHamburger() {
-            let thisEl = this;
-            let parent = thisEl.closest('.js-header');
-            let overlay = parent.querySelector('.js-menu-overlay');
+    modalWindowShow();
 
-            if (!open) {
-                thisEl.classList.add("open");
-                overlay.classList.add("menu");
-                document.body.style.overflowY = 'hidden';
-                overlay.style.visibility = 'visible';
-            } else {
-                thisEl.classList.remove("open");
-                overlay.classList.remove("menu");
-                document.body.style.overflowY = 'visible';
-                overlay.style.visibility = 'hidden';
-            }
-            open = !open;
+    function modalWindowShow() {
+        if (!openBtnMd) {
+            return false
         }
-
-
-    hamburgerLabels.forEach((el) => {
-        el.addEventListener('click', changeHamburger);
-    });
-
-    //Accordion
-    let allSvBtns = document.querySelectorAll('.js-sv-item__btn');
-    let allSvItem = document.querySelectorAll('.js-sv-item');
-    let allSvCont = document.querySelectorAll('.js-sv-item__cont');
-
-
-    allSvBtns.forEach((btn) => {
-        btn.addEventListener('click', openSvContent);
-    });
-
-    function openSvContent() {
-
-        let currentSvItem = this.closest('.js-sv-item');
-        let currentSvCont = currentSvItem.querySelector('.js-sv-item__cont');
-        let currentSvContWrap = currentSvItem.querySelector('.js-sv-item__wrap');
-        let currentSvBtn = currentSvItem.querySelector('.js-sv-item__btn');
-        let currentSvContHeight = currentSvContWrap.clientHeight;
-
-        if (!currentSvCont.classList.contains('open')) {
-            currentSvItem.classList.add('active');
-            currentSvBtn.classList.add('active');
-            currentSvCont.style.maxHeight = `${currentSvContHeight}px`;
-            currentSvCont.classList.add('open');
-
-            for (let i = 0; i < allSvCont.length; i++) {
-                if (allSvCont[i].classList.contains('open') && allSvCont[i] !== currentSvCont) {
-                    allSvCont[i].classList.remove('open');
-                    allSvCont[i].style.maxHeight = '0px';
+        let openBtnMds = document.querySelectorAll('.js-open-modal');
+        openBtnMds.forEach((item) => {
+            item.addEventListener('click', function openModal() {
+                let pathBtnOpen = this.dataset.opn;
+                let modalWindow = document.querySelector(`[data-md='${pathBtnOpen}']`);
+                if (!modalWindow.classList.contains('.show')) {
+                    modalWindow.classList.add('show');
+                    document.body.style.overflowY = 'hidden';
+                } else {
+                    modalWindow.classList.remove('show');
+                    document.body.style.overflowY = 'visible';
                 }
-                if (allSvBtns[i].classList.contains('active') && allSvBtns[i] !== currentSvBtn) {
-                    allSvBtns[i].classList.remove('active');
+            });
+        });
+
+        if (!closeBtnMd) {
+            return false
+        }
+        let closeBtnMds = document.querySelectorAll('.js-close-modal');
+        closeBtnMds.forEach((item) => {
+            item.addEventListener('click', function closeModal() {
+                let pathBtnClose = this.dataset.cls;
+                let modalWindow = document.querySelector(`[data-md='${pathBtnClose}']`);
+                if (modalWindow.classList.contains('show')) {
+                    modalWindow.classList.remove('show');
+                    document.body.style.overflowY = 'visible';
                 }
-                if (allSvItem[i].classList.contains('active') && allSvItem[i] !== currentSvItem) {
-                    allSvItem[i].classList.remove('active');
-                }
-            }
-        } else {
-            currentSvItem.classList.remove('active');
-            currentSvBtn.classList.remove('active');
-            currentSvCont.style.maxHeight = '0px';
-            currentSvCont.classList.remove('open');
+            })
+        });
+    }
+
+    //custom select
+    let selectHeaders = document.querySelectorAll('.js-select__header');
+    let selectItems = document.querySelectorAll('.js-select__item');
+    let closeSelectBtns = document.querySelectorAll('.js-select-close');
+    //let selectOverlays = document.querySelectorAll('.js-select-overlay');
+
+    selectHandler();
+    function selectHandler() {
+        selectHeaders.forEach((item) => {
+            item.classList.contains('select-mob');
+            item.addEventListener('click', selectToggle)
+        });
+        selectItems.forEach((item) => {
+            item.addEventListener('click', selectChose)
+        });
+        closeSelectBtns.forEach((item) => {
+            item.addEventListener('click', closeSelect)
+        });
+        // selectOverlays.forEach((item) => {
+        //     item.addEventListener('click', closeSelectOverlay)
+        // });
+
+        function closeSelect() {
+            let parent = this.closest('.js-select');
+            this.classList.remove('active');
+            parent.classList.remove('is-active');
+        }
+        //
+        // function closeSelectOverlay() {
+        //     let parent = this.closest('.js-select');
+        //     this.classList.remove('active');
+        //     parent.classList.remove('is-active');
+        // }
+
+        function selectToggle() {
+            let parent = this.closest('.js-select');
+            this.parentElement.classList.toggle('is-active');
+            let currentCloseBtn = parent.querySelector('.js-select-close');
+            currentCloseBtn.classList.add('active');
+        }
+        function selectChose() {
+            let select = this.closest('.js-select');
+            let currentText = select.querySelector('.js-select__current');
+            currentText.innerText = this.innerText;
+            select.classList.remove('is-active');
         }
     }
 
-    const lgBpDown = window.matchMedia("(max-width: 1023px)");
-
+    // validate
     const isValidEmail = (email) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -84,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameCompanyInput = document.querySelector("input[name='company-name']");
     const emailInput = document.querySelector("input[name='email']");
     const messageInput = document.querySelector("textarea[name='message']");
-    const overlayWindow = document.querySelector('.overlay');
     const modalMd = document.querySelector('.modal');
 
     if (!form.length) {
@@ -144,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
             validateInputs();
             if (isFormValid) {
                 // TODO: DO AJAX REQUEST
-                showOverlayWindow();
+                //change color btn
             }
         })
     })
@@ -155,44 +170,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    function showOverlayWindow() {
-        if (!overlayWindow.classList.contains('open')) {
-            overlayWindow.classList.add('open');
-        }
-    }
-
-    overlayWindow.addEventListener('click', closeOverlay);
-
-    function closeOverlay(e) {
-        if (overlayWindow.classList.contains('open')) {
-            if (e.target === overlayWindow) {
-                overlayWindow.classList.remove('open');
-            }
-        }
-    }
-
-    let closeBtnOverlay = document.querySelector('.js-overlay-close');
-
-    closeBtnOverlay.addEventListener('click', closeOverlayWindow);
-
-    function closeOverlayWindow() {
-        if (overlayWindow.classList.contains('open')) {
-            overlayWindow.classList.remove('open');
-        }
-    }
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            overlayWindow.classList.remove('open');
-        }
-    });
-
     function openModalMd() {
         if (!modalMd.classList.contains('open')) {
             modalMd.classList.add('open');
             setTimeout(()=> {
                 modalMd.classList.remove('open');
-            },5000);
+            },3000);
         }
     }
 
@@ -203,5 +186,46 @@ document.addEventListener('DOMContentLoaded', () => {
             modalMd.classList.remove('open');
         }
     });
+
+    // // toggle class
+    console.log('lll');
+
+    //let elem = document.querySelector('.js-page');
+    // if (!elem) {
+    //     return false;
+    // }
+    //
+    // function selectIcons() {
+    //
+    //     let elems = document.querySelectorAll('.js-toggle-btn');
+    //
+    //     elems.forEach((item) => {
+    //         item.addEventListener('click', toggleClass)
+    //     });
+    //
+    //     function toggleClass(e) {
+    //         e.preventDefault();
+    //         this.classList.add('active');
+    //         for (let k = 0; elems.length > k; k++) {
+    //             let item = elems[k];
+    //             if (item !== this && item.classList.contains('.active')) {
+    //                 item.classList.remove('active')
+    //             }
+    //         }
+    //     }
+    // }
+   // toggleActivePage();
+   // function toggleActivePage() {
+        //let pages = Array.from(document.querySelectorAll('.js-page'));
+        //console.log(pages);
+        // let current = 0;
+        // for (let i = 0; i < pages.length; i++) {
+        //     if (pages[i].href === document.URL) {
+        //         current = i;
+        //     }
+        // }
+        // pages[current].className = 'active';
+    //}
+
 
 })
