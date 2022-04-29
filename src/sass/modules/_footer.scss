@@ -190,6 +190,9 @@ a.link-phone {
 
 .footer .nav__list.nav__list--soc .nav-item .nav-item__img  {
   margin-right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
 }
 
 .footer .nav__list.nav__list--soc .nav-item:last-child .nav-item__img {
@@ -213,6 +216,19 @@ a.nav-item__link:hover {
     color: $blue;
 }
 
+.footer.footer--black .footer__row.footer--top {
+    padding: 80px 0 50px;
+
+    @include sm {
+        padding: 32px 0 75px;
+    }
+}
+
+.nav__list.nav__list--soc {
+    @include sm-down{
+        margin-top: 38px;
+    }
+}
     //
 .footer__row.footer--bottom {
     padding: 20px 0;

@@ -47,7 +47,7 @@
     font-family: "Rubik", "Arial", sans-serif;
     display: inline-block;
     color: $black;
-    margin-bottom: 147px;
+    margin: 0 auto;
 }
 
 .header-logo {
@@ -165,30 +165,20 @@
 .menu-overlay__wrap {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    //justify-content: center;
+    //align-items: center;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 30px 0 0;
     width: 100%;
-    overflow-y: scroll;
+    height: 100vh;
+    overflow-y: auto;
     position: relative;
     margin: 0 auto;
 }
 
-//.menu-overlay.menu {
-//    z-index: 10001;
-//    opacity: 1;
-//    display: block;
-//}
-//
-//.menu .menu-overlay__wrap {
-//    position: relative;
-//    display: block;
-//    z-index: 10001;
-//    height: auto;
-//}
+
 
 .nav.nav--mob {
     transform: translateY(20%);
@@ -461,6 +451,7 @@ a.soc-el__link {
 
 .select.is-active .select__body {
     display: block;
+    z-index: 100;
 }
 
 .select__header {

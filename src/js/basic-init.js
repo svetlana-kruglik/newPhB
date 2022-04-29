@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    (function(w, d){
+        let b = d.getElementsByTagName('body')[0];
+        let s = d.createElement("script");
+        // s.async = true;
+        let v = !("IntersectionObserver" in w) ? "8.12.0" : "10.12.0";
+        s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
+        w.lazyLoadOptions = {};
+        b.appendChild(s);
+    }(window, document));
+
+    let images = document.querySelectorAll(".lazyload");
+    lazyload(images);
 
     //burger modal
     let openBtnMd = document.querySelector('.js-open-modal');
@@ -43,9 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //custom select
     let selectHeaders = document.querySelectorAll('.js-select__header');
-    let selectItems = document.querySelectorAll('.js-select__item');
+    let selectItems = document.querySelectorAll('.select__item');
     let closeSelectBtns = document.querySelectorAll('.js-select-close');
-    //let selectOverlays = document.querySelectorAll('.js-select-overlay');
 
     selectHandler();
     function selectHandler() {
@@ -59,35 +70,56 @@ document.addEventListener('DOMContentLoaded', () => {
         closeSelectBtns.forEach((item) => {
             item.addEventListener('click', closeSelect)
         });
-        // selectOverlays.forEach((item) => {
-        //     item.addEventListener('click', closeSelectOverlay)
-        // });
 
         function closeSelect() {
             let parent = this.closest('.js-select');
             this.classList.remove('active');
             parent.classList.remove('is-active');
         }
-        //
-        // function closeSelectOverlay() {
-        //     let parent = this.closest('.js-select');
-        //     this.classList.remove('active');
-        //     parent.classList.remove('is-active');
-        // }
 
         function selectToggle() {
             let parent = this.closest('.js-select');
             this.parentElement.classList.toggle('is-active');
             let currentCloseBtn = parent.querySelector('.js-select-close');
-            currentCloseBtn.classList.add('active');
+            if (currentCloseBtn) {
+                currentCloseBtn.classList.add('active');
+            }
         }
         function selectChose() {
             let select = this.closest('.js-select');
             let currentText = select.querySelector('.js-select__current');
-            currentText.innerText = this.innerText;
+            let currentImg = select.querySelector('.js-select-img');
+            let textItem = this.querySelector('.js-select__item');
+            let imgItem = this.querySelector('.js-select-img');
+            currentText.innerText = textItem.innerText;
             select.classList.remove('is-active');
+            if (imgItem && currentImg) {
+                let pathImg = imgItem.dataset.src;
+                currentImg.setAttribute("src", `${pathImg}`)
+            }
         }
     }
+
+    let elems = document.querySelectorAll('.js-toggle-btn');
+
+    function selectIcons() {
+
+        elems.forEach((item) => {
+            item.addEventListener('click', toggleClass)
+        });
+
+        function toggleClass(e) {
+            e.preventDefault();
+            this.classList.add('active');
+            for (let k = 0; elems.length > k; k++) {
+                let item = elems[k];
+                if (item !== this && item.classList.contains('active')) {
+                    item.classList.remove('active')
+                }
+            }
+        }
+    }
+    selectIcons();
 
     // validate
     const isValidEmail = (email) => {
@@ -101,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.querySelector("input[name='email']");
     const messageInput = document.querySelector("textarea[name='message']");
     const modalMd = document.querySelector('.modal');
+    //const submitFormBtns = document.querySelectorAll('.js-btn-submit');
 
     if (!form.length) {
         return false;
@@ -157,9 +190,21 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             isValidation = true;
             validateInputs();
+            let btnSubmit = el.querySelector('.js-btn-submit');
+            let btnSubmitNew = el.querySelector('.js-btn-submit-new');
+            let btnSubmitRep = el.querySelector('.js-btn-submit-rep');
             if (isFormValid) {
                 // TODO: DO AJAX REQUEST
                 //change color btn
+                btnSubmit.classList.add('visible');
+                btnSubmitNew.classList.add('visible');
+                btnSubmitRep.classList.add('visible');
+
+                btnSubmitRep.addEventListener('click', () => {
+                    btnSubmit.classList.remove('visible');
+                    btnSubmitNew.classList.remove('visible');
+                    btnSubmitRep.classList.remove('visible');
+                })
             }
         })
     })
@@ -187,45 +232,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // // toggle class
-    console.log('lll');
-
-    //let elem = document.querySelector('.js-page');
-    // if (!elem) {
-    //     return false;
-    // }
-    //
-    // function selectIcons() {
-    //
-    //     let elems = document.querySelectorAll('.js-toggle-btn');
-    //
-    //     elems.forEach((item) => {
-    //         item.addEventListener('click', toggleClass)
-    //     });
-    //
-    //     function toggleClass(e) {
-    //         e.preventDefault();
-    //         this.classList.add('active');
-    //         for (let k = 0; elems.length > k; k++) {
-    //             let item = elems[k];
-    //             if (item !== this && item.classList.contains('.active')) {
-    //                 item.classList.remove('active')
-    //             }
-    //         }
-    //     }
-    // }
-   // toggleActivePage();
-   // function toggleActivePage() {
-        //let pages = Array.from(document.querySelectorAll('.js-page'));
-        //console.log(pages);
-        // let current = 0;
-        // for (let i = 0; i < pages.length; i++) {
-        //     if (pages[i].href === document.URL) {
-        //         current = i;
-        //     }
-        // }
-        // pages[current].className = 'active';
-    //}
 
 
 })

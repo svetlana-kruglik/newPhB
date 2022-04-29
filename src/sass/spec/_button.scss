@@ -14,13 +14,14 @@
     color: #ffffff;
     font-size: 18px;
     font-family: 'Inter', 'Arial', sans-serif;
-    line-height: 1.55;
+    line-height: 32px;
     font-weight: 500;
     border-radius: 10px;
     border-color: transparent;
     border-style: solid;
     transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
     margin-bottom: 10px;
+    white-space: nowrap;
 
     @include sm {
         margin-bottom: 0;

@@ -18,16 +18,28 @@
 .contact-s1 .form__content-bottom.form__content-bottom--mob {
     display: block;
     max-width: 100%;
-    margin: 30px 0 0;
+    margin: 30px auto 0;
     text-align: start;
 
-    @include csx {
+    @include sm {
         display: none;
     }
 }
 
+.contact-s1 .form .soc-el {
+    border-radius: 50%;
+    background-color: $gray-tx;
+}
+
+.contact-s1 .form .soc-el:not(:last-child) {
+    margin-right: 40px;
+}
+
 .contact-s1 .form__content-bottom.form__content-bottom--mob .form__content-inner {
-    text-align: start;
+    text-align: center;
+    @include sm {
+        text-align: start;
+    }
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__content-inner{
@@ -36,7 +48,7 @@
         margin: 30px 0 0;
     }
 
-    @include csx {
+    @include sm {
         text-align: center;
     }
 
@@ -51,9 +63,16 @@
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__desc.text-s {
 
-    @include csx-down() {
+    @include sm-down() {
         font-size: 14px;
     }
+}
+
+.contact-s1 .form .form__content-bottom.form__content-bottom--desk .soc-el:first-child {
+    margin-right: 40px;
+}
+.contact-s1 .form .form__content-bottom.form__content-bottom--desk .soc-el:not(:last-child) {
+    margin-right: 40px;
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--mob .h2 {
@@ -62,12 +81,57 @@
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--mob .soc-list {
-    justify-content: start;
+    justify-content: flex-start;
+    @include sm-down() {
+        justify-content: center;
+    }
 }
 
-.contact-s1 .form .form__content-bottom.form__content-bottom--mob .soc-el:first-child {
-    margin-right: 10px;
+.contact-s1 .form__content-bottom.form__content-bottom--desk .soc-list {
+
+    @include sm() {
+        margin-bottom: 20px;
+    }
+
+    @include md() {
+        margin-bottom: 0;
+    }
 }
+
+.form__btns .btn-rect.btn-green {
+    background-color: $green-extra;
+    color: $white;
+    font-weight: 600;
+    display: none;
+}
+
+.form__btns .btn-rect.btn-transparent {
+    background-color: $white;
+    color: $blue;
+    font-weight: 400;
+    display: none;
+}
+
+.form__btns .btn-rect.btn-transparent.visible,
+.form__btns .btn-rect.btn-green.visible {
+    display: flex;
+}
+
+.form__btns .btn-rect.btn-blue.visible {
+    display: none;
+}
+
+.form__btns .btn-rect.btn-blue {
+    display: flex;
+}
+
+.form__btns .btn-rect.btn-transparent {
+    margin-left: 16px;
+}
+
+//.contact-s1 .form .form__content-bottom.form__content-bottom--mob .soc-el:first-child {
+//    margin-right: 10px;
+//}
 
 .footer.footer--black {
     background-color: $black;

@@ -30,7 +30,8 @@
 }
 
 .error__subtitle {
-  padding-bottom: 15px;
+    padding-bottom: 15px;
+    padding-top: 20px;
 
     @include sm {
         padding-bottom: 75px;
