@@ -1,18 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // cookies-modal
-    // let modalCookiesCloseBtns = document.querySelectorAll('.js-close-modal-cookies');
-    //
-    // modalCookiesCloseBtns.forEach((btn) => {
-    //     btn.addEventListener('click', () => {
-    //         console.log(this);
-    //         // let pathBtnClose = this.dataset.close;
-    //         // console.log(pathBtnClose);
-    //         // let modalCookie = document.querySelector(`[data-cookies='${pathBtnClose}']`);
-    //         // if (!modalCookie.classList.contains('.hide')) {
-    //         //     modalCookie.classList.add('hide');
-    //         // }
-    //     });
-    // });
+
+    let images = document.querySelectorAll('.img-lazy');
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    }
+
+    function handleImg(myImg, observer) {
+        myImg.forEach(myImgSingle => {
+            if(myImgSingle.intersectionRatio > 0) {
+                loadImage(myImgSingle.target);
+            }
+        })
+    }
+    function loadImage(image) {
+        image.src = image.getAttribute('data-src');
+    }
+    const observer = new IntersectionObserver(handleImg, options);
+    images.forEach(img => {
+        observer.observe(img);
+    });
+
+    // focus label
+    let inptElems = document.querySelectorAll('.form__input');
+    let textareaElems = document.querySelectorAll('.form__textarea');
+
+    inptElems.forEach(inp => {
+        inp.addEventListener('focusin', addedTopLabel);
+        function addedTopLabel() {
+            let parent = this.closest('.form-control');
+            let labelForm = parent.querySelector('.form__label');
+            if (!labelForm.classList.contains('label-top')) {
+                labelForm.classList.add('label-top');
+            }
+        }
+    });
+
+    textareaElems.forEach(textarea => {
+        textarea.addEventListener('focusin', addedTopLabel);
+        function addedTopLabel() {
+            let parent = this.closest('.form-control');
+            let labelForm = parent.querySelector('.form__label');
+            if (!labelForm.classList.contains('label-top')) {
+                labelForm.classList.add('label-top');
+            }
+        }
+    });
 
     //burger modal
     let openBtnMd = document.querySelector('.js-open-modal');
@@ -139,7 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     selectIcons();
 
-
     // validate
     const isValidEmail = (email) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -152,7 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.querySelector("input[name='email']");
     const messageInput = document.querySelector("textarea[name='message']");
     const modalMd = document.querySelector('.modal');
-    //const submitFormBtns = document.querySelectorAll('.js-btn-submit');
 
     if (!form.length) {
         return false;
@@ -248,22 +280,5 @@ document.addEventListener('DOMContentLoaded', () => {
             modalMd.classList.remove('open');
         }
     });
-
-
-    // let inputEls = document.querySelectorAll('input');
-    // inputEls.forEach((input) => {
-    //     console.log(input);
-    //     input.addEventListener('input', (e) => {
-    //         let target = e.target;
-    //         if (target.classList.contains('.input')) {
-    //
-    //             if (target.value.length > 0) {
-    //                 target.classList.add('filled');
-    //             } else {
-    //                 target.classList.remove('filled');
-    //             }
-    //         }
-    //     })
-   // });
 
 })

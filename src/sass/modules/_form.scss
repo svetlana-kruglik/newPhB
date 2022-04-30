@@ -162,6 +162,10 @@
     font-family: 'Inter', 'Arial', sans-serif;
 }
 
+.form__label span {
+    color: $red;
+}
+
 .form__input,
 .form__textarea {
     color: $black;
@@ -180,13 +184,13 @@
 }
 
 .form__input {
-    padding: 0 20px;
+    padding: 10px 20px;
     height: 64px;
     margin-bottom: 10px;
 }
 
 .form__textarea {
-    padding: 10px 20px;
+    padding: 25px 20px;
     height: 135px;
     resize: none;
     margin-bottom: 10px;
@@ -227,36 +231,42 @@
     position: relative;
 }
 
+input ~ .form__label {
+    top: 18px;
+}
+
+textarea ~ .form__label {
+    top: 18px;
+}
+
 textarea:focus ~ .form__label,
-input:focus ~ .form__label,
-input:focus ~ .floating-label{
-    top: 8px;
-    bottom: 30px;
+input:focus ~ .form__label {
     left: 20px;
-    font-size: 11px;
     opacity: 1;
     color: $blue;
 }
 
 textarea:valid ~ .form__label,
-input:valid ~ .form__label,
-input:valid ~ .floating-label {
-    top: 8px;
+input:valid ~ .form__label {
     bottom: 10px;
     left: 20px;
-    font-size: 11px;
     opacity: 1;
-    color: $black;
 }
 
-//input:invalid ~ .floating-label {
-//    top: 8px;
-//    bottom: 10px;
-//    left: 20px;
-//    font-size: 11px;
-//    opacity: 1;
-//    color: $red;
-//}
+.form__textarea.invalid ~ .form__label,
+.form__input.invalid ~ .form__label {
+    color: $red;
+}
+
+input ~ .form__label.label-top {
+    top: -2px;
+    font-size: 11px;
+}
+
+textarea ~ .form__label.label-top {
+    top: 0;
+    font-size: 11px;
+}
 
 .input-text {
     font-weight: 600;
