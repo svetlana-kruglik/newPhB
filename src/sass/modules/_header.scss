@@ -11,12 +11,6 @@
     }
 }
 
-.container.container--mob {
-    @include md-down() {
-        padding: 0 20px 0;
-    }
-}
-
 .header__wrap {
     display: flex;
     justify-content: space-between;

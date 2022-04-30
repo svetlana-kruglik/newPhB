@@ -159,7 +159,7 @@
     max-width: 120px;
     width: 100%;
 
-    @include csx() {
+    @include sm {
         max-width: 200px;
     }
 }
@@ -449,98 +449,8 @@ a.col50__link {
     display: inline-block;
     margin-top: 20px;
 }
-
-//
-//.form-control {
-//    position: relative;
-//}
-//
-//.form-control .form__label {
-//    position: absolute;
-//    font-weight: 600;
-//    font-size: 18px;
-//    line-height: 32px;
-//    left: 24px;
-//    top: 16px;
-//    color: #85888C;
-//    transition: all .2s ease;
-//}
-//
-//.form-control .form__label span {
-//    color: red;
-//}
-//
-//.form-control textarea:focus + .form__label,
-//.form-control input:focus + .form__label {
-//    top: 0;
-//    font-size: 10px;
-//    color: $black;
-//}
-//
-//.form-control:focus {
-//    border-color: $blue;
-//}
-//
-//.form-control input:focus .form__label {
-//    color: $blue;
-//}
-//
-//.form-control:valid {
-//    border-color: #42d142;
-//}
-//
-//.form-control:invalid .form__label,
-//.form-control:invalid {
-//    border-color: $red;
-//}
-
-//
-
-//.label {
-//    position: relative;
-//    display: block;
-//    height: 48px;
-//    cursor: text;
-//}
-//
-//.label input {
-//    position: absolute;
-//    bottom: 0;
-//    border: 0;
-//    height: 2px;
-//    width: 100%;
-//    padding: 0 0 0 35px;
-//    transition: all 0.3s ease;
-//    vertical-align: bottom;
-//    font-size: 16px;
-//    box-sizing: border-box;
-//    border-bottom: 1px solid transparent;
-//    color: #85888C;
-//}
-//
-//.label input:focus,
-//.label input.filled {
-//    height: 100%;
-//    width: 100%;
-//    background: $white;
-//    border: 2px solid transparent;
-//    outline: none;
-//}
-//
-//.label input:focus + label,
-//.label input.filled + label {
-//    position: absolute;
-//    transform: translateY(-34px);
-//    font-size: 12px;
-//    color: #85888C;
-//}
-//
-//.label input + label {
-//    color: #85888C;
-//    line-height: 48px;
-//    padding-left: 3px;
-//    transform: translateY(0);
-//    transition: all 0.3s ease;
-//    pointer-events: none;
-//}
-//
+.index-s9 .col50.col50--left {
+    @include sm-down {
+        margin-bottom: 0;
+    }
+}

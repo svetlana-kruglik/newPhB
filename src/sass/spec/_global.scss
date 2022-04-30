@@ -22,8 +22,8 @@ body {
     overflow: hidden;
     padding-top: 70px;
 
-    @include md {
-        padding-top: 20px;
+    @include sm {
+        padding-top: 24px;
     }
 }
 
