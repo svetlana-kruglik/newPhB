@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    (function(w, d){
-        let b = d.getElementsByTagName('body')[0];
-        let s = d.createElement("script");
-        // s.async = true;
-        let v = !("IntersectionObserver" in w) ? "8.12.0" : "10.12.0";
-        s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
-        w.lazyLoadOptions = {};
-        b.appendChild(s);
-    }(window, document));
-
-    let images = document.querySelectorAll(".lazyload");
-    lazyload(images);
+    // cookies-modal
+    // let modalCookiesCloseBtns = document.querySelectorAll('.js-close-modal-cookies');
+    //
+    // modalCookiesCloseBtns.forEach((btn) => {
+    //     btn.addEventListener('click', () => {
+    //         console.log(this);
+    //         // let pathBtnClose = this.dataset.close;
+    //         // console.log(pathBtnClose);
+    //         // let modalCookie = document.querySelector(`[data-cookies='${pathBtnClose}']`);
+    //         // if (!modalCookie.classList.contains('.hide')) {
+    //         //     modalCookie.classList.add('hide');
+    //         // }
+    //     });
+    // });
 
     //burger modal
     let openBtnMd = document.querySelector('.js-open-modal');
@@ -49,8 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     modalWindow.classList.remove('show');
                     document.body.style.overflowY = 'visible';
                 }
+                if (!modalWindow.classList.contains('hide')) {
+                    modalWindow.classList.add('hide');
+                }
             })
         });
+
+        let closeLinks = document.querySelectorAll('.js-modal-link');
+        closeLinks.forEach((link) => {
+            link.addEventListener('click', function closeModal() {
+                let pathLink = this.dataset.link;
+                let modalWindow = document.querySelector(`[data-md='${pathLink}']`);
+
+                if (!modalWindow.classList.contains('hide')) {
+                    modalWindow.classList.add('hide');
+                }
+            })
+        });
+
     }
 
     //custom select
@@ -121,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     selectIcons();
 
+
     // validate
     const isValidEmail = (email) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -146,12 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const resetElm = (elm) => {
         elm.classList.remove('invalid');
-        elm.nextElementSibling.classList.add('hide');
     }
 
     const invalidateElm = (elm) => {
         elm.classList.add('invalid');
-        elm.nextElementSibling.classList.remove('hide');
     }
 
     const validateInputs = () => {
@@ -233,5 +250,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
+    // let inputEls = document.querySelectorAll('input');
+    // inputEls.forEach((input) => {
+    //     console.log(input);
+    //     input.addEventListener('input', (e) => {
+    //         let target = e.target;
+    //         if (target.classList.contains('.input')) {
+    //
+    //             if (target.value.length > 0) {
+    //                 target.classList.add('filled');
+    //             } else {
+    //                 target.classList.remove('filled');
+    //             }
+    //         }
+    //     })
+   // });
 
 })

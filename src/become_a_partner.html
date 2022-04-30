@@ -11,9 +11,9 @@
     <meta name="keywords"
           content="PharmBonus, Medical">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/base/logo.svg">
-    <link rel="icon" type="image/svg" sizes="32x32" href="/img/base/logo.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/base/logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/base/logo-main.svg">
+    <link rel="icon" type="image/svg" sizes="32x32" href="/img/base/logo-main.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/base/logo-main.svg">
     <!-- OG -->
     <meta property="og:url" content="https://www.international.pharmbonus.com">
     <meta property="og:title" content="PharmBonus | Mobile App for Healthcare Professionals">
@@ -33,7 +33,7 @@
             <div class="header__wrap">
                 <div class="header__col header__col--left">
                     <a href="/index.html" class="header-logo">
-                        <img src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo"/>
+                        <img loading="lazy" src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo"/>
                     </a>
                     <nav class="nav nav--desk">
                         <ul class="nav__list nav__list--header">
@@ -114,7 +114,7 @@
                         </ul>
                     </div>
                     <div class="col50 col50--right">
-                        <img class="col50__img col50__img--440 lazyload" data-src="/img/base/bg-p1.svg" alt="A medical worker" title="Photo of a medical worker">
+                        <img class="col50__img col50__img--440" loading="lazy" src="/img/base/bg-p1.svg" alt="A medical worker" title="Photo of a medical worker">
                     </div>
                 </div>
             </div>
@@ -190,7 +190,7 @@
                         <a href="#" class="col50__link">Join Us</a>
                     </div>
                     <div class="col50 col50--right">
-                        <img class="col50__img col50__img--544 lazyload" data-src="/img/base/bg-p2.png" alt="Doctor" title="Doctor">
+                        <img class="col50__img col50__img--544" loading="lazy" src="/img/base/bg-p2.png" alt="Doctor" title="Doctor">
                     </div>
                 </div>
             </div>
@@ -208,7 +208,7 @@
                         <a href="#" class="col50__link">Join Us</a>
                     </div>
                     <div class="col50 col50--right">
-                        <img class="col50__img col50__img--544 lazyload" data-src="/img/base/bg-p3.png" alt="Doctor" title="Doctor">
+                        <img class="col50__img col50__img--544" loading="lazy" src="/img/base/bg-p3.png" alt="Doctor" title="Doctor">
                     </div>
                 </div>
             </div>
@@ -227,7 +227,7 @@
                         <a href="#" class="col50__link">Join Us</a>
                     </div>
                     <div class="col50 col50--right">
-                        <img class="col50__img col50__img--544 lazyload" data-src="/img/base/bg-p4.png" alt="Doctor" title="Doctor">
+                        <img class="col50__img col50__img--544" loading="lazy" src="/img/base/bg-p4.png" alt="Doctor" title="Doctor">
                     </div>
                 </div>
             </div>
@@ -247,7 +247,7 @@
                         <a href="#" class="col50__link">Join Us</a>
                     </div>
                     <div class="col50 col50--right">
-                        <img class="col50__img col50__img--544 lazyload" data-src="/img/base/bg-p5.png" alt="Doctor" title="Doctor">
+                        <img class="col50__img col50__img--544" loading="lazy" src="/img/base/bg-p5.png" alt="Doctor" title="Doctor">
                     </div>
                 </div>
             </div>
@@ -288,22 +288,24 @@
                     <div class="col50 col50--right">
                         <form class="form__inner js-form" name="contact-form">
                             <div class="form-control">
-                                <label class="form__label" for="name"></label>
-                                <input class="form__input" placeholder="Your name" type="text" name="name"
+                                <input class="form__input input-text" placeholder="Your name" type="text" name="name"
                                        id="name"/>
+                                <label class="form__label" for="name">Your name</label>
                                 <div class="error hide">This field is required</div>
                             </div>
                             <div class="form-control">
-                                <label class="form__label" for="company-name"></label>
-                                <input class="form__input" placeholder="Company name" type="text" name="company-name" id="company-name"/>
+                                <input class="form__input input-text" placeholder="Company name" type="text" name="company-name" id="company-name"/>
+                                <label class="form__label" for="company-name">Company name</label>
                                 <div class="error hide">This field is required</div>
                             </div>
                             <div class="form-control">
-                                <input class="form__input" placeholder="Email*" type="email" id="email" name="email"/>
+                                <input class="form__input input-text" placeholder="Email*" type="email" id="email" name="email"/>
+                                <label class="form__label" for="email">Email</label>
                                 <div class="error hide">Please, check the email format (e.g sample@sample.com)</div>
                             </div>
                             <div class="form-control">
-                                <textarea class="form__textarea" placeholder="Drop us a line" name="message"></textarea>
+                                <textarea class="form__textarea input-text" placeholder="Drop us a line" id="message" name="message"></textarea>
+                                <label class="form__label" for="message">Drop us a line</label>
                                 <div class="error hide">This field is required</div>
                             </div>
                             <div class="form__btns">
@@ -418,7 +420,6 @@
         </div>
         <div class="footer__row">
             <div class="container">
-
                 <div class="footer__row footer--bottom">
                     <img src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo" class="footer__logo">
                     <div class="footer__col footer-col footer-col--desc">
@@ -532,6 +533,18 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-cookies js-modal-cookies" data-md="modal-cookies">
+        <div class="overlay-cookies__content">
+            <div class="overlay-cookies__img">
+                <img src="/img/base/cookie.svg" alt="Cookie">
+            </div>
+            <p class="overlay-cookies__text">Our site uses <a class="js-modal-link" data-link="modal-cookies"
+            href="/terms.html" target="_blank">cookies</a>. We use cookies because nothing works without them)</p>
+            <div class="overlay-cookies__close js-close-modal" data-cls="modal-cookies">
+                <img  src="/img/base/close-g.svg" alt="Close element">
             </div>
         </div>
     </div>

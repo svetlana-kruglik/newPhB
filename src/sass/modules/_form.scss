@@ -14,67 +14,6 @@
     }
 }
 
-.form-control {
-    position: relative;
-}
-
-
-.form__input {
-    &:focus,
-    &:valid {
-        outline: 0;
-
-        + label {
-            top: -10px;
-            font-size:12px;
-        }
-    }
-}
-
-
-.form__label {
-    position: absolute;
-    left: 12px;
-    top: 10px;
-    color: rgba(51,51,51,.54);
-    pointer-events: none;
-    transition: all .2s ease;
-
-    span {
-        color: red;
-        font-weight: 700;
-    }
-}
-//
-//.form-control .form__label {
-//    position: absolute;
-//    top: 0;
-//    left: 0;
-//    height: 100%;
-//    padding: 1rem .75rem;
-//    pointer-events: none;
-//    border: 1px solid transparent;
-//    transform-origin: 0 0;
-//    transition: opacity .15s ease-in-out, transform .15s ease-in-out;
-//}
-//
-//.form-control .form__input::-moz-placeholder {
-//    color: transparent;
-//}
-//.form-control .form__input::placeholder {
-//    color: transparent;
-//}
-//.form-control .form__input:focus,
-//.form-control .form__input:not(:placeholder-shown) {
-//    padding-top: 1.625rem;
-//    padding-bottom: .625rem;
-//}
-//.form-control .form__input:focus~.form__label,
-//.form-control .form__input:not(:placeholder-shown)~.form__label {
-//    opacity: .65;
-//    transform: scale(.85) translateY(-.75rem) translateX(.15rem);
-//}
-
 .form .soc-el:first-child {
     margin-right: 40px;
 }
@@ -138,7 +77,6 @@
 
 .form__content-bottom.form__content-bottom--mob {
     display: block;
-    //max-width: 60%;
     margin: 40px auto 0;
 
     @include sm {
@@ -216,10 +154,18 @@
     width: 100%;
 }
 
+.form__label {
+    color: #85888C;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
 .form__input,
 .form__textarea {
-    color: #000000;
-    border: 0 solid #000;
+    color: $black;
+    border: 0 solid transparent;
     background-color: #f0f0f0;
     border-radius: 6px;
     font-size: 18px;
@@ -235,7 +181,7 @@
 
 .form__input {
     padding: 0 20px;
-    height: 68px;
+    height: 64px;
     margin-bottom: 10px;
 }
 
@@ -274,3 +220,118 @@
         align-items: center;
     }
 }
+
+//
+.form-control,
+.mdl-textfield {
+    position: relative;
+}
+
+textarea:focus ~ .form__label,
+input:focus ~ .form__label,
+input:focus ~ .floating-label{
+    top: 8px;
+    bottom: 30px;
+    left: 20px;
+    font-size: 11px;
+    opacity: 1;
+    color: $blue;
+}
+
+textarea:valid ~ .form__label,
+input:valid ~ .form__label,
+input:valid ~ .floating-label {
+    top: 8px;
+    bottom: 10px;
+    left: 20px;
+    font-size: 11px;
+    opacity: 1;
+    color: $black;
+}
+
+//input:invalid ~ .floating-label {
+//    top: 8px;
+//    bottom: 10px;
+//    left: 20px;
+//    font-size: 11px;
+//    opacity: 1;
+//    color: $red;
+//}
+
+.input-text {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.form__label,
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 34px;
+    top: 30px;
+    transition: 0.2s ease all;
+}
+
+/* Cluttered Magic */
+textarea:focus::-webkit-input-placeholder,
+textarea:valid::-webkit-input-placeholder,
+input:focus::-webkit-input-placeholder,
+input:valid::-webkit-input-placeholder{
+    opacity: 1;
+}
+
+textarea:focus::-moz-placeholder,
+textarea:valid::-moz-placeholder,
+input:focus::-moz-placeholder,
+input:valid::-moz-placeholder{
+    opacity: 1;
+}
+
+textarea:focus:-ms-input-placeholder,
+textarea:valid:-ms-input-placeholder,
+input:focus:-ms-input-placeholder,
+input:valid:-ms-input-placeholder{
+    opacity: 1;
+}
+
+textarea:focus:-moz-placeholder,
+textarea:valid:-moz-placeholder,
+input:focus:-moz-placeholder,
+input:valid:-moz-placeholder {
+    opacity: 1;
+}
+
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: 0.2s ease opacity;
+    transition: 0.2s ease opacity;
+}
+
+textarea::-moz-placeholder,
+input::-moz-placeholder,
+input::-moz-placeholder {
+    opacity: 0;
+    -webkit-transition: 0.2s ease opacity;
+    transition: 0.2s ease opacity;
+}
+
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder,
+input:-ms-input-placeholder {
+    opacity: 0;
+    -webkit-transition: 0.2s ease opacity;
+    transition: 0.2s ease opacity;
+}
+
+textarea:-moz-placeholder,
+input:-moz-placeholder,
+input:-moz-placeholder {
+    opacity: 0;
+    -webkit-transition: 0.2s ease opacity;
+    transition: 0.2s ease opacity;
+}
+

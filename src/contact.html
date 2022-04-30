@@ -11,9 +11,9 @@
     <meta name="keywords"
           content="PharmBonus, Medical">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/base/logo.svg">
-    <link rel="icon" type="image/svg" sizes="32x32" href="/img/base/logo.svg">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/base/logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/base/logo-main.svg">
+    <link rel="icon" type="image/svg" sizes="32x32" href="/img/base/logo-main.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/base/logo-main.svg">
     <!-- OG -->
     <meta property="og:url" content="https://www.international.pharmbonus.com">
     <meta property="og:title" content="PharmBonus | Mobile App for Healthcare Professionals">
@@ -122,20 +122,24 @@
                     <div class="col50 col50--right">
                         <form class="form__inner js-form" name="contact-form">
                             <div class="form-control">
-                                <input class="form__input" placeholder="Your name" type="text" name="name"
-                                       id="name"/>
+                                <input class="form__input input-text" type="text" name="name"
+                                       id="name" required/>
+                                <label class="form__label" for="name">Your name</label>
                                 <div class="error hide">This field is required</div>
                             </div>
                             <div class="form-control">
-                                <input class="form__input" placeholder="Company name" type="text" name="company-name" id="company-name"/>
+                                <input class="form__input input-text" type="text" name="company-name" id="company-name" required/>
+                                <label class="form__label" for="company-name">Company name</label>
                                 <div class="error hide">This field is required</div>
                             </div>
                             <div class="form-control">
-                                <input class="form__input" placeholder="Email*"  type="email" name="email"/>
+                                <input class="form__input input-text" id="email" type="email" name="email" required/>
+                                <label class="form__label" for="email">Email</label>
                                 <div class="error hide">Please, check the email format (e.g sample@sample.com)</div>
                             </div>
                             <div class="form-control">
-                                <textarea class="form__textarea" placeholder="Drop us a line" name="message"></textarea>
+                                <textarea class="form__textarea input-text" id="message" name="message" required></textarea>
+                                <label class="form__label" for="message">Drop us a line</label>
                                 <div class="error hide">This field is required</div>
                             </div>
                             <div class="form__btns">
@@ -363,6 +367,16 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay-cookies js-modal-cookies" data-md="modal-cookies">
+        <div class="overlay-cookies__content">
+            <img src="/img/base/cookie.svg" alt="">
+            <p class="overlay-cookies__text">Our site uses <a class="js-modal-link" data-link="modal-cookies"
+            href="/terms.html" target="_blank">cookies</a>. We use cookies because nothing works without them)</p>
+            <div class="overlay-cookies__close js-close-modal" data-cls="modal-cookies">
+                <img  src="/img/base/close-g.svg" alt="">
             </div>
         </div>
     </div>
