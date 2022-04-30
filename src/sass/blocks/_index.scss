@@ -300,6 +300,7 @@
 .index-s7 .col50__img.col50__img--340 {
 
     @include sm {
+        height: auto;
         position: absolute;
         top: -60px;
         right: 0;
@@ -397,15 +398,10 @@
 }
 
 .col50__img.col50__img--340 {
-    min-width: 260px;
-    max-width: 280px;
+    max-width: 300px;
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
-
-    @include sm {
-        max-width: 300px;
-    }
 
     @include md {
         max-width: 340px;

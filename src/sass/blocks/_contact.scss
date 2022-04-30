@@ -16,7 +16,7 @@
     margin: 30px auto 0;
     text-align: start;
 
-    @include sm {
+    @include md {
         display: none;
     }
 }
@@ -32,13 +32,13 @@
 
 .contact-s1 .form__content-bottom.form__content-bottom--mob .form__content-inner {
     text-align: center;
-    @include sm {
+    @include md {
         text-align: start;
     }
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__content-inner{
-    @include csx-down() {
+    @include sm-down() {
         max-width: 100%;
         margin: 30px 0 0;
     }
@@ -52,13 +52,12 @@
     }
 }
 
-.contact-s1 .form__content-bottom.form__content-bottom--mob .form__desc.text-s {
-    font-size: 14px;
-}
+//.contact-s1 .form__content-bottom.form__content-bottom--mob .form__desc.text-s {
+//    font-size: 14px;
+//}
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__desc.text-s {
-
-    @include sm-down() {
+    @include md-down() {
         font-size: 14px;
     }
 }
@@ -77,7 +76,7 @@
 
 .contact-s1 .form__content-bottom.form__content-bottom--mob .soc-list {
     justify-content: flex-start;
-    @include sm-down() {
+    @include md-down() {
         justify-content: center;
     }
 }
@@ -123,10 +122,6 @@
 .form__btns .btn-rect.btn-transparent {
     margin-left: 16px;
 }
-
-//.contact-s1 .form .form__content-bottom.form__content-bottom--mob .soc-el:first-child {
-//    margin-right: 10px;
-//}
 
 .footer.footer--black {
     background-color: $black;

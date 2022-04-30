@@ -25,13 +25,13 @@
 }
 
 .form .form__content-bottom.form__content-bottom--mob .soc-el {
-    @include sm-down {
+    @include md-down {
         margin-right: 40px;
     }
 }
 
 .form .form__content-bottom.form__content-bottom--mob .soc-el:last-child {
-    @include sm-down {
+    @include md-down {
         margin-right: 0;
     }
 }
@@ -55,13 +55,15 @@
 .form__content-inner {
     max-width: 100%;
     margin: 0;
+    text-align: center;
 
-    @include sm {
+    @include md {
+        text-align: start;
         max-width: 50%;
         margin: 0 auto;
     }
 
-    @include md {
+    @include lgx {
         max-width: 100%;
         margin: 0;
     }
@@ -70,7 +72,7 @@
 .form__content-bottom.form__content-bottom--desk {
     display: none;
 
-    @include sm {
+    @include md {
         display: block;
     }
 }
@@ -79,7 +81,7 @@
     display: block;
     margin: 40px auto 0;
 
-    @include sm {
+    @include md {
         display: none;
     }
 }
@@ -90,7 +92,6 @@
 }
 
 .form .col50 {
-
     @include md-down {
         max-width: 100%;
     }
@@ -118,12 +119,12 @@
         margin-bottom: 40px;
     }
 
-    @include sm {
+    @include md {
         padding-left: 60px;
         margin-bottom: 100px;
     }
 
-    @include md {
+    @include lgx {
         padding-left: 0;
     }
 }

@@ -2,7 +2,7 @@
     background: $white;
     width: 100%;
 
-    @include md-down() {
+    @include sm-down() {
         position: fixed;
         top: 0;
         right: 0;
@@ -64,7 +64,7 @@
 .nav.nav--desk {
     display: none;
 
-    @include md {
+    @include sm {
         display: block;
     }
 }
@@ -140,27 +140,9 @@
     margin-bottom: 10px;
 }
 
-//.menu-overlay {
-//    position: fixed;
-//    width: 100%;
-//    min-height: 100%;
-//    background-color: $white;
-//    top: 0;
-//    right: 0;
-//    left: 0;
-//    bottom: 0;
-//    z-index: -100;
-//    opacity: 0;
-//    transition: .3s ease-in-out;
-//    //overflow-y: auto;
-//    display: none;
-//}
-
 .menu-overlay__wrap {
     display: flex;
     flex-direction: column;
-    //justify-content: center;
-    //align-items: center;
     bottom: 0;
     left: 0;
     right: 0;
@@ -172,15 +154,12 @@
     margin: 0 auto;
 }
 
-
-
 .nav.nav--mob {
     transform: translateY(20%);
     position: relative;
     right: auto;
     left: auto;
     top: auto;
-    //padding: 140px 0 0;
     display: flex;
     justify-content: center;
 }
@@ -256,15 +235,13 @@ a.soc-el__link {
     justify-content: center;
 }
 
-/************ common styles ************/
-
 .hamburger-menu {
     display: inline-block;
     padding: 3px;
     width: 29px;
     z-index: 10002;
 
-    @include md {
+    @include sm {
         display: none;
     }
 }
@@ -338,54 +315,10 @@ a.soc-el__link {
     animation: moveDown 0.25s ease 0s 1 forwards, makeCross1 0.25s ease 0.25s 1 forwards;
 }
 
-//.input-check2:checked + label .bar2 {
-//    opacity: 0;
-//}
-
 .input-check2:checked + label .bar3 {
     animation: moveUp 0.25s ease 0s 1 forwards,
     makeCross2 0.25s ease 0.25s 1 forwards;
 }
-
-//@keyframes moveDown {
-//    from { top: 5%; transform: translateY(0); }
-//    to { top: 50%; transform: translateY(-50%); }
-//}
-//
-//@keyframes moveDownBackward {
-//    from { top: 50%; transform: translateY(-50%); }
-//    to { top: 5%; transform: translateY(0); }
-//}
-//
-//@keyframes moveUp {
-//    from { top: 95%; transform: translateY(0); }
-//    to { top: 50%; transform: translateY(-50%); }
-//}
-//
-//@keyframes moveUpBackward {
-//    from { top: 50%; transform: translateY(-50%); }
-//    to { top: 95%; transform: translateY(0); }
-//}
-//
-//@keyframes makeCross1 {
-//    from { transform: rotate(0deg); }
-//    to { transform: rotate(40deg); }
-//}
-//
-//@keyframes makeCross1Backward {
-//    from { top: 50%; transform: rotate(40deg) translateY(-50%); }
-//    to { top: 50%; transform: rotate(0deg) translateY(-50%); }
-//}
-//
-//@keyframes makeCross2 {
-//    from { transform: rotate(0deg); }
-//    to { transform: rotate(-40deg); }
-//}
-//
-//@keyframes makeCross2Backward {
-//    from { top: 50%; transform: rotate(-40deg) translateY(-50%); }
-//    to { top: 50%; transform: rotate(0deg) translateY(-50%); }
-//}
 
 .nav-item__title {
     position: relative;
@@ -423,7 +356,6 @@ a.soc-el__link {
     transform: rotate(180deg);
 }
 
-//
 .select-wrapper {
     width: 167px;
     display: block;
