@@ -2,7 +2,7 @@
     display: none;
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    right: 50px;
     z-index: 10000;
     max-width: 400px;
     min-width: 260px;
@@ -13,6 +13,10 @@
     font-family: 'Inter','Arial',sans-serif;
     background: #F95D51;
     padding: 10px;
+
+    @include sm-down {
+        right: 20px;
+    }
 }
 
 .modal.open {
