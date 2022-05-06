@@ -6,6 +6,88 @@
     }
 }
 
+.h1.terms-s__title {
+    letter-spacing: 0.01em;
+    color: #010101;
+    width: 100%;
+    max-width: 477px;
+    @include font-base($fw: 600,$fz: 48px,$lh: 57px);
+    font-family: 'Rubik', 'Arial', sans-serif;
+}
+
+.terms-s .terms-s__col70 h1 {
+    @include font-base($fw: 600,$fz: 28px,$lh: 38px);
+    color: $black;
+    font-family: 'Rubik', 'Arial', sans-serif;
+    padding-bottom: 24px;
+}
+
+.terms-s .terms-s__col70 p {
+    @include font-base($fw: 400,$fz: 16px,$lh: 19px);
+    color: $gray-tx;
+    font-family: 'Rubik', 'Arial', sans-serif;
+}
+
+.terms-s .terms-s__col70 ol {
+    counter-reset: section;
+    list-style-type: none;
+}
+
+.terms-s .terms-s__col70 ol li::before {
+    counter-increment: section;
+    content: counters(section,".") " ";
+    color: $gray-tx;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.terms-s .terms-s__col70 ol > li {
+    color: $gray-tx;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.01em;
+    margin-bottom: 8px;
+    padding-top: 24px;
+}
+
+.terms-s .terms-s__col70 ol li ol li {
+    font-weight: 400;
+    padding-top: 0;
+}
+
+.terms-s .terms-s__col70 ol > li ol {
+    padding-top: 8px;
+}
+
+.terms-s .terms-s__col70 ul {
+    padding-top: 8px;
+}
+
+.terms-s .terms-s__col70 ul > li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.terms-s .terms-s__col70 ul > li:before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background-color: gray;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+}
+
+.terms-s .terms-s__col70 div {
+    letter-spacing: 0.01em;
+    @include font-base($fw: 600,$fz: 16px,$lh: 19px);
+    color: $black;
+    font-family: 'Rubik', 'Arial', sans-serif;
+    padding-top: 16px;
+}
+
 .terms-s__text {
     font-weight: 400;
     font-size: 16px;
@@ -81,7 +163,7 @@
     display: block;
     content: '';
     position: absolute;
-    top: 15px;
+    top: 8px;
     left: -13px;
     width: 6px;
     height: 6px;
@@ -128,4 +210,14 @@
 
 .select-wrapper--mob .select__item:active {
     font-weight: 500;
+}
+
+.select__item.active {
+    font-weight: 600;
+}
+
+.overlay-modal .select__item.active,
+.header .select__item.active {
+    font-weight: 600;
+    color: $black;
 }

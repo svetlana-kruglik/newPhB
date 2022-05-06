@@ -1,5 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // Scroll
+    scrollTo();
+
+    function scrollTo() {
+        const links = document.querySelectorAll('.js-menu-hash-item');
+        links.forEach(each => (each.onclick = scrollAnchors));
+    }
+
+    function scrollAnchors(e, respond = null) {
+        const links = document.querySelectorAll('.sv__page-menu-content-item');
+        const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+        e.preventDefault();
+        const targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+        const targetAnchor = document.querySelector(targetID);
+
+        if (!targetAnchor) return;
+        const originalTop = distanceToTop(targetAnchor);
+
+        window.scrollBy({top: originalTop, left: 0, behavior: 'smooth'});
+        const checkIfDone = setInterval(function () {
+            const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+            if (distanceToTop(targetAnchor) === 0 || atBottom) {
+                targetAnchor.tabIndex = '-1';
+                targetAnchor.focus();
+                window.history.pushState('', '', targetID);
+                clearInterval(checkIfDone);
+            }
+        }, 100);
+    }
+
+    //
+    let header = document.querySelectorAll('.header');
+    document.addEventListener('scroll', () => {
+        header.forEach(el => {
+            if (window.pageYOffset > 0 && !el.closest('.scroll')) {
+                el.classList.add('scroll');
+            }
+            if (window.pageYOffset <= 0 && el.closest('.scroll')) {
+                el.classList.remove('scroll');
+            }
+        })
+    })
+
     let images = document.querySelectorAll('.img-lazy');
     const options = {
         root: null,
@@ -37,6 +80,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    inptElems.forEach(inp => {
+        inp.addEventListener('focusout', addedTopLabel);
+        function addedTopLabel() {
+            let parent = this.closest('.form-control');
+            let inputForm = parent.querySelector('.form__input');
+            let labelForm = parent.querySelector('.form__label');
+            if (inputForm.value === "" && labelForm.classList.contains('label-top')) {
+                labelForm.classList.remove('label-top');
+            }
+        }
+    });
+
     textareaElems.forEach(textarea => {
         textarea.addEventListener('focusin', addedTopLabel);
         function addedTopLabel() {
@@ -44,6 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
             let labelForm = parent.querySelector('.form__label');
             if (!labelForm.classList.contains('label-top')) {
                 labelForm.classList.add('label-top');
+            }
+        }
+    });
+
+    textareaElems.forEach(inp => {
+        inp.addEventListener('focusout', addedTopLabel);
+        function addedTopLabel() {
+            let parent = this.closest('.form-control');
+            let textareaForm = parent.querySelector('.form__textarea');
+            let labelForm = parent.querySelector('.form__label');
+            if (textareaForm.value === "" && labelForm.classList.contains('label-top')) {
+                labelForm.classList.remove('label-top');
             }
         }
     });
@@ -180,10 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const form = Array.from(document.querySelectorAll("form[name='contact-form']"));
-    const nameInput = document.querySelector("input[name='name']");
-    const nameCompanyInput = document.querySelector("input[name='company-name']");
+    //const nameInput = document.querySelector("input[name='name']");
+    //const nameCompanyInput = document.querySelector("input[name='company-name']");
     const emailInput = document.querySelector("input[name='email']");
-    const messageInput = document.querySelector("textarea[name='message']");
+    //const messageInput = document.querySelector("textarea[name='message']");
     const modalMd = document.querySelector('.modal');
 
     if (!form.length) {
@@ -193,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let isFormValid = false;
     let isValidation = false;
 
-    const inputs = [nameInput, nameCompanyInput, emailInput, messageInput];
+    const inputs = [emailInput];
 
     const resetElm = (elm) => {
         elm.classList.remove('invalid');
@@ -209,17 +276,17 @@ document.addEventListener('DOMContentLoaded', () => {
         isFormValid = true;
         inputs.forEach(resetElm);
 
-        if (!nameInput.value) {
-            isFormValid = false;
-            invalidateElm(nameInput);
-            openModalMd();
-        }
-
-        if (!nameCompanyInput.value) {
-            isFormValid = false;
-            invalidateElm(nameCompanyInput);
-            openModalMd();
-        }
+        // if (!nameInput.value) {
+        //     isFormValid = false;
+        //     invalidateElm(nameInput);
+        //     openModalMd();
+        // }
+        //
+        // if (!nameCompanyInput.value) {
+        //     isFormValid = false;
+        //     invalidateElm(nameCompanyInput);
+        //     openModalMd();
+        // }
 
         if (!isValidEmail(emailInput.value)) {
             isFormValid = false;
@@ -227,11 +294,11 @@ document.addEventListener('DOMContentLoaded', () => {
             openModalMd();
         }
 
-        if (!messageInput.value) {
-            isFormValid = false;
-            invalidateElm(messageInput);
-            openModalMd();
-        }
+        // if (!messageInput.value) {
+        //     isFormValid = false;
+        //     invalidateElm(messageInput);
+        //     openModalMd();
+        // }
     }
 
     form.forEach((el)=> {

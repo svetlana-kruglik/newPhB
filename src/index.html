@@ -22,7 +22,7 @@
 </head>
     <body>
         <header class="header js-header">
-            <div class="header__row header__row--hr">
+            <div class="header__row">
                 <div class="container container--mob">
                     <div class="header__wrap">
                         <div class="header__col header__col--left">
@@ -32,7 +32,7 @@
                             <nav class="nav nav--desk">
                                 <ul class="nav__list nav__list--header">
                                     <li class="nav__item nav-item js-page">
-                                        <a href="/index.html" class="nav-item__link text-xs">About Us</a>
+                                        <a href="#about-us-link" class="nav-item__link text-xs js-menu-hash-item">About Us</a>
                                     </li>
                                     <li class="nav__item nav-item js-page">
                                         <a href="/become_a_partner.html" class="nav-item__link text-xs">Become a Partner</a>
@@ -51,15 +51,15 @@
                                         <img class="select__icon js-select__icon" src="/img/base/arr-down.svg"/>
                                     </div>
                                     <div class="select__body js-select__body">
-                                        <div class="select__item" data-value="int">
+                                        <div class="select__item js-toggle-btn active" data-value="int">
                                             <img src="/img/base/brit.svg" class="select__img" alt="">
                                             <span class="js-select__item">International</span>
                                         </div>
-                                        <div class="select__item" data-value="by">
+                                        <div class="select__item js-toggle-btn" data-value="by">
                                             <img src="/img/base/bel.svg" class="select__img" alt="">
                                             <span class="js-select__item">Беларусь</span>
                                         </div>
-                                        <div class="select__item" data-value="pl">
+                                        <div class="select__item js-toggle-btn" data-value="pl">
                                             <img src="/img/base/pl.svg" class="select__img" alt="">
                                             <span class="js-select__item">Polska</span>
                                         </div>
@@ -84,9 +84,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col50 col50--left">
-                            <h1 class="h1 col50__title">First professional mobile app for healthcare professionals</h1>
-                            <p class="col50__desc text-s">Your digital healthcare assistant. Always at hand.</p>
-                            <div class="btn-wrap pb-8">
+                            <h1 class="h1 col50__title" data-aos="fade-in">First professional mobile app for healthcare professionals</h1>
+                            <p class="col50__desc text-s" data-aos="fade-in">Your digital healthcare assistant. Always at hand.</p>
+                            <div class="btn-wrap pb-8" data-aos="fade-in">
                                 <a href="https://apps.apple.com/ru/app/pharmbonus/id1062954210" class="btn btn-rect btn-black">
                                     <img class="btn__icon btn__icon--apple" src="/img/base/apple.svg" alt="Apple store">
                                     <p class="btn__title-wrap">
@@ -106,13 +106,15 @@
                                 exclusively for healthcare professionals</p>
                         </div>
                         <div class="col50 col50--right bg-s-mob">
-                            <img class="col50__img col50__img--340" src="/img/base/bg1.png" alt="Mobile phone picture"
-                                 title="Mobile phone picture"/>
+                            <div class="col50__img-wrap">
+                                <img class="col50__img col50__img--340" data-aos="fade-in" src="/img/base/bg1.png" alt="Mobile phone picture"
+                                     title="Mobile phone picture"/>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section class="index-s2 pb-160-m">
+            <section class="index-s2 pb-160-m" id="about-us-link">
                 <div class="container">
                     <div class="row row--reverse">
                         <div class="col50 col50--left">
@@ -122,7 +124,7 @@
                                 field of medicine, the pharmaceutical market and legislative changes. Discuss them in the
                                 comments with colleagues and express your opinion.
                             </p>
-                            <a href="#" class="col50__link">Join Us</a>
+                            <a href="#" class="col50__link col50__link--desk">Join Us</a>
                         </div>
                         <div class="col50 col50--right bg-s-mob">
                             <img class="col50__img col50__img--340 img-lazy" data-src="/img/base/bg2.png" src="" alt="Mobile phone picture"
@@ -141,7 +143,7 @@
                                 medicine, the pharmaceutical market and legislative changes. Discuss them in the comments with
                                 colleagues and express your opinion.
                             </p>
-                            <a href="#" class="col50__link">Join Us</a>
+                            <a href="#" class="col50__link col50__link--desk">Join Us</a>
                         </div>
                         <div class="col50 col50--right bg-s-mob">
                             <img class="col50__img col50__img--340 img-lazy" data-src="/img/base/bg3.png" src="" alt="Mobile phone picture"
@@ -159,7 +161,11 @@
                             <p class="col50__desc text-s">Biggest digital database of healthcare
                                 researches, guides, protocols, medicines and etc.
                             </p>
-                            <a href="#" class="col50__link">
+                            <a href="#" class="col50__link col50__link--mob">
+                                <span>Try for free</span>
+                                <img src="/img/base/arrow-right.svg" class="col50__link-img" alt="">
+                            </a>
+                            <a href="#" class="col50__link col50__link--desk">
                                 <span>Join Us</span>
                                 <img src="/img/base/arrow-right.svg" class="col50__link-img" alt="">
                             </a>
@@ -236,6 +242,7 @@
                         <p class="row-grid__desc text-s">PharmBonus collaborates with leading healthcare professionals
                             and pharmaceutical manufacturers to provide distance learning opportunities through the
                             publication of presentations and video lectures.</p>
+                        <a href="#" class="col50__link">View All</a>
                         <div class="img-grid">
                             <div class="img-grid__el">
                                 <img class="img-lazy" src="" data-src="/img/base/img1.png" alt="Company`s logo BAYER" title="Company`s logo BAYER">
@@ -311,7 +318,7 @@
                                 <span class="grid-item__title text-s">About</span>
                                 <ul class="nav__list">
                                     <li class="nav__item nav-item">
-                                        <a href="/index.html" target="_blank" class="nav-item__link text-m">Terms and Conditions</a>
+                                        <a href="/terms.html" class="nav-item__link text-m">Terms and Conditions</a>
                                     </li>
                                     <li class="nav__item nav-item">
                                         <a class="nav-item__link text-m" href="mailto:info@pharmbonus.com">info@pharmbonus.com</a>
@@ -367,7 +374,7 @@
                     <div class="footer__row footer--bottom">
                         <img src="/img/base/logo-main.svg" alt="Company`s logo" title="Company`s logo" class="footer__logo">
                         <div class="footer__col footer-col footer-col--desc">
-                            <p class="footer-col__copy">©2022 PharmBonus Internationa Investment L.L.C. </p>
+                            <p class="footer-col__copy">©2022 PharmBonus International Investment L.L.C. </p>
                         </div>
                     </div>
                 </div>
@@ -397,7 +404,7 @@
                             <span class="grid-item__title text-s">PharmBonus</span>
                             <ul class="nav__list">
                                 <li class="nav__item nav-item">
-                                    <a href="/index.html" class="nav-item__link text-m">About Us</a>
+                                    <a href="/index.html" target="_blank" class="nav-item__link text-m">About Us</a>
                                 </li>
                                 <li class="nav__item nav-item">
                                     <a href="/become_a_partner.html" class="nav-item__link text-m">Become a Partner</a>
@@ -461,15 +468,15 @@
                                         <span class="select__title">Region</span>
                                         <img class="select__close js-select-close" src="/img/base/close.svg" alt="">
                                     </div>
-                                    <div class="select__item" data-value="int">
+                                    <div class="select__item js-toggle-btn active" data-value="int">
                                         <img src="/img/base/brit.svg" data-src="/img/base/brit.svg" class="select__img js-select-img" alt="">
                                         <span class="js-select__item">International</span>
                                     </div>
-                                    <div class="select__item" data-value="by">
+                                    <div class="select__item js-toggle-btn" data-value="by">
                                         <img src="/img/base/bel.svg" data-src="/img/base/bel.svg" class="select__img js-select-img" alt="">
                                         <span class="js-select__item">Беларусь</span>
                                     </div>
-                                    <div class="select__item" data-value="pl">
+                                    <div class="select__item js-toggle-btn" data-value="pl">
                                         <img src="/img/base/pl.svg" data-src="/img/base/pl.svg" class="select__img js-select-img" alt="">
                                         <span class="js-select__item">Polska</span>
                                     </div>

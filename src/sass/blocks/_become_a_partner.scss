@@ -48,12 +48,23 @@
 }
 
 .partner-s1 .btn-rect {
-    max-width: 328px;
+    max-width: 100%;
     width: 100%;
     margin-right: 0;
+    margin-bottom: 40px;
 
     @include sm {
+        margin-bottom: 0;
         max-width: 219px;
+    }
+}
+
+.partner-s a.col50__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include sm {
+        justify-content: flex-start;
     }
 }
 
@@ -76,12 +87,6 @@
     @include sm-down {
         vertical-align: bottom;
         margin: auto 0 0;
-    }
-}
-
-.partner-s1 .btn-rect {
-    @include sm {
-        max-width: 219px;
     }
 }
 
@@ -153,12 +158,6 @@
     padding-top: 70px;
 }
 
-.partner-s1 .btn-rect {
-    @include csx {
-        width: 200px;
-    }
-}
-
 .partner-s1.index-s1 {
     margin-bottom: 60px;
 }
@@ -220,8 +219,9 @@
 }
 
 .partner-s .partner-s3 .col50__title {
-    margin-bottom: 30px;
-    max-width: 580px;
+    margin-bottom: 96px;
+    max-width: 768px;
+    text-align: center;
 
     @include sm {
        margin: 0 auto 68px;
@@ -229,6 +229,12 @@
 
     @include sm-down {
         color: $white;
+    }
+}
+
+.partner-s .partner-s3 .col50__title.h1 {
+    @include sm-down {
+        @include font-base($fz: 28px,$lh: 33px);
     }
 }
 
@@ -244,10 +250,9 @@
 .icon-grid__el {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
 
     @include sm-down {
-        justify-content: center;
         margin-bottom: 76px;
     }
 }
@@ -264,7 +269,7 @@
 }
 
 .icon-grid__title {
-    @include font-base($fw: 600,$fz: 24px,$lh: 1.55);
+    @include font-base($fw: 600,$fz: 24px,$lh: 28px);
     color: $black;
     font-family: 'Inter', 'Arial', sans-serif;
 
@@ -287,7 +292,7 @@
 .icon-grid__img {
     width: 64px;
     height: 64px;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 
     @include sm {
         margin-right: 10px;
@@ -296,23 +301,17 @@
 }
 
 .icon-grid__img img {
-    max-width: 40px;
-    height: 40px;
+    max-width: 64px;
+    height: 64px;
     flex-shrink: 0;
-
-    @include csx {
-        max-width: 60px;
-        height: 60px;
-    }
 }
 
 .icon-grid {
     display: grid;
-    grid-gap: 20px;
+    grid-gap: 40px;
     grid-template-columns: 1fr;
 
     @include sm {
-        grid-gap: 40px;
         grid-template-columns: 1fr 1fr ;
     }
 

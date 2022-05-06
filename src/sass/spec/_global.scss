@@ -13,7 +13,7 @@ body {
     position: relative;
     min-height: 100%;
     background: $white;
-    @include font-base();
+    //@include font-base();
     -webkit-font-smoothing: antialiased;
     font-family: 'Inter', 'Arial', sans-serif;
 }
@@ -91,12 +91,12 @@ li {
 }
 
 .h1 {
-    @include font-base($fw: 700,$fz: 28px,$lh: 1.15);
+    @include font-base($fw: 700,$fz: 32px,$lh: 38px);
     color: $black;
     font-family: 'Rubik', 'Arial', sans-serif;
 
     @include sm {
-        @include font-base($fz: 40px,$lh: 1.15);
+        @include font-base($fz: 48px,$lh: 57px);
     }
 }
 

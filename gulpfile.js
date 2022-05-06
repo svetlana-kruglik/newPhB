@@ -172,7 +172,7 @@ export const watch = () => {
 }
 
 // Build
-export const build = async () => {
+export const build = done => {
     gulp.series(
         clean,
         html,
@@ -185,7 +185,7 @@ export const build = async () => {
         imgOg,
         js,
         jsVendor,
-    );
+    )(done);
 };
 
 // Default

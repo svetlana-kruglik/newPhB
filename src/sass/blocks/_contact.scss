@@ -44,6 +44,8 @@
     }
 
     @include sm {
+        max-width: 100%;
+        margin: 30px 0 0;
         text-align: center;
     }
 
@@ -62,11 +64,8 @@
     }
 }
 
-.contact-s1 .form .form__content-bottom.form__content-bottom--desk .soc-el:first-child {
-    margin-right: 40px;
-}
 .contact-s1 .form .form__content-bottom.form__content-bottom--desk .soc-el:not(:last-child) {
-    margin-right: 40px;
+    margin-right: 16px;
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--mob .h2 {

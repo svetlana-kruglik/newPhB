@@ -19,7 +19,7 @@
     border-radius: 10px;
     border-color: transparent;
     border-style: solid;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
     margin-bottom: 10px;
     white-space: nowrap;
 
@@ -50,12 +50,12 @@
 }
 
 .btn-blue:hover{
-    background-color: $blue-h;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), #0379F7;
 }
 
 .btn-blue:active,
 .btn-blue:focus {
-    background-color: $blue-a;
+    background: $blue-a;
 }
 
 .btn__title-wrap {

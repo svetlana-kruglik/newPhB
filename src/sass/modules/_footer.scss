@@ -156,13 +156,18 @@ a.link-phone {
 }
 
 .footer .nav__list.nav__list--soc .nav-item .nav-item__img  {
-  margin-right: 8px;
-    width: 24px;
-    height: 24px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+
+    @include sm {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
 }
 
-.footer .nav__list.nav__list--soc .nav-item:last-child .nav-item__img {
+.footer .nav__list.nav__list--soc .nav-item:not(:last-child) .nav-item__img {
     @include sm-down {
         margin-right: 8px;
     }
