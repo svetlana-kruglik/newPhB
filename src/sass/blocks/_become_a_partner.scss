@@ -1,21 +1,48 @@
 .partner-s1 {
-    background-repeat: no-repeat;
-    background-image: url("/img/base/bg2x-mob.png");
-    background-size: cover;
-    background-position: unset;
+    //background-repeat: no-repeat;
+    //background-image: url("/img/base/bg2x-mob.png");
+    //background-size: cover;
+    //background-position: unset;
     width: 100%;
-    height: 706px;
+    position: relative;
+    //height: 706px;
 
-    @include sm-down {
-        display: flex;
-        align-items: flex-end;
-    }
+    //@include sm-down {
+    //    display: flex;
+    //    align-items: flex-end;
+    //}
 
     @include sm {
-        height: 820px;
-        background-image: url("/img/base/bg-2x.png");
-        background-size: cover;
-        background-position: center right;
+        //height: 820px;
+        //background-image: url("/img/base/bg-2x.png");
+        //background-size: cover;
+        //background-position: center right;
+    }
+}
+
+.partner-s__bg.partner-s__bg--desk{
+    display: none;
+
+    @include sm {
+        display: block;
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+        z-index: 1;
+        position: relative;
+    }
+}
+
+.partner-s__bg.partner-s__bg--mob {
+    display: block;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+
+    @include sm {
+        display: none;
     }
 }
 
@@ -68,6 +95,20 @@
     }
 }
 
+.partner-s__box {
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include sm {
+        top: 0;
+        left: 0;
+        bottom: auto;
+    }
+}
+
 .col50.col50--box {
     width: 100%;
     display: flex;
@@ -75,8 +116,6 @@
     align-items: center;
     padding: 0 0 56px;
     height: 100%;
-    z-index: 3;
-    position: relative;
 
     @include sm {
         max-width: 582px;
@@ -154,9 +193,9 @@
     border-style: solid;
 }
 
-.partner-s1 {
-    padding-top: 70px;
-}
+//.partner-s1 {
+//    padding-top: 70px;
+//}
 
 .partner-s1.index-s1 {
     margin-bottom: 60px;

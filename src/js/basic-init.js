@@ -1,4 +1,35 @@
+const smBpUp = window.matchMedia("(min-width: 768px)");
+
 document.addEventListener('DOMContentLoaded', () => {
+
+    AOS.init({disable: 'phone'});
+
+    //
+    let container = document.querySelectorAll('.js-container');
+
+    if (smBpUp.matches) {
+        container.forEach(el=> {
+            let bodyParent = el.closest('.js-body');
+            let pathBody = bodyParent.dataset.body;
+            let modalCookie = document.querySelector(`[data-md='${pathBody}']`);
+
+            function getCoords(elem) {
+                let box = elem.getBoundingClientRect();
+
+                return {
+                    left: (box.left + 40) + window.pageXOffset
+                };
+            }
+
+            function createMessageUnder(modalCookie, el) {
+                let coords = getCoords(el);
+                modalCookie.style.left = coords.left + "px";
+                return modalCookie;
+            }
+            createMessageUnder(modalCookie, el);
+        })
+    }
+
 
     // Scroll
     scrollTo();
@@ -43,27 +74,27 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     })
 
-    let images = document.querySelectorAll('.img-lazy');
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    }
-
-    function handleImg(myImg, observer) {
-        myImg.forEach(myImgSingle => {
-            if(myImgSingle.intersectionRatio > 0) {
-                loadImage(myImgSingle.target);
-            }
-        })
-    }
-    function loadImage(image) {
-        image.src = image.getAttribute('data-src');
-    }
-    const observer = new IntersectionObserver(handleImg, options);
-    images.forEach(img => {
-        observer.observe(img);
-    });
+    // let images = document.querySelectorAll('.img-lazy');
+    // const options = {
+    //     root: null,
+    //     rootMargin: '0px',
+    //     threshold: 0.1
+    // }
+    //
+    // function handleImg(myImg, observer) {
+    //     myImg.forEach(myImgSingle => {
+    //         if(myImgSingle.intersectionRatio > 0) {
+    //             loadImage(myImgSingle.target);
+    //         }
+    //     })
+    // }
+    // function loadImage(image) {
+    //     image.src = image.getAttribute('data-src');
+    // }
+    // const observer = new IntersectionObserver(handleImg, options);
+    // images.forEach(img => {
+    //     observer.observe(img);
+    // });
 
     // focus label
     let inptElems = document.querySelectorAll('.form__input');

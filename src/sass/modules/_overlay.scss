@@ -1,7 +1,6 @@
 .overlay-cookies {
     position: fixed;
     background-color: $white;
-    left: 10px;
     bottom: 16px;
     width: calc(100% - 20px);
     height: 80px;
@@ -14,7 +13,11 @@
     @include sm {
         width: 100%;
         max-width: 540px;
-        left: 40px;
+        left: auto;
+    }
+
+    @include sm-down {
+        left: 10px;
     }
 }
 

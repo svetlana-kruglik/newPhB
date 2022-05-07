@@ -19,11 +19,12 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
+<body class="js-body" data-body="modal-cookies">
     <header class="header js-header">
     <div class="header__row header__row--hr">
-        <div class="container container--mob">
+        <div class="container js-container">
             <div class="header__wrap">
                 <div class="header__col header__col--left">
                     <a href="/index.html" class="header-logo">
@@ -99,16 +100,16 @@
                 <div class="row form">
                     <div class="col50 col50--left form__content">
                         <div class="form__content-top">
-                            <h1 class="h1 form__title">Send us a message</h1>
-                            <p class="form__desc text-s">We will be in touch as soons as possible</p>
+                            <h1 class="h1 form__title" data-aos="fade-in" data-aos-duration="500">Send us a message</h1>
+                            <p class="form__desc text-s" data-aos="fade-in" data-aos-duration="500">We will be in touch as soons as possible</p>
                         </div>
                         <div class="form__content-bottom form__content-bottom--desk">
-                            <div class="form__content-inner">
+                            <div class="form__content-inner" data-aos="fade-in" data-aos-duration="500">
                                 <p class="form__desc text-s">UAE, Dubai</p>
                                 <p class="form__desc text-s">Dubai Investment Park First</p>
                                 <p class="form__desc text-s">BAYAN BUSINESS CENTER 108-156</p>
                             </div>
-                            <ul class="soc-list">
+                            <ul class="soc-list" data-aos="fade-in" data-aos-duration="500">
                                 <li class="soc-el">
                                     <a class="soc-el__link" href="https://www.instagram.com/pharmbonus">
                                         <img src="/img/base/lin-gr.svg" alt="">
@@ -128,7 +129,7 @@
                         </div>
                     </div>
                     <div class="col50 col50--right">
-                        <form class="form__inner js-form" name="contact-form">
+                        <form class="form__inner js-form" name="contact-form" data-aos="fade-in" data-aos-duration="500">
                             <div class="form-control">
                                 <input class="form__input input-text" type="text" name="name"
                                        id="name"/>
@@ -186,7 +187,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer footer--black">
+    <footer class="footer footer--black" data-aos="fade-in" data-aos-duration="500">
         <div class="footer__row">
             <div class="container">
                 <div class="footer__row footer--top">
@@ -378,7 +379,7 @@
             </div>
         </div>
     </div>
-    <div class="overlay-cookies js-modal-cookies" data-md="modal-cookies">
+    <div class="overlay-cookies js-overlay-cookies js-modal-cookies" data-md="modal-cookies">
         <div class="overlay-cookies__content">
             <img src="/img/base/cookie.svg" alt="">
             <p class="overlay-cookies__text">Our site uses <a class="js-modal-link" data-link="modal-cookies"
@@ -389,5 +390,6 @@
         </div>
     </div>
     <script src="js/basic-init.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
