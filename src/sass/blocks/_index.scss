@@ -225,20 +225,17 @@
 }
 
 .col50__img-wrap {
-    height: 95vh;
-    //min-height: 300px;
-    //max-height: 590px;
+    height: 90vh;
     @include sm {
+        height: 95vh;
         min-height: 400px;
         max-height: 650px;
     }
 }
 
-//.index-s6 .col50__img-wrap {
-//    height: 90vh;
-//    min-height: 400px;
-//    max-height: 565px;
-//}
+.index-s1 .col50__img-wrap {
+
+}
 
 .index-s1 .col50.col50--left {
     margin-bottom: 90px;
@@ -266,20 +263,6 @@
 .pb-160-m {
     padding-bottom: 160px;
 }
-
-//.index-s6 .col50__img.col50__img--385 {
-//    //max-width: 280px;
-//    width: 100%;
-//    height: 100%;
-//    margin-bottom: 40px;
-//
-//    @include sm {
-//        margin-bottom: 0;
-//        //max-width: 400px;
-//    }
-//}
-//.index-s6 .col50.col50--right.bg-s-mob,
-
 
 .index-s4 .col50.col50--right.bg-s-mob {
     @include sm-down {
@@ -370,9 +353,7 @@
 }
 
 .index-s7 .col50__img-wrap {
-    height: 95vh;
-    //min-height: 400px;
-    //max-height: 650px;
+    height: 90vh;
 
     @include sm {
         height: auto;
@@ -438,7 +419,6 @@
 
 .index-s8 .col50__link {
     display: none;
-    //display: inline-block;
     margin-top: 8px;
 }
 
@@ -501,14 +481,9 @@
 }
 
 .col50__img.col50__img--340 {
-   // max-width: 300px;
     width: 100%;
     height: 100%;
     display: block;
-
-    @include md {
-      //  max-width: 340px;
-    }
 }
 
 .partner-s1 .col50.col50--right,
@@ -540,26 +515,6 @@
         padding: 60px 0 169px;
     }
 }
-//
-//a.col50__link {
-//    display: none;
-//
-//    @include sm {
-//        color: $blue;
-//        @include font-base($fw: 400,$fz: 18px,$lh: 22px);
-//        font-family: 'Inter', 'Arial', sans-serif;
-//        margin-top: 20px;
-//        display: inline-block;
-//    }
-//}
-
-//a.col50__link.col50__link--mob {
-//    color: $blue;
-//    @include font-base($fw: 400,$fz: 18px,$lh: 22px);
-//    font-family: 'Inter', 'Arial', sans-serif;
-//    margin-top: 20px;
-//    display: inline-block;
-//}
 
 .index-s9 .col50.col50--left {
     @include sm-down {

@@ -1,23 +1,6 @@
 .partner-s1 {
-    //background-repeat: no-repeat;
-    //background-image: url("/img/base/bg2x-mob.png");
-    //background-size: cover;
-    //background-position: unset;
     width: 100%;
     position: relative;
-    //height: 706px;
-
-    //@include sm-down {
-    //    display: flex;
-    //    align-items: flex-end;
-    //}
-
-    @include sm {
-        //height: 820px;
-        //background-image: url("/img/base/bg-2x.png");
-        //background-size: cover;
-        //background-position: center center;
-    }
 }
 
 .partner-s__bg.partner-s__bg--desk{
@@ -25,7 +8,6 @@
 
     @include sm {
         display: block;
-        //width: 100%;
         width: 100vw;
         height: auto;
         object-fit: cover;
@@ -120,13 +102,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    //padding: 0 0 56px;
     height: 100%;
 
     @include sm {
         max-width: 582px;
         width: 100%;
-        //padding: 246px 0;
     }
 
     @include sm-down {
@@ -198,10 +178,6 @@
     border-color: transparent;
     border-style: solid;
 }
-
-//.partner-s1 {
-//    padding-top: 70px;
-//}
 
 .partner-s1.index-s1 {
     margin-bottom: 60px;
@@ -377,14 +353,7 @@
     width: 100%;
     display: block;
     max-width: 100%;
-    //max-width: 340px;
     height: 100%;
-    //height: 461px;
-    //
-    //@include md {
-    //    max-width: 544px;
-    //    height: 739px;
-    //}
 }
 
 .partner-s .icon-grid__content {

@@ -54,10 +54,6 @@
     }
 }
 
-//.contact-s1 .form__content-bottom.form__content-bottom--mob .form__desc.text-s {
-//    font-size: 14px;
-//}
-
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__desc.text-s {
     @include md-down() {
         font-size: 14px;

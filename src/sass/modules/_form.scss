@@ -120,7 +120,6 @@
     }
 
     @include md {
-        //padding-left: 60px;
         margin-bottom: 100px;
     }
 
@@ -200,8 +199,6 @@
     margin-bottom: 10px;
 }
 
-//
-
 .invalid {
     border: 1px solid red;
 }
@@ -229,7 +226,6 @@
     }
 }
 
-//
 .form-control,
 .mdl-textfield {
     position: relative;
