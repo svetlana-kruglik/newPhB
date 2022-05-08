@@ -250,9 +250,12 @@
 }
 
 .col50__image {
-    height: 95vh;
-    min-height: 540px;
-    max-height: 740px;
+    height: 70vh;
+
+    @include sm {
+        min-height: 540px;
+        max-height: 740px;
+    }
 }
 
 .partner-s2 .col50.col50--right {

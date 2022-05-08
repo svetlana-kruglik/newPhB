@@ -132,6 +132,13 @@
     background-image: url("/img/base/bg.png");
 }
 
+.index-s6 .bg-s-mob {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("/img/base/bg6-mob.png");
+}
+
 .img-grid {
     display: grid;
     grid-gap: 40px;
@@ -160,11 +167,17 @@
 
 .img-grid__el img {
     height: auto;
-    max-width: 120px;
+    max-width: 160px;
     width: 100%;
 
     @include sm {
         max-width: 200px;
+    }
+}
+
+.img-grid__el:nth-child(7) img {
+    @include sm {
+        max-width: 150px;
     }
 }
 
@@ -182,9 +195,13 @@
 }
 
 .col50__img-wrap {
-    height: 90vh;
-    min-height: 400px;
-    max-height: 650px;
+    height: 95vh;
+    //min-height: 300px;
+    //max-height: 590px;
+    @include sm {
+        min-height: 400px;
+        max-height: 650px;
+    }
 }
 
 //.index-s6 .col50__img-wrap {
@@ -235,7 +252,16 @@
 .index-s5 .col50.col50--right.bg-s-mob {
     padding: 160px 0;
     @include sm-down {
-        padding: 100px 0 260px;
+        padding: 100px 0 145px;
+    }
+}
+
+.index-s4 .col50.col50--right.bg-s-mob {
+    @include sm-down {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 }
 
@@ -256,7 +282,7 @@
 }
 
 .index-s5 .col50__img.col50__img--385 {
-    width: 80%;
+    width: 100%;
     height: auto;
 
     @include md {
@@ -270,8 +296,8 @@
 }
 
 .index-s7 {
-    background: linear-gradient( left top, #FF4545 -4.03%, #FF457D 113.72%, #FF45B5 113.72%);
-    padding: 70px 0 84px;
+    background: linear-gradient( to bottom, #FF4545 -4.03%, #FF457D 113.72%, #FF45B5 113.72%);
+    padding: 80px 0 78px;
     position: relative;
 
     @include sm {
@@ -310,10 +336,10 @@
     }
 }
 
-.index-s7 .xxx {
-    height: 90vh;
-    min-height: 400px;
-    max-height: 650px;
+.index-s7 .col50__img-wrap {
+    height: 95vh;
+    //min-height: 400px;
+    //max-height: 650px;
 
     @include sm {
         height: auto;
@@ -384,7 +410,7 @@
 }
 
 .index-s9 {
-    background: linear-gradient(left top, #0379F7 -1.01%, #0379F7 31.88%, #03C2F7 86.86%, rgba(3, 247, 227, 0.6) 110.55%);
+    background: linear-gradient(to bottom, #0379F7 -1.01%, #0379F7 31.88%, #03C2F7 86.86%, rgba(3, 247, 227, 0.6) 110.55%);
     padding: 80px 0 0;
     position: relative;
 

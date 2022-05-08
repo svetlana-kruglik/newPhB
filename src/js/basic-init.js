@@ -4,7 +4,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     AOS.init({disable: 'phone'});
 
-    //
+    // hide cookie box
+    const storageType = localStorage;
+    const consentPropertyType = 'hide-window';
+    const shouldShowPopUp = () => !storageType.getItem(consentPropertyType);
+    const saveToStorage = () => !storageType.setItem(consentPropertyType, true);
+
+
+    const popUps = document.querySelectorAll('.js-overlay-cookies');
+    popUps.forEach(el => {
+        if (shouldShowPopUp()) {
+            el.classList.add('open');
+        }
+        let btn = el.querySelector('.js-close-modal');
+        btn.addEventListener('click', ()=> {
+            saveToStorage();
+            el.classList.remove('open');
+        })
+    })
+
+    // align cookies to container coordinates
     let container = document.querySelectorAll('.js-container');
 
     if (smBpUp.matches) {
@@ -12,10 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             let bodyParent = el.closest('.js-body');
             let pathBody = bodyParent.dataset.body;
             let modalCookie = document.querySelector(`[data-md='${pathBody}']`);
-
             function getCoords(elem) {
                 let box = elem.getBoundingClientRect();
-
                 return {
                     left: (box.left + 40) + window.pageXOffset
                 };
@@ -33,14 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll
     scrollTo();
-
     function scrollTo() {
         const links = document.querySelectorAll('.js-menu-hash-item');
         links.forEach(each => (each.onclick = scrollAnchors));
     }
-
     function scrollAnchors(e, respond = null) {
-        const links = document.querySelectorAll('.sv__page-menu-content-item');
         const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
         e.preventDefault();
         const targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
@@ -61,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 100);
     }
 
-    //
+    // adding a shadow to the header on scroll
     let header = document.querySelectorAll('.header');
     document.addEventListener('scroll', () => {
         header.forEach(el => {
@@ -80,18 +94,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     inptElems.forEach(inp => {
         inp.addEventListener('focusin', addedTopLabel);
-        function addedTopLabel() {
-            let parent = this.closest('.form-control');
-            let labelForm = parent.querySelector('.form__label');
-            if (!labelForm.classList.contains('label-top')) {
-                labelForm.classList.add('label-top');
-            }
-        }
     });
 
+    textareaElems.forEach(textarea => {
+        textarea.addEventListener('focusin', addedTopLabel);
+    });
+
+    function addedTopLabel() {
+        let parent = this.closest('.form-control');
+        let labelForm = parent.querySelector('.form__label');
+        if (!labelForm.classList.contains('label-top')) {
+            labelForm.classList.add('label-top');
+        }
+    }
+
     inptElems.forEach(inp => {
-        inp.addEventListener('focusout', addedTopLabel);
-        function addedTopLabel() {
+        inp.addEventListener('focusout', removeTopLabel);
+        function removeTopLabel() {
             let parent = this.closest('.form-control');
             let inputForm = parent.querySelector('.form__input');
             let labelForm = parent.querySelector('.form__label');
@@ -101,20 +120,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    textareaElems.forEach(textarea => {
-        textarea.addEventListener('focusin', addedTopLabel);
-        function addedTopLabel() {
-            let parent = this.closest('.form-control');
-            let labelForm = parent.querySelector('.form__label');
-            if (!labelForm.classList.contains('label-top')) {
-                labelForm.classList.add('label-top');
-            }
-        }
-    });
-
     textareaElems.forEach(inp => {
-        inp.addEventListener('focusout', addedTopLabel);
-        function addedTopLabel() {
+        inp.addEventListener('focusout', removeTopLabel);
+        function removeTopLabel() {
             let parent = this.closest('.form-control');
             let textareaForm = parent.querySelector('.form__textarea');
             let labelForm = parent.querySelector('.form__label');
@@ -213,6 +221,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 currentCloseBtn.classList.add('active');
             }
         }
+
+        document.addEventListener('click', function handleClickOutsideBox(event) {
+            const selects = document.querySelectorAll('.js-select');
+            selects.forEach(el => {
+                if (!el.contains(event.target)) {
+                    el.classList.remove('is-active');
+                }
+            })
+        });
+
         function selectChose() {
             let select = this.closest('.js-select');
             let currentText = select.querySelector('.js-select__current');
@@ -231,7 +249,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let elems = document.querySelectorAll('.js-toggle-btn');
 
     function selectIcons() {
-
         elems.forEach((item) => {
             item.addEventListener('click', toggleClass)
         });
@@ -249,6 +266,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     selectIcons();
 
+    let btnStore = document.querySelector('.js-btn-store');
+    let appLink = 'https://apps.apple.com/ru/app/pharmbonus/id1062954210';
+    let gpLink = 'https://play.google.com/store/apps/details?id=com.pharmbonus.by&amp;hl=ru&amp;gl=US';
+    let platform = navigator.userAgent;
+
+    btnStore.addEventListener('click', (e) => {
+        e.preventDefault();
+        // if (){
+        //
+        //     //btnStore.setAttribute('href', appLink);
+        // }
+    })
+
     // validate
     const isValidEmail = (email) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -256,10 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const form = Array.from(document.querySelectorAll("form[name='contact-form']"));
-    //const nameInput = document.querySelector("input[name='name']");
-    //const nameCompanyInput = document.querySelector("input[name='company-name']");
     const emailInput = document.querySelector("input[name='email']");
-    //const messageInput = document.querySelector("textarea[name='message']");
     const modalMd = document.querySelector('.modal');
 
     if (!form.length) {
@@ -268,7 +295,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let isFormValid = false;
     let isValidation = false;
-
     const inputs = [emailInput];
 
     const resetElm = (elm) => {
@@ -285,29 +311,11 @@ document.addEventListener('DOMContentLoaded', () => {
         isFormValid = true;
         inputs.forEach(resetElm);
 
-        // if (!nameInput.value) {
-        //     isFormValid = false;
-        //     invalidateElm(nameInput);
-        //     openModalMd();
-        // }
-        //
-        // if (!nameCompanyInput.value) {
-        //     isFormValid = false;
-        //     invalidateElm(nameCompanyInput);
-        //     openModalMd();
-        // }
-
         if (!isValidEmail(emailInput.value)) {
             isFormValid = false;
             invalidateElm(emailInput);
             openModalMd();
         }
-
-        // if (!messageInput.value) {
-        //     isFormValid = false;
-        //     invalidateElm(messageInput);
-        //     openModalMd();
-        // }
     }
 
     form.forEach((el)=> {

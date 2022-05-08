@@ -1,4 +1,5 @@
 .overlay-cookies {
+    display: none;
     position: fixed;
     background-color: $white;
     bottom: 16px;
@@ -19,6 +20,9 @@
     @include sm-down {
         left: 10px;
     }
+}
+.overlay-cookies.open {
+    display: block;
 }
 
 .overlay-cookies a {
