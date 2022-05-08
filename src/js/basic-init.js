@@ -269,17 +269,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let btnStore = document.querySelector('.js-btn-store');
     let appLink = 'https://apps.apple.com/ru/app/pharmbonus/id1062954210';
     let gpLink = 'https://play.google.com/store/apps/details?id=com.pharmbonus.by&amp;hl=ru&amp;gl=US';
-    let platform = navigator.userAgent;
 
-    btnStore.addEventListener('click', (e) => {
-        e.preventDefault();
-        // if (){
-        //
-        //     //btnStore.setAttribute('href', appLink);
-        // }
-    })
+    if (btnStore) {
+        if (!/(Android)/i.test(navigator.platform)) {
+            btnStore.setAttribute('href', appLink);
+        } else {
+            btnStore.setAttribute('href', gpLink);
+        }
+    }
 
-    // validate
+        // validate
     const isValidEmail = (email) => {
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());

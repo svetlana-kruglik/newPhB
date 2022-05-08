@@ -132,11 +132,41 @@
     background-image: url("/img/base/bg.png");
 }
 
+.index-s1 .bg-s-mob {
+    background-image: url("/img/base/bgr1.png");
+}
+
+.index-s2 .bg-s-mob {
+    background-image: url("/img/base/bgr2.png");
+}
+
+.index-s2 {
+    padding-bottom: 140px;
+}
+
+.index-s3 .bg-s-mob {
+    background-image: url("/img/base/bgr3.png");
+    background-size: cover;
+    padding: 20px 0;
+}
+
+.index-s4 .bg-s-mob {
+
+    @include sm-down {
+        margin-bottom: 160px;
+        padding-bottom: 40px;
+        background-size: cover;
+    }
+}
+
 .index-s6 .bg-s-mob {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url("/img/base/bg6-mob.png");
+    @include sm-down {
+        background-size: cover;
+    }
 }
 
 .img-grid {
@@ -249,12 +279,7 @@
 //    }
 //}
 //.index-s6 .col50.col50--right.bg-s-mob,
-.index-s5 .col50.col50--right.bg-s-mob {
-    padding: 160px 0;
-    @include sm-down {
-        padding: 100px 0 145px;
-    }
-}
+
 
 .index-s4 .col50.col50--right.bg-s-mob {
     @include sm-down {
@@ -266,11 +291,19 @@
 }
 
 .index-s5 .bg-s-mob {
-
+    background-position: clamp(40%, 3vh, 110%);
+    background-size: contain;
+    background-image: url("/img/base/bg-s5.png");
     @include sm-down {
-        background-image: url("/img/base/bg-s5.png");
         background-position: top;
         background-size: 100%;
+    }
+}
+
+.index-s5 .col50.col50--right.bg-s-mob {
+    padding: 70px 0;
+    @include sm-down {
+        padding: 100px 0 145px;
     }
 }
 

@@ -167,12 +167,6 @@ a.link-phone {
     }
 }
 
-.footer .nav__list.nav__list--soc .nav-item:not(:last-child) .nav-item__img {
-    @include sm-down {
-        margin-right: 8px;
-    }
-}
-
 .nav-item__link {
     display: flex;
     align-items: center;
@@ -246,13 +240,23 @@ a.nav-item__link:hover {
     text-align: center;
 }
 
-.nav-item--social .nav-item__img {
-    width: 24px;
-    height: 24px;
-}
-
 .grid-item__title--soc {
     @include sm-down {
        display: none;
     }
+}
+
+.overlay-modal .nav__item.nav-item.nav-item--social {
+    width: 40px;
+    height: 40px;
+}
+
+.nav-item--social .nav-item__img {
+    width: 40px;
+    height: 40px;
+}
+
+.overlay-modal .nav-item__img {
+    width: 40px;
+    height: 40px;
 }
