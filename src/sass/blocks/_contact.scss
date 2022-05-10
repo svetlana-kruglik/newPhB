@@ -13,7 +13,7 @@
 .contact-s1 .form__content-bottom.form__content-bottom--mob {
     display: block;
     max-width: 100%;
-    margin: 30px auto 0;
+    margin: 48px auto 0;
     text-align: start;
 
     @include md {
@@ -87,22 +87,43 @@
     }
 }
 
-.form__btns .btn-rect.btn-green {
-    background-color: $green-extra;
-    color: $white;
+.form .form__btns .btn-rect.btn-white-green {
+    background-color: $white;
+    color: $green-extra;
     font-weight: 600;
     display: none;
+    max-width: 162px;
+    margin-top: 0;
+}
+
+
+.form .form__btns .btn-rect.btn-black-green {
+    background-color: transparent;
+    color: $green-extra;
+    font-weight: 600;
+    display: none;
+    max-width: 162px;
+    margin-top: 0;
+}
+
+.form .form__btns .btn-rect {
+    margin-top: 16px;
+    @include sm {
+        margin-top: 0;
+        margin-left: 0;
+    }
 }
 
 .form__btns .btn-rect.btn-transparent {
-    background-color: $white;
-    color: $blue;
+    background-color: transparent;
+    color: $gray-tx;
     font-weight: 400;
     display: none;
 }
 
 .form__btns .btn-rect.btn-transparent.visible,
-.form__btns .btn-rect.btn-green.visible {
+.form__btns .btn-rect.btn-white-green.visible,
+.form__btns .btn-rect.btn-black-green.visible{
     display: flex;
 }
 
@@ -112,10 +133,6 @@
 
 .form__btns .btn-rect.btn-blue {
     display: flex;
-}
-
-.form__btns .btn-rect.btn-transparent {
-    margin-left: 16px;
 }
 
 .footer.footer--black {

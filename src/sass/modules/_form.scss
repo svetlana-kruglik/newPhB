@@ -189,14 +189,14 @@
 .form__input {
     padding: 10px 20px;
     height: 64px;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 .form__textarea {
     padding: 25px 20px;
     height: 135px;
     resize: none;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 .invalid {
@@ -221,7 +221,7 @@
 
     @include sm {
         flex-direction: row;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
     }
 }

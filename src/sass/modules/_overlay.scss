@@ -167,7 +167,8 @@
     @include font-base($fw: 600,$fz: 18px,$lh: 40px);
 }
 
-.overlay-modal .grid-item__title {
+.overlay-modal .grid-item__title,
+.overlay-modal a.grid-item__title {
     margin-bottom: 16px;
 }
 

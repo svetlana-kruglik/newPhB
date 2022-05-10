@@ -2,7 +2,7 @@ const smBpUp = window.matchMedia("(min-width: 768px)");
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    AOS.init({disable: 'phone'});
+    AOS.init({disable: 'phone',once: true});
 
     // hide cookie box
     const storageType = localStorage;
