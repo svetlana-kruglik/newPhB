@@ -22,7 +22,8 @@ body {
     padding-top: 70px;
 
     @include sm {
-        padding-top: 24px;
+        //padding-top: 24px;
+        padding-top: 1px;
     }
 }
 
@@ -90,13 +91,9 @@ li {
 }
 
 .h1 {
-    @include font-base($fw: 700,$fz: 32px,$lh: 38px);
+    @include font-base($fw: 700,$fz: clamp(32px, 3.5vw, 48px), $lh: clamp(38px, 3.5vw, 57px));
     color: $black;
     font-family: 'Rubik', 'Arial', sans-serif;
-
-    @include sm {
-        @include font-base($fz: 48px,$lh: 57px);
-    }
 }
 
 .text-x {
@@ -113,11 +110,10 @@ li {
 
 .text-s {
     color: $gray-tx;
-    @include font-base($fw: 400,$fz: 18px,$lh: 22px);
+    @include font-base($fw: 400,$fz: clamp(16px, 4vw, 18px),$lh: 22px);
     font-family: 'Inter', 'Arial', sans-serif;
 }
 
-//footer
 .text-m {
     color: $black;
     @include font-base($fw: 400,$fz: 16px,$lh: 1.15);

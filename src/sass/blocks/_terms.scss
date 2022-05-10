@@ -14,7 +14,7 @@
     letter-spacing: 0.01em;
     color: #010101;
     width: 100%;
-    max-width: 477px;
+    max-width: 360px;
     @include font-base($fw: 600,$fz: 48px,$lh: 57px);
     font-family: 'Rubik', 'Arial', sans-serif;
 }
@@ -191,6 +191,11 @@
     }
 }
 
+.select-wrapper.select-wrapper--mob .select__item span.active {
+    color: $black;
+    font-weight: 600;
+}
+
 .select-wrapper--mob .select__header{
     border: 1px solid rgba(153, 156, 160, 0.2);
     box-sizing: border-box;
@@ -224,10 +229,10 @@
 
 .select__item.active {
     font-weight: 600;
+    color: $black;
 }
 
-.overlay-modal .select__item.active,
-.header .select__item.active {
+.overlay-modal .select__item.active{
     font-weight: 600;
     color: $black;
 }

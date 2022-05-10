@@ -53,7 +53,7 @@
 
 .index-s1 .btn-wrap,
 .index-s7 .btn-wrap {
-    margin-top: 25px;
+    margin-top: clamp(20px, 3vh, 25px);
 }
 
 .overtitle {
@@ -214,7 +214,7 @@
 .index-s1 {
     padding-top: 70px;
     @include sm {
-        padding-top: 120px;
+        padding-top: clamp(20px, 2vh, 90px);
     }
 }
 
@@ -226,15 +226,19 @@
 
 .col50__img-wrap {
     height: 90vh;
+
     @include sm {
-        height: 95vh;
-        min-height: 400px;
+        height: 73vh;
+        min-height: 360px;
         max-height: 650px;
     }
 }
 
-.index-s1 .col50__img-wrap {
 
+.index-s6 .col50__img-wrap {
+    @include sm-down {
+        height: 85vh;
+    }
 }
 
 .index-s1 .col50.col50--left {
@@ -247,7 +251,7 @@
 
 .index-s2 .col50.col50--left,
 .index-s6 .col50.col50--left {
-    margin-bottom: 42px;
+    margin-bottom: 44px;
 
     @include sm {
         margin-bottom: 0;
@@ -377,6 +381,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 600;
 
     @include sm {
         display: none;
@@ -405,6 +410,10 @@
 
 .col50__link img {
     margin-left: 10px;
+}
+
+.col50__link.col50__link--mob .col50__link img {
+    margin-left: 13px;
 }
 
 .index-s9 .col50__desc.text-s,

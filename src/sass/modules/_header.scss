@@ -27,8 +27,12 @@
     padding: 16px 0;
 
     @include sm {
-        padding: 32px 0;
+        padding: clamp(20px, 1vh, 32px) 0;
     }
+}
+
+.index-s1 .btn-rect:last-child {
+    margin-right: 0;
 }
 
 .header__col {

@@ -248,13 +248,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let elems = document.querySelectorAll('.js-toggle-btn');
 
-    function selectIcons() {
+    function selectActive() {
         elems.forEach((item) => {
             item.addEventListener('click', toggleClass)
         });
 
         function toggleClass(e) {
             e.preventDefault();
+            console.log(this);
             this.classList.add('active');
             for (let k = 0; elems.length > k; k++) {
                 let item = elems[k];
@@ -264,8 +265,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    selectIcons();
+    selectActive();
 
+    // Add class active
+    let elemLinks = document.querySelectorAll('.js-toggle-link');
+
+    elemLinks.forEach((link) => {
+        link.addEventListener('click', toggleActiveClass)
+    });
+
+    function toggleActiveClass(e) {
+        e.preventDefault();
+        if (!this.closest('active')) {
+            this.classList.add('active');
+            for (let k = 0; elemLinks.length > k; k++) {
+                let link = elemLinks[k];
+                if (link !== this && link.classList.contains('active')) {
+                    link.classList.remove('active')
+                }
+            }
+        }
+    }
+
+    // change url for link
     let btnStore = document.querySelector('.js-btn-store');
     let appLink = 'https://apps.apple.com/ru/app/pharmbonus/id1062954210';
     let gpLink = 'https://play.google.com/store/apps/details?id=com.pharmbonus.by&amp;hl=ru&amp;gl=US';
