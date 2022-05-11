@@ -440,7 +440,7 @@
 
     @include sm {
         background: linear-gradient(94.86deg, #0379F7 -1.01%, #0379F7 31.88%, #03C2F7 86.86%, rgba(3, 247, 227, 0.6) 110.55%), linear-gradient(93.16deg, #FF4545 -4.03%, #FF457D 36.38%, #FF45B5 63.57%, #E240D2 96.24%, rgba(255, 69, 125, 0) 113.72%);
-        padding: 155px 0;
+        padding: clamp(100px, 4vh, 150px);
     }
 }
 
@@ -467,15 +467,20 @@
 .index-s7 .col50.col50--right.bg-s-mob {
     position: relative;
 }
+
 .index-s9 .col50__img.col50__img--340 {
     display: block;
-    max-width: 257px;
+
     height: 376px;
     width: 100%;
+    @include sm-down {
+        max-width: 257px;
+    }
 
     @include sm {
-        max-width: 480px;
-        height: 700px;
+        height: 100vh;
+        max-height: 650px;
+        width: auto;
         position: absolute;
         bottom: 0;
         z-index: 10;
