@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     btnSubmit.classList.remove('visible');
                     btnSubmitNew.classList.remove('visible');
                     btnSubmitRep.classList.remove('visible');
-                })
+                });
             }
         })
     })

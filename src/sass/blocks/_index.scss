@@ -326,7 +326,7 @@
     }
 
     @include md {
-        padding: 150px 0 158px;
+        padding: clamp(100px, 4vh, 160px);
     }
 }
 
@@ -360,12 +360,11 @@
     height: 90vh;
 
     @include sm {
-        height: auto;
+        height: 90vh;
         position: absolute;
-        top: -60px;
+        top: 50%;
+        transform: translateY(-50%);
         z-index: 10;
-        max-width: 340px;
-        width: 100%;
     }
 }
 
@@ -465,8 +464,8 @@
     margin-bottom: 0;
 }
 
-.index-s7 .col50__img.col50__img--340 {
-
+.index-s7 .col50.col50--right.bg-s-mob {
+    position: relative;
 }
 .index-s9 .col50__img.col50__img--340 {
     display: block;
