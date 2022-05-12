@@ -2,6 +2,14 @@
     padding-bottom: 80px;
 
     @include sm {
+        padding-top: 50px;
+    }
+
+    @include lg {
+        padding-top: 100px;
+    }
+
+    @include xl {
         padding-top: 230px;
     }
 }

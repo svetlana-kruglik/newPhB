@@ -91,9 +91,12 @@ li {
 }
 
 .h1 {
-    @include font-base($fw: 700,$fz: clamp(32px, 3.5vw, 48px), $lh: clamp(38px, 3.5vw, 57px));
+    @include font-base($fw: 700,$fz: clamp(32px, 3vw, 48px), $lh: clamp(38px, 3vw, 57px));
     color: $black;
     font-family: 'Rubik', 'Arial', sans-serif;
+    @include md() {
+        @include font-base($fw: 700,$fz: clamp(32px, 3.5vw, 48px), $lh: clamp(38px, 3.5vw, 57px));
+    }
 }
 
 .text-x {
