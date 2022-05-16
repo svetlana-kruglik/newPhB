@@ -287,8 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    //
-
     // change url for link
     let btnStore = document.querySelector('.js-btn-store');
     let appLink = 'https://apps.apple.com/ru/app/pharmbonus/id1062954210';
