@@ -128,29 +128,26 @@
 }
 
 .col50__image {
-    height: auto;
-    display: flex;
-    justify-content: center;
+    min-height: 360px;
+    max-height: 740px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 96.25%;
 
-    @include sm {
-        width: clamp( 360px, 2vw, 460px);
-        max-height: 740px;
-    }
-
-    @include lg {
-        width: clamp( 360px, 2vw, 560px);
-    }
-
-    @include xl {
-        height: 95vh;
-        width: auto;
+    @include sm-down {
+        height: 87vh;
+        padding-top: 100%;
     }
 }
 
-.partner-s .col50__img.col50__img--544 {
+.col50__image .col50__img {
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
+    object-fit: contain;
     height: 100%;
-    display: block;
 }
 
 .partner-s .col50.col50--right {

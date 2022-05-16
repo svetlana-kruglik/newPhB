@@ -153,7 +153,7 @@
 .index-s4 .bg-s-mob {
 
     @include sm-down {
-        margin-bottom: 160px;
+        margin-bottom: 120px;
         padding-bottom: 40px;
         background-size: cover;
     }
@@ -225,35 +225,29 @@
 }
 
 .col50__img-wrap {
-    height: 90vh;
+    max-height: 650px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 76.25%;
+
+    @include sm-down {
+        height: 87vh;
+        padding-top: 100%;
+    }
 
     @include sm {
-        height: 75vh;
-        min-width: 200px;
-        max-width: 200px;
         min-height: 360px;
-        max-height: 650px;
     }
+}
 
-    @include md {
-        min-width: 220px;
-        max-width: 220px;
-    }
-
-    @include lgx {
-        min-width: 230px;
-        max-width: 230px;
-    }
-
-    @include lg {
-        height: 80vh;
-        min-width: 300px;
-        max-width: 300px;
-    }
-
-    @include xl {
-        max-width: 340px;
-    }
+.col50__img-wrap .col50__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
 }
 
 .index-s6 .col50__img-wrap {
@@ -302,6 +296,7 @@
     background-position: clamp(40%, 3vh, 110%);
     background-size: contain;
     background-image: url("/img/base/bg-s5.png");
+
     @include sm-down {
         background-position: top;
         background-size: 100%;
@@ -386,6 +381,7 @@
         top: 50%;
         transform: translateY(-50%);
         z-index: 10;
+        max-height: 640px;
     }
     @include lgx {
         min-width: 270px;
@@ -530,12 +526,6 @@
         margin-right: 0;
         max-width: 200px;
     }
-}
-
-.col50__img.col50__img--340 {
-    width: 100%;
-    height: 100%;
-    display: block;
 }
 
 .partner-s1 .col50.col50--right,
