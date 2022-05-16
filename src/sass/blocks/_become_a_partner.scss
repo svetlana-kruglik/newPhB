@@ -243,23 +243,53 @@
     }
 }
 
-.p-110 {
-    padding: 90px 0;
-
-    @include sm{
-        padding: 44px 0;
-    }
-}
-
 .partner-s2 .col50.col50--right {
     justify-content: center;
+}
+.partner-s2 {
+    width: 100%;
+    position: relative;
+    margin: 160px 0 88px;
+
+    @include sm {
+        margin: 220px 0;
+    }
 }
 
 .partner-s3 {
     background-color: $blue;
+    margin: 0 0 160px;
 
     @include sm {
         background-color: $white;
+        margin: 0 0 198px;
+    }
+    @include sm-down {
+        padding: 160px 0 84px;
+    }
+}
+.partner-s4 {
+    margin: 0 0 160px;
+
+    @include sm {
+        margin: 0 0 88px;
+    }
+}
+
+.partner-s5,
+.partner-s6 {
+    margin: 0 0 160px;
+
+    @include sm {
+        margin: 0 0 88px;
+    }
+}
+
+.partner-s7 {
+    margin: 0 0 160px;
+
+    @include sm {
+        margin: 0 0 192px;
     }
 }
 
@@ -413,7 +443,7 @@
     }
 }
 
-.form .col50.col50--left {
+.partner-s .col50.col50--left {
     margin-bottom: 0;
 }
 
