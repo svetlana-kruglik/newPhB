@@ -339,7 +339,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return isMobile || deviceOS;
     };
-    mobileAndTabletCheck();
+
+    if (btnStore) {
+        mobileAndTabletCheck();
+    }
 
         // validate
     const isValidEmail = (email) => {
