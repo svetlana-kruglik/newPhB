@@ -5,10 +5,11 @@
     margin: 0 auto;
 }
 
-@mixin font-base($fw: 500,$fz: 40px,$lh: 20px) {
+@mixin font-base($fw: 500,$fz: 40px,$lh: 20px, $ls: 1px) {
     font-size: $fz;
     line-height: $lh;
     font-weight: $fw;
+    letter-spacing: $ls;
 }
 
 @mixin flex-column ($fl-dir: column, $a-start: flex-start, $j-start: center) {
@@ -85,8 +86,14 @@
     }
 }
 
-@mixin lg-inner {
-    @media screen and (min-width: #{$lg_width_inner}) {
+@mixin lx {
+    @media screen and (min-width: #{$lx_width}) {
+        @content;
+    }
+}
+
+@mixin lx-down {
+    @media screen and (max-width: #{$lx_width - 1}) {
         @content;
     }
 }
