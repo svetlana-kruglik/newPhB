@@ -1,15 +1,15 @@
 .row.form {
 
-    @include lx-down() {
+    @include md-down() {
         @include flex-column($fl-dir: column, $a-start: center, $j-start: flex-start);
     }
-    @include lx {
+    @include md {
         @include flex-row($a-start: flex-start);
     }
 }
 
 .form .soc-list {
-    @include lx-down() {
+    @include md-down() {
         justify-content: center;
     }
 }
@@ -19,19 +19,19 @@
 }
 
 .form .form__content-bottom.form__content-bottom--desk .soc-el:first-child {
-    @include lx {
+    @include md {
         margin-right: 10px;
     }
 }
 
 .form .form__content-bottom.form__content-bottom--mob .soc-el {
-    @include lx-down {
+    @include md-down {
         margin-right: 40px;
     }
 }
 
 .form .form__content-bottom.form__content-bottom--mob .soc-el:last-child {
-    @include lx-down {
+    @include md-down {
         margin-right: 0;
     }
 }
@@ -41,11 +41,11 @@
         max-width: 100%;
     }
 
-    @include lx {
+    @include md {
         max-width: 50%;
     }
 
-    @include lx-down() {
+    @include md-down() {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -57,12 +57,13 @@
     margin: 0;
     text-align: center;
 
-    @include sm {
+    @include md {
+        text-align: start;
+        max-width: 50%;
         margin: 0 auto;
     }
 
-    @include lx {
-        text-align: start;
+    @include lgx {
         max-width: 100%;
         margin: 0;
     }
@@ -71,7 +72,7 @@
 .form__content-bottom.form__content-bottom--desk {
     display: none;
 
-    @include lx {
+    @include md {
         display: block;
     }
 }
@@ -80,7 +81,7 @@
     display: block;
     margin: 40px auto 0;
 
-    @include lx {
+    @include md {
         display: none;
     }
 }
@@ -88,14 +89,10 @@
 .form .col50.col50--right {
     display: flex;
     flex-direction: column;
-
-    @include lx-down {
-        margin-top: 32px;
-    }
 }
 
 .form .col50 {
-    @include lx-down {
+    @include md-down {
         max-width: 100%;
     }
 }
@@ -105,7 +102,7 @@
     margin-top: 10px;
     max-width: 100%;
 
-    @include lx {
+    @include sm {
         width: 160px;
     }
 }
@@ -115,8 +112,15 @@
 }
 
 .form__content-top {
-    @include lx-down() {
+    margin-bottom: 20px;
+
+    @include md-down() {
         text-align: center;
+        margin-bottom: 40px;
+    }
+
+    @include md {
+        margin-bottom: 100px;
     }
 
     @include lgx {
@@ -126,13 +130,13 @@
 
 .form__title {
     margin-bottom: 16px;
-    @include lx {
+    @include md {
         margin-bottom: 8px;
     }
 }
 
 .form__content-bottom {
-    @include lx-down() {
+    @include sm-down() {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -215,7 +219,7 @@
     flex-direction: column;
     align-items: center;
 
-    @include lx {
+    @include sm {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;

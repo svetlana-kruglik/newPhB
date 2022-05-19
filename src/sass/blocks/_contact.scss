@@ -2,11 +2,15 @@
     padding-bottom: 80px;
 
     @include sm {
-        padding-top: calc(50px + (60 - 50) * ((100vw - 320px) / (1200 - 320)));
+        padding-top: 50px;
     }
 
     @include lg {
-        padding-top: calc(50px + (230 - 50) * ((100vw - 320px) / (1920 - 320)));
+        padding-top: 100px;
+    }
+
+    @include xl {
+        padding-top: 230px;
     }
 }
 
@@ -20,7 +24,7 @@
     margin: 48px auto 0;
     text-align: start;
 
-    @include lx {
+    @include md {
         display: none;
     }
 }
@@ -36,13 +40,13 @@
 
 .contact-s1 .form__content-bottom.form__content-bottom--mob .form__content-inner {
     text-align: center;
-    @include lx {
+    @include md {
         text-align: start;
     }
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__content-inner{
-    @include lx-down() {
+    @include sm-down() {
         max-width: 100%;
         margin: 30px 0 0;
     }
@@ -53,13 +57,13 @@
         text-align: center;
     }
 
-    @include lx {
+    @include md {
         text-align: start;
     }
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__desc.text-s {
-    @include lx-down() {
+    @include md-down() {
         font-size: 14px;
     }
 }
@@ -75,18 +79,18 @@
 
 .contact-s1 .form__content-bottom.form__content-bottom--mob .soc-list {
     justify-content: flex-start;
-    @include lx-down() {
+    @include md-down() {
         justify-content: center;
     }
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .soc-list {
 
-    @include sm {
+    @include sm() {
         margin-bottom: 20px;
     }
 
-    @include lx {
+    @include md() {
         margin-bottom: 0;
     }
 }
@@ -112,7 +116,7 @@
 
 .form .form__btns .btn-rect {
     margin-top: 16px;
-    @include lx {
+    @include sm {
         margin-top: 0;
         margin-left: 0;
     }

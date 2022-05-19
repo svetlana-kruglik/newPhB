@@ -1,48 +1,28 @@
 .partner-s1 {
     width: 100%;
     position: relative;
-    max-height: 820px;
-    height: 100%;
 }
 
-.partner-s__bg {
-    position: relative;
-    overflow: hidden;
-    padding-top: 40.25%;
-    width: 100%;
-    height: 100%;
-    display: block;
-    min-height: 700px;
-    max-height: 820px;
-    @include sm {
-        padding-top: 40.25%;
-    }
-}
-
-.partner-s__bg img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-    height: 100%;
-
-    @include lg-down {
-        object-position: clamp(90%, 5vw, 164%);
-    }
-}
-
-.partner-s__bg img.partner-s__bg-desk {
+.partner-s__bg.partner-s__bg--desk{
     display: none;
 
     @include sm {
-      display: block;
+        display: block;
+        width: 100vw;
+        height: auto;
+        object-fit: cover;
+        z-index: 1;
+        position: relative;
     }
 }
 
-.partner-s__bg .partner-s__bg-mob {
+.partner-s__bg.partner-s__bg--mob {
     display: block;
+    width: 100vw;
+    height: auto;
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
 
     @include sm {
         display: none;
@@ -52,7 +32,7 @@
 .partner-s2 .row.row--reverse {
     flex-direction: column-reverse;
 
-    @include lx {
+    @include sm {
         flex-direction: row-reverse;
     }
 }
@@ -63,7 +43,7 @@
     height: auto;
     max-width: 160px;
 
-    @include lx {
+    @include sm {
         max-width: 370px;
     }
 }
@@ -94,7 +74,7 @@
     margin-right: 0;
     margin-bottom: 40px;
 
-    @include lx {
+    @include sm {
         margin-bottom: 0;
         max-width: 219px;
     }
@@ -104,7 +84,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include lx {
+    @include sm {
         justify-content: flex-start;
     }
 }
@@ -118,7 +98,7 @@
     left: 0;
     display: flex;
 
-    @include lx {
+    @include sm {
         height: 100%;
         align-items: center;
         justify-content: center;
@@ -135,12 +115,12 @@
     align-items: center;
     height: 100%;
 
-    @include lx {
+    @include sm {
         max-width: 582px;
         width: 100%;
     }
 
-    @include lx-down {
+    @include sm-down {
         vertical-align: bottom;
         margin: auto 0 0;
         text-align: center;
@@ -155,7 +135,7 @@
     overflow: hidden;
     padding-top: 96.25%;
 
-    @include lx-down {
+    @include sm-down {
         height: 87vh;
         padding-top: 100%;
     }
@@ -171,7 +151,7 @@
 }
 
 .partner-s .col50.col50--right {
-    @include lx-down {
+    @include sm-down {
       justify-content: center;
     }
 }
@@ -184,7 +164,7 @@
 }
 
 .partner-s .row .col50.col50--left {
-    @include lx-down {
+    @include sm-down {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -192,7 +172,7 @@
 }
 
 .partner-s .row .col50.col50--right {
-    @include lx-down {
+    @include sm-down {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -233,19 +213,19 @@
 }
 
 .partner-s .row.row--reverse {
-    @include lx-down() {
+    @include sm-down() {
         flex-direction: column-reverse;
     }
 }
 
 .partner-s .row{
-    @include lx-down() {
+    @include sm-down() {
         flex-direction: column-reverse;
     }
 }
 
 .partner-s .col50.col50--left {
-    @include lx-down() {
+    @include sm-down() {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -255,7 +235,7 @@
 .partner-s1 .col50__desc {
     margin-bottom: 20px;
 
-    @include lx-down() {
+    @include sm-down() {
        text-align: center;
     }
 }
@@ -268,7 +248,7 @@
     position: relative;
     margin: 160px 0 88px;
 
-    @include lx {
+    @include sm {
         margin: 220px 0;
     }
 }
@@ -277,18 +257,18 @@
     background-color: $blue;
     margin: 0 0 160px;
 
-    @include lx {
+    @include sm {
         background-color: $white;
         margin: 0 0 198px;
     }
-    @include lx-down {
+    @include sm-down {
         padding: 160px 0 84px;
     }
 }
 .partner-s4 {
     margin: 0 0 160px;
 
-    @include lx {
+    @include sm {
         margin: 0 0 88px;
     }
 }
@@ -297,7 +277,7 @@
 .partner-s6 {
     margin: 0 0 160px;
 
-    @include lx {
+    @include sm {
         margin: 0 0 88px;
     }
 }
@@ -305,27 +285,27 @@
 .partner-s7 {
     margin: 0 0 160px;
 
-    @include lx {
+    @include sm {
         margin: 0 0 192px;
     }
 }
 
 .partner-s .partner-s3 .col50__title {
+    margin-bottom: 96px;
     max-width: 768px;
     text-align: center;
-    margin: 0 auto 96px;
 
-    @include lx {
+    @include sm {
        margin: 0 auto 68px;
     }
 
-    @include lx-down {
+    @include sm-down {
         color: $white;
     }
 }
 
 .partner-s .partner-s3 .col50__title.h1 {
-    @include lx-down {
+    @include sm-down {
         @include font-base($fz: 28px,$lh: 33px);
     }
 }
@@ -333,7 +313,7 @@
 .partner-s .col50__title {
     margin-bottom: 15px;
 
-    @include lx-down {
+    @include sm-down {
         max-width: 100%;
         text-align: center;
     }
@@ -344,7 +324,7 @@
     align-items: center;
     justify-content: center;
 
-    @include lx-down {
+    @include sm-down {
         margin-bottom: 76px;
     }
 }
@@ -354,7 +334,7 @@
     align-items: flex-start;
     flex-direction: row;
 
-    @include lx-down {
+    @include sm-down {
         flex-direction: column;
         align-items: center;
     }
@@ -365,7 +345,7 @@
     color: $black;
     font-family: 'Inter', 'Arial', sans-serif;
 
-    @include lx-down {
+    @include sm-down {
         color: $white;
     }
 }
@@ -375,7 +355,7 @@
     max-width: 389px;
     width: 100%;
 
-    @include lx-down {
+    @include sm-down {
         opacity: 60%;
         color: $white;
     }
@@ -386,7 +366,7 @@
     height: 64px;
     margin-bottom: 24px;
 
-    @include lx {
+    @include sm {
         margin-right: 10px;
         margin-bottom: 0;
     }
@@ -403,11 +383,11 @@
     grid-gap: 40px;
     grid-template-columns: 1fr;
 
-    @include lx {
+    @include sm {
         grid-template-columns: 1fr 1fr ;
     }
 
-    @include lx-down {
+    @include sm-down {
         max-width: 460px;
         margin: 0 auto;
     }
@@ -415,7 +395,7 @@
 
 .partner-s .icon-grid__content {
 
-    @include lx-down {
+    @include sm-down {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -427,7 +407,7 @@
     background-color: $black;
     padding: 160px 0;
 
-    @include lx {
+    @include sm {
         padding: 80px 0;
     }
 }
@@ -455,7 +435,7 @@
 
 .contact-s .row.form,
 .partner-s .partner-s8 .row.form {
-    @include lx-down {
+    @include sm-down {
         flex-direction: column;
     }
 }
