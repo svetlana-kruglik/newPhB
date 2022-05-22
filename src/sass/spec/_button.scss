@@ -36,13 +36,13 @@
     height: 54px;
 
     @include sm {
-        max-width: 164px;
+        max-width: 178px;
     }
 }
 
 .btn-wrap .btn-rect.btn-black:first-child {
-    @include sm {
-        margin-right: 24px;
+    @include md {
+        margin-right: 16px;
     }
 }
 

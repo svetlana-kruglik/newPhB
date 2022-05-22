@@ -24,7 +24,7 @@
     background-color: $white;
     z-index: 10000;
     position: sticky;
-    padding: 16px 0;
+    padding: 30px 0 24px;
 
     @include sm {
         padding: clamp(20px, 1vh, 32px) 0;

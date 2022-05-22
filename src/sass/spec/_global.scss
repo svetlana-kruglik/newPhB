@@ -19,10 +19,9 @@ body {
 
 .main {
     overflow: hidden;
-    padding-top: 70px;
+    padding-top: 95px;
 
     @include sm {
-        //padding-top: 24px;
         padding-top: 1px;
     }
 }
@@ -90,18 +89,35 @@ li {
     }
 }
 
+h1,
 .h1 {
-    @include font-base($fw: 700,$fz: clamp(32px, 3vw, 48px), $lh: clamp(38px, 3vw, 57px));
-    color: $black;
+   @include font-base($fw: 700,$fz: 32px, $lh: 38px);
+    letter-spacing: 1px;
+    color: $main-black;
     font-family: 'Rubik', 'Arial', sans-serif;
-    @include md() {
-        @include font-base($fw: 700,$fz: clamp(32px, 3.5vw, 48px), $lh: clamp(38px, 3.5vw, 57px));
+    @include sm {
+        @include font-base($fw: 700,$fz: 44px, $lh: 47px);
+    }
+
+    @include lgx {
+        @include font-base($fw: 700,$fz: 48px, $lh: 57px);
+    }
+}
+
+h2,
+.h2 {
+    @include font-base($fw: 600,$fz: 28px, $lh: 33px);
+    letter-spacing: 1px;
+    color: $main-black;
+    font-family: 'Rubik', 'Arial', sans-serif;
+    @include sm {
+        @include font-base($fw: 600,$fz: 40px, $lh: 47px);
     }
 }
 
 .text-x {
     color: $gray-tx;
-    @include font-base($fw: 400,$fz: 13px,$lh: 1.55);
+    @include font-base($fw: 400,$fz: 13px,$lh: 16px);
     font-family: 'Inter', 'Arial', sans-serif;
 }
 
@@ -113,8 +129,12 @@ li {
 
 .text-s {
     color: $gray-tx;
-    @include font-base($fw: 400,$fz: clamp(16px, 4vw, 18px),$lh: 22px);
+    @include font-base($fw: 400,$fz: 16px ,$lh: 22px);
     font-family: 'Inter', 'Arial', sans-serif;
+    @include sm {
+        font-size: 18px;
+        line-height: 22px;
+    }
 }
 
 .text-m {

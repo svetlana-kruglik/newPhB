@@ -1,18 +1,40 @@
 .partner-s1 {
     width: 100%;
     position: relative;
-}
-
-.partner-s__bg.partner-s__bg--desk{
-    display: none;
 
     @include sm {
+        max-height: 820px;
+        height: 100%;
+    }
+}
+
+.partner-s__bg1 {
+    position: relative;
+    overflow: hidden;
+    padding-top: 40.25%;
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    max-height: 820px;
+    display: none;
+    @include sm {
         display: block;
-        width: 100vw;
-        height: auto;
-        object-fit: cover;
-        z-index: 1;
-        position: relative;
+        padding-top: 40.25%;
+    }
+}
+
+.partner-s__bg1 .partner-s__bg-desk {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    max-height: 820px;
+
+    @include lg-down {
+        object-position: clamp(90%, 5vw, 164%);
     }
 }
 
@@ -55,6 +77,10 @@
     margin-right: auto;
 
     @include sm {
+        @include font-base($fz: 44px,$lh: 47px);
+    }
+
+    @include md {
         @include font-base($fz: 48px,$lh: 57px);
     }
 }
@@ -84,6 +110,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 258px;
+    height: 48px;
+
     @include sm {
         justify-content: flex-start;
     }
@@ -181,7 +211,11 @@
 }
 
 .list__el:not(:last-child) {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
+
+    @include sm {
+        margin-bottom: 18px;
+    }
 }
 
 .list__el {
