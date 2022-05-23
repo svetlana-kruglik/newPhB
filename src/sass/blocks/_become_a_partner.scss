@@ -241,25 +241,25 @@
 }
 
 .p-mob {
-    @include csx-down() {
+    @include csx-down {
         padding: 0 40px;
     }
 }
 
 .partner-s .row.row--reverse {
-    @include sm-down() {
+    @include sm-down {
         flex-direction: column-reverse;
     }
 }
 
 .partner-s .row{
-    @include sm-down() {
+    @include sm-down {
         flex-direction: column-reverse;
     }
 }
 
 .partner-s .col50.col50--left {
-    @include sm-down() {
+    @include sm-down {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -269,7 +269,7 @@
 .partner-s1 .col50__desc {
     margin-bottom: 20px;
 
-    @include sm-down() {
+    @include sm-down {
        text-align: center;
     }
 }
@@ -277,6 +277,7 @@
 .partner-s2 .col50.col50--right {
     justify-content: center;
 }
+
 .partner-s2 {
     width: 100%;
     position: relative;
@@ -444,6 +445,10 @@
     @include sm {
         padding: 80px 0;
     }
+}
+
+.partner-s8 .h2 {
+    color: $white;
 }
 
 .partner-s8 a.soc-el__link {
