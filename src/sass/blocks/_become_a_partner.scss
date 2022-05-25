@@ -38,15 +38,15 @@
     }
 }
 
-.partner-s__bg.partner-s__bg--mob {
+.partner-s__bg2 {
     width: 100%;
     position: relative;
 }
 
-.partner-s__bg.partner-s__bg--mob img {
+.partner-s__bg2 .partner-s__bg--mob {
     display: block;
     width: 100vw;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 180px);
     object-fit: cover;
     object-position: top;
     min-height: 550px;
