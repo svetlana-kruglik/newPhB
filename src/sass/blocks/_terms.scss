@@ -209,6 +209,9 @@
     font-size: 14px;
     line-height: 32px;
     color: #85888C;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .select-wrapper--mob .select__icon {

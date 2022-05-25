@@ -592,18 +592,10 @@
     }
 }
 
-//.index-s5 .col50__img.col50__img--385 {
-//    width: 100%;
-//    height: auto;
-//
-//    @include md {
-//        max-width: 400px;
-//    }
-//}
-
 .col50__subdesc.text-x {
     max-width: 370px;
     width: 100%;
+    color: $gray-lite;
 }
 
 .index-s7 {
