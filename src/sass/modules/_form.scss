@@ -101,6 +101,7 @@
     margin-right: 0;
     margin-top: 10px;
     max-width: 100%;
+    border-radius: 8px;
 
     @include sm {
         width: 160px;
@@ -114,13 +115,13 @@
 .form__content-top {
     margin-bottom: 20px;
 
-    @include md-down() {
+    @include md-down {
         text-align: center;
         margin-bottom: 40px;
     }
 
     @include md {
-        margin-bottom: 100px;
+        margin-bottom: 48px;
     }
 
     @include lgx {
@@ -174,7 +175,7 @@
     color: $black;
     border: 0 solid transparent;
     background-color: #f0f0f0;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 18px;
     font-weight: 500;
     font-family: 'Inter', 'Arial', sans-serif;

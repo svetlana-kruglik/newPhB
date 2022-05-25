@@ -46,7 +46,7 @@
 .partner-s__bg2 .partner-s__bg--mob {
     display: block;
     width: 100vw;
-    height: calc(100vh - 180px);
+    height: calc(100vh - 170px);
     object-fit: cover;
     object-position: top;
     min-height: 550px;
@@ -241,7 +241,8 @@
 .list__el:after {
     content: '';
     position: absolute;
-    top: 9px;
+    top: 50%;
+    transform: translateY(-50%);
     left: 0;
     width: 10px;
     height: 10px;

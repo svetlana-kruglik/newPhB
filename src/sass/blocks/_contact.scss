@@ -47,14 +47,13 @@
 }
 
 .contact-s1 .form__content-bottom.form__content-bottom--desk .form__content-inner{
-    @include sm-down() {
+    @include sm-down {
         max-width: 100%;
         margin: 30px 0 0;
     }
 
     @include sm {
         max-width: 100%;
-        margin: 30px 0 0;
         text-align: center;
     }
 
