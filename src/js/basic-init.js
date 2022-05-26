@@ -265,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function toggleClass(e) {
             e.preventDefault();
-            console.log(this);
             this.classList.add('active');
             for (let k = 0; elems.length > k; k++) {
                 let item = elems[k];
@@ -401,8 +400,15 @@ document.addEventListener('DOMContentLoaded', () => {
             let btnSubmit = el.querySelector('.js-btn-submit');
             let btnSubmitNew = el.querySelector('.js-btn-submit-new');
             let btnSubmitRep = el.querySelector('.js-btn-submit-rep');
+            let formElems = el.querySelectorAll('[data-clear]');
             if (isFormValid) {
                 // TODO: DO AJAX REQUEST
+                formElems.forEach(el => {
+                    el.value = "";
+                    if(el.nextElementSibling.closest('.label-top')) {
+                        el.nextElementSibling.classList.remove('label-top');
+                    }
+                })
                 //change color btn
                 btnSubmit.classList.add('visible');
                 btnSubmitNew.classList.add('visible');
