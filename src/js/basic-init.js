@@ -2,6 +2,16 @@ const smBpUp = window.matchMedia("(min-width: 768px)");
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    let heightWindow = document.documentElement.clientHeight;
+    let widthWindow = document.documentElement.clientWidth;
+    let indexS1 = document.querySelector('.index-s1')
+
+    if (indexS1) {
+        if (!indexS1.closest('p-100') && heightWindow === 960 && widthWindow === 1920) {
+            indexS1.classList.add('pt-100');
+        }
+    }
+
     AOS.init({disable: 'phone',once: true});
 
     // hide cookie box
