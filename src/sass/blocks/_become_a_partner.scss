@@ -43,6 +43,12 @@
     position: relative;
 }
 
+.partner-s .col50 {
+    @include sm {
+        max-width: 45.5%;
+    }
+}
+
 .partner-s__bg2 .partner-s__bg--mob {
     display: block;
     width: 100vw;
@@ -165,14 +171,9 @@
 }
 
 .col50__image {
-
-
-    @include sm-down {
-        //height: 87vh;
-        //padding-top: 100%;
-    }
-
     @include sm {
+        height: 100vh;
+        max-width: 544px;
         min-height: 468px;
         max-height: 740px;
         width: 100%;
@@ -183,7 +184,6 @@
 }
 
 .col50__image .col50__img {
-
     @include sm {
         position: absolute;
         left: 0;
